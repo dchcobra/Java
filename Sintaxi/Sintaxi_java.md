@@ -534,3 +534,12 @@ Palabra para crear clases definidas por la interfaz
 Tipo de clase que define métodos parciales o utilizar subclases para definir un método
 
 Palabra para definir la firma del método de subclases
+
+### INSTANCEOF
+
+Palabra que determina del objecto el tipo
+
+### POLYMORPHISM
+
+La habilidad de trabajar con objetos indistintamente (sin que importe la diferencia
+)
