@@ -284,7 +284,29 @@ lector.nextLine();
 
 ![image-20200215012657299](C:\Users\David\AppData\Roaming\Typora\typora-user-images\image-20200215012657299.png)
 
+## TERNARY OPERATORS
+
+Los ternary operators sirven para hacer if/else de manera mas rápida en una linea
+
+Ejemplo:
+
+```java
+return one == null ? two == null : one.equals(two);
+```
+
+El ejemplo anterior nos devuelve si el objeto one es igual a null entonces nos devuelve two == null si no one.equals(two). 
+
+TRADUCIDO SERIA:
+
+```java
+   if (one == null) {
+       return two == null;
+    } else {
+      return one.equals(two)}
+```
+
 ## ARRAYS
+
 ## CREACION DE UNA ARRAY
 
 ```java
