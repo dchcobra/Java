@@ -503,3 +503,34 @@ Cuando esto se hace con listas se envía la variable en si, no solamente los val
 
 
 
+## TERMINOS BASICOS (OBJETOS)
+
+### UPCAST /  DOWNCAST
+
+![Cuál es la diferencia entre up-casting y down-casting con respecto a la  variable de clase DOKRY Desarrollo](https://sofes.miximages.com/java/Lkn0S.png)
+
+### SUPERCLASS =  BASE CLASS / SUBCLASS
+
+Clase principal de la cual de ella salen subclases, la cual hereda su estado y comportamiento para añadir comportamientos únicos
+
+### OVERRIDING
+
+Característica que permite crear nuevas versiones para la superclass con una firma del método idéntica al método de la superclass
+
+### OVERLOADING
+
+Es la característica que permite crear mas de un método con el mismo nombre pero con distintas firmas
+
+### EXTENDS
+
+Palabra para crear una subclase que hereda de la superclass
+
+### IMPLEMENTS 
+
+Palabra para crear clases definidas por la interfaz
+
+### ABSTRACT 
+
+Tipo de clase que define métodos parciales o utilizar subclases para definir un método
+
+Palabra para definir la firma del método de subclases
