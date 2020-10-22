@@ -541,5 +541,12 @@ Palabra que determina del objecto el tipo
 
 ### POLYMORPHISM
 
-La habilidad de trabajar con objetos indistintamente (sin que importe la diferencia
-)
+La habilidad de trabajar con objetos indistintamente (sin que importe la diferencia)
+
+### OBJECTOS
+
+La siguiente URL están todos los métodos que se pueden utilizar para los objetos.
+
+```URL 
+https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html
+```

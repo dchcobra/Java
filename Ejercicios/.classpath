@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="BasicDataStructures/src"/>
+	<classpathentry kind="src" path="BasicUnitTestingWithJUnit/src"/>
+	<classpathentry kind="src" path="ClasesConstructores/src"/>
+	<classpathentry kind="src" path="ConditionalOperators/src"/>
+	<classpathentry kind="src" path="Loops/src"/>
+	<classpathentry kind="src" path="Methods/src"/>
+	<classpathentry kind="src" path="PackagesAndJars_P1/src"/>
+	<classpathentry kind="src" path="PackagesAndJars_P2/src"/>
+	<classpathentry kind="src" path="SwitcTernaruyOperators/src"/>
+	<classpathentry kind="src" path="TypesVariables/src"/>
+	<classpathentry kind="lib" path="CUSTOM_LIBRARIES/Utilities.jar"/>
+	<classpathentry kind="output" path="BasicDataStructures/bin"/>
+</classpath>
