@@ -563,3 +563,14 @@ Las excepciones son:
 - Errores que no son logicos
 - Los errores que son tanto esperados como no esperados 
 
+```java
+try {
+  //  Block of code to try
+}
+catch(Exception e) {
+  //  Block of code to handle errors
+}
+```
+
+
+
