@@ -571,6 +571,12 @@ catch(Exception e) {
   //  Block of code to handle errors
 }
 ```
-
-
-
+Devuelve que hay un tipo de error, se pone al final de bloque de try
+```java
+try {
+    System.out.println("Please enter another integer");
+	int z = Integer.parseInt(input.nextLine());
+	System.out.println(x / z);
+	//Devuelve que hay algun error
+	throw new IllegalArgumentException(); }
+```
