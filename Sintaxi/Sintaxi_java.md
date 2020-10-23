@@ -550,3 +550,16 @@ La siguiente URL están todos los métodos que se pueden utilizar para los objet
 ```URL 
 https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html
 ```
+
+## EXCEPCIONES
+
+¿Que son las excepciones en Java?
+
+Las excepciones son: 
+
+- Los fallos o paradas que pueden ocurrir en el programa
+- Errores
+- Falta alguna cosa o llega a ser inaccesible
+- Errores que no son logicos
+- Los errores que son tanto esperados como no esperados 
+
