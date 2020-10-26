@@ -560,7 +560,7 @@ Las excepciones son:
 - Los fallos o paradas que pueden ocurrir en el programa
 - Errores
 - Falta alguna cosa o llega a ser inaccesible
-- Errores que no son logicos
+- Errores que no son lógicos
 - Los errores que son tanto esperados como no esperados 
 
 ```java
