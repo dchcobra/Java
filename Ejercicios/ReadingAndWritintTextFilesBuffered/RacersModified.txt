@@ -1,0 +1,10 @@
+Mar2y|71
+Tom|70
+Steve|60
+Paul|56
+Jason|72
+Roger|70
+Amy|71
+Sally|26
+Wes|39
+John|35
