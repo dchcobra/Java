@@ -1,24 +1,24 @@
 import java.io.Serializable;
 
 public class CreditCard implements Serializable {
-	private long ccNunm;
+	private long ccNum;
 	private double balance;
 	
 	public CreditCard() {
 		//do nothing
 	}
 	
-	public CreditCard(long ccNunml, double balancel) {
-		ccNunm = ccNunml;
+	public CreditCard(long ccNuml, double balancel) {
+		ccNum = ccNuml;
 		balance = balancel;
 	}
 	
 	public long getCreditCardNumber() {
-		return ccNunm;
+		return ccNum;
 	}
 	
 	public void setCreditCardNumber(long num) {
-		ccNunm = num;
+		ccNum = num;
 	}
 	
 	public double getBalance() {

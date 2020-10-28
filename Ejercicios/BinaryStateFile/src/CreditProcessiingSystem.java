@@ -1,8 +1,9 @@
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CreditProcessiingSystem {
-	public static String dataFilePath = "C:\\Users\\dcastilh\\Documents\\GitHub\\Java\\Ejercicios\\RandomAccessFiles\\src\\CreditProcessingData";
+	public static String dataFilePath = "C:\\Users\\dcastilh\\Documents\\GitHub\\Java\\Ejercicios\\BinaryStateFile\\src\\CreditProcessingData.bin";
 
 	public static void main(String[] args) {
 		boolean done = false;
@@ -65,7 +66,7 @@ public class CreditProcessiingSystem {
 					}
 					break;
 				case 5:
-					cards = LoadCardDataFromFile();
+					cards = loadCardDataFromFile();
 					System.out.println("Loaded " + cards.size() + " cards from file into the system.");
 					break;
 				case 6:
@@ -88,7 +89,7 @@ public class CreditProcessiingSystem {
 		System.out.println("Enter 2 for viewing details of a credit card");
 		System.out.println("Enter 3 to update card details");
 		System.out.println("Enter 4 to list all cards and balances");
-		System.out.println("Enter 5 to º existing data");
+		System.out.println("Enter 5 to load existing data");
 		System.out.println("Enter 6 to save data to file");
 		System.out.println("Enter 7 to quit");
 		return Integer.parseInt(menuInput.nextLine());
@@ -136,7 +137,7 @@ public class CreditProcessiingSystem {
 		System.out.println("Card Details: " + cc.toString());
 	}
 	
-	private static ArrayList<CreditCard> LoadCardDataFromFile() {
+	private static ArrayList<CreditCard> loadCardDataFromFile() {
 		ArrayList<CreditCard> cards = null;
 		try {
 			FileInputStream fis = new FileInputStream(dataFilePath);
@@ -155,25 +156,12 @@ public class CreditProcessiingSystem {
 	private static void saveCardDataToFile(ArrayList<CreditCard> cards) {
 		try {
 			FileOutputStream fos = new FileOutputStream(dataFilePath);
-			ObjectInputStream oos = new ObjectOutputStream(fos);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(cards);
 		} catch (IOException ioex) {
 			ioex.printStackTrace();
 		}
 	}
 	
-	private static int findCardPosition(long cardNumber, RandomAccessFile f) throws IOException {
-		
-		long totalRecords = f.length() / RECORD_LENGTH;
-		
-		for (int i = 0; i < totalRecords; i++) {
-			f.seek(i * RECORD_LENGTH);
-			long ccNum = f.readLong();
-			if (ccNum == cardNumber) {
-				return 1;
-			}
-		}
-		return -1;
-	}
 	
 }
