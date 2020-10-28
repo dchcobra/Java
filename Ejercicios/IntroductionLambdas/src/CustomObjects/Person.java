@@ -40,7 +40,7 @@ public class Person {
 	}
 	
 	public String toString() {
-		return String.format("First; %s\tLast; %s\tAge: %d\n"
+		return String.format("First: %s\tLast: %s\tAge: %d\n"
 				, this.getFirstName()
 				, this.getLastName()
 				, this.getAge() );
