@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -46,5 +47,19 @@ public class StreamsFilterCollectAndSrted {
 			System.out.println("better events: " + i);
 		} 
 		System.out.println(StringGenerator.stars()); //linea 68 video
+		
+		Predicate<Integer> isEven = x -> x % 2 == 0;
+		List<Integer> bestEvens = testList.stream().filter(isEven).collect(Collectors.toList());
+		for (Integer i : bestEvens) {
+			System.out.println("best evens: " + i);
+		}		
+		System.out.println(StringGenerator.stars());
+		bestEvens.forEach(x -> System.out.println("Inline Next Even: " + x));
+		System.out.println(StringGenerator.stars());
+		
+		List<Integer> bestBestEvens = testList.stream().filter(isEven).sorted().collect(Collectors.toList());
+		bestBestEvens.forEach(x -> System.out.println("Inline Sorted Next Even: " + x));
+		System.out.println(StringGenerator.stars());
+
 	}
 }
