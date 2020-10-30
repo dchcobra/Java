@@ -1,6 +1,11 @@
 package raceManagerDatabase;
 import java.util.Scanner;
+
+import ServerInterop.DBManager;
+import ServerInterop.MySQLOperations;
+
 import java.io.*;
+import java.sql.SQLException;
 
 public class ShowDatabaseOperations {
 	private static final String CONFIG_PATH = "C:\\Users\\dcastilh\\Documents\\GitHub\\Java\\Ejercicios\\MySQLDBTableOperations\\src\\ServerInterop\\dataconfig.json";
@@ -28,7 +33,7 @@ public class ShowDatabaseOperations {
 					break;
 				case 3:
 					System.out.println("Enter 1 to create the Athlete Table, 2 to create the Athlete Type Table:");
-					tableName =input.nextLine():
+					tableName =input.nextLine();
 					if (tableName.equals("1")) {
 						createTable(dbm, RaceManagerOperations.ATHLETE_TABLE_NAME
 								, RaceManagerOperations.CreateAthleteTableDetails();
@@ -86,7 +91,7 @@ public class ShowDatabaseOperations {
 		rs.close();
 	}
 	
-	public static void verifyTableExists(DBManager dbm, string tableName) throws SQLException {
+	public static void verifyTableExists(DBManager dbm, String tableName) throws SQLException {
 		String query = MySQLOperations.TABLE_EXISTS_QUERY(dbm.GetDBName(), tableName);
 		boolean exists = dbm.ExecuteTableExists(query, "ExistsCount");
 		if (exists) {

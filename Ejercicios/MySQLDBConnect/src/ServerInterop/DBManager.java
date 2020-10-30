@@ -87,6 +87,26 @@ public class DBManager {
 			}
 			return null;
 		}
+		
+		public boolean ExecuteTableExists(String query, String col_name) {
+			try {
+				PreparedStatement pst = cn.prepareStatement(query);
+				ResultSet rs = pst.executeQuery();
+				if (rs.next()) {
+					int val = rs.getInt(col_name);
+					if (val > 0) {
+						return true;
+					} else {
+						return false;
+					}
+				} else {
+					return false;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		public Connection GetConnection() {
 			return cn;
 		}
