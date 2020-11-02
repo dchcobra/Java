@@ -2,6 +2,7 @@ package raceManagerDatabase;
 import java.util.Scanner;
 
 import ServerInterop.DBManager;
+import ServerInterop.MySQLOperations;
 import ServerInterop.MySQLServerConnector;
 import ServerInterop.ServerConector;
 
@@ -65,7 +66,6 @@ public class ShowDatabaseOperations {
 					allDone = true;
 				}
 			}
-			
 			dbm.closeConnection(false);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -1,9 +1,9 @@
 {
-	"racemananagerdb"
+	"racemanagerdb" :
 		{
-			"server" : "2131dsada12313":
-			, "database" : "dasdasdqweqewsad213asd2asg"
+			"server" : "localhost:3306"
+			, "database" : "racemanagerdev"
 			, "username" : "root"
-			, "password" : "dwsdada8das7daysdhad8w11dsa"
+			, "password" : ""
 		}
 }

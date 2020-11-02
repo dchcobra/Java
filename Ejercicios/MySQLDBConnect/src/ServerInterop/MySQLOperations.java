@@ -1,6 +1,10 @@
 package ServerInterop;
 
 public class MySQLOperations {
+	public static String CREATE_TABLE_QUERY(String tableName, String fieldList) {
+		return String.format("CREATE TABLE %s (%s) ENGINE=MyISAM", tableName, fieldList);
+	}
+	
 	public static String DELETE_TABLE_QUERY(String tableName) {
 		return "DROP TABLE" + tableName;
 	}

@@ -1,11 +1,12 @@
 package raceManagerDatabase;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import ServerInterop.DBManager;
 import ServerInterop.MySQLOperations;
-
-import java.io.*;
-import java.sql.SQLException;
+import ServerInterop.MySQLServerConnector;
+import ServerInterop.ServerConnector;
 
 public class ShowDatabaseOperations {
 	private static final String CONFIG_PATH = "C:\\Users\\dcastilh\\Documents\\GitHub\\Java\\Ejercicios\\MySQLDBTableOperations\\src\\ServerInterop\\dataconfig.json";
@@ -15,8 +16,8 @@ public class ShowDatabaseOperations {
 		try {
 			ServerConnector sc = new MySQLServerConnector(CONFIG_PATH, DB_KEY);
 			
-			DBMaanager dbm = new DBManager(sc);
-			dbm.openCoonnection();
+			DBManager dbm = new DBManager(sc);
+			dbm.openConnection();
 			Scanner input = new Scanner(System.in);
 			String tableName;
 			boolean allDone = false;
@@ -35,11 +36,22 @@ public class ShowDatabaseOperations {
 					System.out.println("Enter 1 to create the Athlete Table, 2 to create the Athlete Type Table:");
 					tableName =input.nextLine();
 					if (tableName.equals("1")) {
-						createTable(dbm, RaceManagerOperations.ATHLETE_TABLE_NAME
-								, RaceManagerOperations.CreateAthleteTableDetails();
+						createtable(dbm, RaceManagerOperations.ATHLETE_TABLE_NAME
+								, RaceManagerOperations.CreateAthleteTableDetails());
 					} else if (tableName.equals("2")) {
-						createTable(dbm, RaceManagerOperations.ATHLETE_TYPE_TABLE_NAME
-								, RaceManagerOperations.CreateAthleteTableDetails();
+						createtable(dbm, RaceManagerOperations.ATHLETE_TYPE_TABLE_NAME
+								, RaceManagerOperations.CreateAthleteTableDetails());
+					} else {
+						System.out.println("Invalid choice");
+					}
+					break;
+				case 4:
+					System.out.println("Please enter 1 to delete the Athlete table, 2 to delete the Athlete type table.");
+					tableName = input.nextLine();
+					if (tableName.equals("1")) {
+						deleteTable(dbm, RaceManagerOperations.ATHLETE_TABLE_NAME);
+					} else if (tableName.equals("2")) {
+						deleteTable(dbm, RaceManagerOperations.ATHLETE_TYPE_TABLE_NAME);
 					} else {
 						System.out.println("Invalid choice");
 					}
@@ -73,7 +85,7 @@ public class ShowDatabaseOperations {
 				System.out.println("Enter 3 to add a new table: ");
 				System.out.println("Enter 4 to delete a table: ");
 				choice = Integer.parseInt(input.nextLine());
-				if (choice >= 1 && choice < 4) {
+				if (choice >= 1 && choice <= 4) {
 					valid = true;
 				}
 			} catch (Exception ex) {
@@ -97,7 +109,7 @@ public class ShowDatabaseOperations {
 		if (exists) {
 			System.out.println("The Table: " + tableName + " exists!");
 		} else {
-			System.out.println("The Tablle: " + tableName + " does not exist!");
+			System.out.println("The Table: " + tableName + " does not exist!");
 		}
 	}
 	

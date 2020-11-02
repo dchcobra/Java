@@ -105,6 +105,7 @@ public class DBManager {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			return false;
 		}
 		
 		public Connection GetConnection() {

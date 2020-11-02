@@ -1,5 +1,12 @@
 package ServerInterop;
+import java.sql.Connection;
 
-public class ServerConnector {
-
+public interface ServerConnector {
+	Connection getConnection();
+	String getConnectionURL();
+	String getConnectionDetails();
+	String getTablesSchemaQuery();
+	String getDBName();
+	String getServername();
+	String getUserName();
 }
