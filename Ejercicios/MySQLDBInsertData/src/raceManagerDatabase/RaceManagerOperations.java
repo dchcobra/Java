@@ -28,9 +28,8 @@ public class RaceManagerOperations {
 	}
 	
 	public static String InsertAthleteString(Athlete a, int typeID) {
-		String atheleteInsert = "Insert into Athlete (Name, Age, IsInjured, TypeId, Shoes, UsesClips, VALUES,(" + a.getName() 
-				+ a.getAge() + a.getIsInjured() + typeID;
-		String athleteInsert = null;
+		String athleteInsert = "Insert into Athlete ('Name', 'Age', 'IsInjured', 'TypeId', 'Shoes', 'UsesClips', VALUES,('" + a.getName() 
+				+ "'" + a.getAge() + "'" + a.getIsInjured() + "'" + typeID;
 		if (a instanceof Runner) {
 			athleteInsert += ((Runner)a).getShoeBrand();
 		} else {
@@ -42,7 +41,7 @@ public class RaceManagerOperations {
 			athleteInsert += "NULL";
 		}
 		athleteInsert += ");";
-		return atheleteInsert;
+		return athleteInsert;
 	}
 	
 	public static String GetAthleteTypeData() {
