@@ -107,10 +107,14 @@ public class DBManager {
 			return false;
 		}
 		
+		public Connection GetConnection() {
+			return cn;
+		}
 		
 		public String GetConnectionURL() {
 			return scb.getConnectionURL();
 		}
+
 		
 		public String GetTablesSchemaQuery() {
 			return scb.getTablesSchemaQuery();
