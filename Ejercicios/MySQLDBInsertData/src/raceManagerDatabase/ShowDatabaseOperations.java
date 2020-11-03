@@ -1,14 +1,12 @@
 package raceManagerDatabase;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import ServerInterop.DBManager;
 import ServerInterop.MySQLOperations;
 import ServerInterop.MySQLServerConnector;
-import ServerInterop.ServerConector;
-
-import java.io.*;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import ServerInterop.ServerConnector;
 
 public class ShowDatabaseOperations {
 	private static final String CONFIG_PATH = "C:\\Users\\dcastilh\\Documents\\GitHub\\Java\\Ejercicios\\MySQLDBTableOperations\\src\\ServerInterop\\dataconfig.json";
@@ -16,7 +14,8 @@ public class ShowDatabaseOperations {
 	
 	public static void main(String[] args) {
 		try {
-			ServerConector sc = new MySQLServerConnector(CONFIG_PATH, DB_KEY);
+			ServerConnector sc = new MySQLServerConnector(CONFIG_PATH, DB_KEY);
+			
 			DBManager dbm = new DBManager(sc);
 			dbm.openConnection();
 			Scanner input = new Scanner(System.in);
@@ -47,7 +46,7 @@ public class ShowDatabaseOperations {
 					}
 					break;
 				case 4:
-					System.out.println("Please enter 1 to delete the Athlete table, 2 to delete the Athlete Type table. ");
+					System.out.println("Please enter 1 to delete the Athlete table, 2 to delete the Athlete type table.");
 					tableName = input.nextLine();
 					if (tableName.equals("1")) {
 						deleteTable(dbm, RaceManagerOperations.ATHLETE_TABLE_NAME);
@@ -66,6 +65,7 @@ public class ShowDatabaseOperations {
 					allDone = true;
 				}
 			}
+			
 			dbm.closeConnection(false);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class ShowDatabaseOperations {
 				System.out.println("Enter 3 to add a new table: ");
 				System.out.println("Enter 4 to delete a table: ");
 				choice = Integer.parseInt(input.nextLine());
-				if (choice >= 1 && choice < 4) {
+				if (choice >= 1 && choice <= 4) {
 					valid = true;
 				}
 			} catch (Exception ex) {
@@ -109,7 +109,7 @@ public class ShowDatabaseOperations {
 		if (exists) {
 			System.out.println("The Table: " + tableName + " exists!");
 		} else {
-			System.out.println("The Tablle: " + tableName + " does not exist!");
+			System.out.println("The Table: " + tableName + " does not exist!");
 		}
 	}
 	

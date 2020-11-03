@@ -1,7 +1,7 @@
 package ServerInterop;
-import java.sql.*;
+import java.sql.Connection;
 
-public interface ServerConector {
+public interface ServerConnector {
 	Connection getConnection();
 	String getConnectionURL();
 	String getConnectionDetails();

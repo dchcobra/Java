@@ -1,27 +1,30 @@
 package ServerInterop;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.lang.Exception;
+
 import org.json.JSONObject;
 
-public class MySQLServerConnector implements ServerConector {
-	private final String FORNAME = "com.mysql.jdbc.Driver";
+public class MySQLServerConnector implements ServerConnector {
+	private final String FORNAME = "com.mysql.cj.jdbc.Driver";
 	private final String CONSTRFORMAT = "jdbc:mysql://%s/%s?user=%s&password=%s";
-	private String serverName;
-	private String dbName;
-	private String userName;
-	private String password;
-
+	private String _serverName;
+	private String _dbName;
+	private String _userName;
+	private String _password;
+	
 	public MySQLServerConnector(String path, String dbconnectionkey) throws IOException {
 		if (path == null || path.length() == 0) {
 			throw new IllegalArgumentException("Must include a valid path");
 		}
 		if (dbconnectionkey == null || dbconnectionkey.length() == 0) {
-			throw new IllegalArgumentException("Must include a valid path");
+			throw new IllegalArgumentException("Must inclide a vald db connector");
 		}
-
+		
+		
 		FileReader fr = new FileReader(path);
 		BufferedReader br = new BufferedReader(fr);
 		String nextLine;
@@ -33,20 +36,18 @@ public class MySQLServerConnector implements ServerConector {
 			br.close();
 			br = null;
 		}
-
 		if (fr != null) {
 			fr.close();
 			fr = null;
 		}
-
+		
 		JSONObject obj = new JSONObject(sb.toString());
-		serverName = obj.getJSONObject(dbconnectionkey).getString("server");
-		dbName = obj.getJSONObject(dbconnectionkey).getString("database");
-		userName = obj.getJSONObject(dbconnectionkey).getString("username");
-		password = obj.getJSONObject(dbconnectionkey).getString("password");
+		_serverName = obj.getJSONObject(dbconnectionkey).getString("server");
+		_dbName = obj.getJSONObject(dbconnectionkey).getString("database");
+		_userName = obj.getJSONObject(dbconnectionkey).getString("username");
+		_password = obj.getJSONObject(dbconnectionkey).getString("password");
 	}
-
-	@Override
+	
 	public Connection getConnection() {
 		try {
 			Class.forName(FORNAME);
@@ -57,37 +58,35 @@ public class MySQLServerConnector implements ServerConector {
 			return null;
 		}
 	}
-
-	@Override
-	public String getTablesSchemaQuery() {
-		return String.format("select table_name from information_schema.tables where tables_schema = '%s'", dbName);
-	}
-
-	@Override
-	public String getDBName() {
-		return dbName;
-	}
-
-	@Override
-	public String getServername() {
-		return serverName;
-	}
-
-	@Override
-	public String getUserName() {
-		return userName;
-	}
-
-	@Override
 	public String getConnectionURL() {
-		// TODO Auto-generated method stub
-		return null;
+		return String.format(CONSTRFORMAT
+				, _serverName
+				, _dbName
+				, _userName
+				, _password);
 	}
-
-	@Override
+	
 	public String getConnectionDetails() {
-		// TODO Auto-generated method stub
-		return null;
+		return String.format("MySQL Database: %s: %s attempting connection %s"
+					, _serverName
+					, _dbName
+					, _userName);
 	}
-
+	
+	public String getTablesSchemaQuery() {
+		return String.format("select table_name from information_schema.tables"
+				+ " where table_schema = '%s'",_dbName);
+	}
+	
+	public String getDBName() {
+		return _dbName;
+	}
+	
+	public String getServername() {
+		return _serverName;
+	}
+	
+	public String getUserName() {
+		return _userName;
+	}
 }

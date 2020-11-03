@@ -8,19 +8,19 @@ import java.sql.Statement;
 
 public class DBManager {
 	Connection cn = null;
-	ServerConector scb = null;
+	ServerConnector scb = null;
 	
 	public DBManager() {
 		
 	}
 	
-	public DBManager(ServerConector connector) {
+	public DBManager(ServerConnector connector) {
 		scb = connector;
 	}
 	
-	public boolean setConnectionBehavior(ServerConector connector) {
+	public boolean setConnectionBehavior(ServerConnector connector) {
 		if (connector == null) {
-			throw new IllegalArgumentException("Server Connector cannot be ");
+			throw new IllegalArgumentException("Server Connector cannot be establed");
 		}
 		scb = connector;
 		return true;
@@ -35,7 +35,6 @@ public class DBManager {
 			ex.printStackTrace();
 			return false;
 		}
-		
 		if (cn == null) return false;
 		return true;
 	}
@@ -56,27 +55,27 @@ public class DBManager {
 		}
 		return true;
 	}
-		
-		public boolean isConnected() {
-			return cn != null;
-		}
-		
-		public boolean ExecuteNonQuery(String query) {
-			try {
-				Statement st = null;
-				st = cn.createStatement();
-				int i = st.executeUpdate(query);
-				if (i == -1) {
-					System.out.println("db error : " + query);
-					return false;
-				}
-				st.close();
-			} catch (Exception ex) {
-				ex.printStackTrace();
+	
+	public boolean isConnected() {
+		return cn != null;
+	}
+	
+	public boolean ExecuteNonQuery(String query) {
+		try {
+			Statement st = null;
+			st = cn.createStatement();
+			int i = st.executeUpdate(query);
+			if (i == -1) {
+				System.out.println("db error : " + query);
 				return false;
 			}
-			return true;
+			st.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
 		}
+		return true;
+	}
 		
 		public ResultSet ExecuteRSGetTableSchema() {
 			try {
@@ -88,13 +87,13 @@ public class DBManager {
 			return null;
 		}
 		
-		public boolean ExecuteTableExists(String query, String col_name) {
+		public boolean ExecuteTableExists(String query , String col_name) {
 			try {
 				PreparedStatement pst = cn.prepareStatement(query);
 				ResultSet rs = pst.executeQuery();
 				if (rs.next()) {
 					int val = rs.getInt(col_name);
-					if (val > 0) {
+					if (val > 0 ) {
 						return true;
 					} else {
 						return false;
@@ -102,15 +101,12 @@ public class DBManager {
 				} else {
 					return false;
 				}
-			} catch (Exception e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 			return false;
 		}
 		
-		public Connection GetConnection() {
-			return cn;
-		}
 		
 		public String GetConnectionURL() {
 			return scb.getConnectionURL();
@@ -124,13 +120,12 @@ public class DBManager {
 			return scb.getDBName();
 		}
 		
-		public String GetServerName() {
+		public String getServerName() {
 			return scb.getServername();
 		}
 		
-		
-		public String GetUserName() {
+		public String getUserName() {
 			return scb.getUserName();
 		}
 	}
-
+		
