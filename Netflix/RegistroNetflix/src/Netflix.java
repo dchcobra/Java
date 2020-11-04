@@ -2,7 +2,7 @@
 public class Netflix {
 	private String nombre;
 	private String fechaR;
-	private int valoracion;
+	private String valoracion;
 	private int ID;
 	
 	//Constructor que no hace nada
@@ -10,10 +10,11 @@ public class Netflix {
 	}
 
 	//Constructor que hace que el objeto siempre tenga ID, nombre y fecha
-	public Netflix(int lID, String lnombre, String lfechaR) {
+	public Netflix(int lID, String lnombre, String lfechaR, String lvaloracion) {
 		ID = lID;
 		nombre = lnombre;
 		fechaR = lfechaR;
+		valoracion = lvaloracion;
 	}
 	//Asignamos el ID segun el usuario introduzca
 	public void setID(int value) {
@@ -39,6 +40,14 @@ public class Netflix {
 	public String getDiaReproduccion() {
 		return fechaR;
 	}
+	
+	public void setValoracion(String value) {
+		valoracion = value;
+	}
+	
+	public String getValoracion() {
+		return valoracion;
+	}
 
 	
 	/* Comentado de momento
@@ -52,9 +61,10 @@ public class Netflix {
 	
 	public String toString() {
 		
-		return String.format("\nID de la serie: %s.\nHa visto la serie: %s\nLa comenzo el dia: %s\n"
+		return String.format("\nID: %s.\nHa visto: %s\nLa vió el dia: %s\nValoracion: %s\n"
 				, getID()
 				, getNombre()
-				, getDiaReproduccion());
+				, getDiaReproduccion()
+				, getValoracion());
 	}
 }

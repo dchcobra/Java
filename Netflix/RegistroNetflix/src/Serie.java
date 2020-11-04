@@ -5,9 +5,9 @@ public class Serie extends Netflix{
 	private int añoTemporada;
 	static String tipo = "Serie";
 	
-	public Serie(int lID, String lnombre, String lfechaR, String lnombreEstudio,
+	public Serie(int lID, String lnombre, String lfechaR, String lvaloracion, String lnombreEstudio,
 			int lnumTemporadas, int lañoTemporada) {
-		super(lID, lnombre, lfechaR);
+		super(lID, lnombre, lfechaR, lvaloracion);
 		nombreEstudio = lnombreEstudio;
 		numTemporadas = lnumTemporadas;
 		añoTemporada = lañoTemporada;
@@ -36,19 +36,18 @@ public class Serie extends Netflix{
 	public int getañoTemporada() {
 		return añoTemporada;
 	}
-	
+	//Asignamos a la variable tipo el valor: Serie
 	public void setTipo(String value) {
 		value = "Serie";
 		tipo = value;
 	}
-	
 	public String getTipo() {
 		return tipo;
 	}
 	
-	
+	//Hacemos que muestre el contenido Serie
 	public String toString() {
-		return String.format("Contenido: %s%sEstudio: %s\nNumero temporadas: %s\nAño primera temporada: %s"
+		return String.format("Contenido: %s%sEstudio: %s\nNumero temporadas: %s\nAño primera temporada: %s\n"
 								, getTipo()
 								, super.toString()
 								, getnombreEstudio()
