@@ -6,9 +6,9 @@ public class Menu {
 		int ID;
 		String NombreContenido;
 		String Fecha;
-		String valoracion;
+		String valoracion = null;
 		String ext1;
-		String ext2;
+		int ext2;
 		int ext3;
 		//String valoracionyf;
 		
@@ -26,6 +26,22 @@ public class Menu {
 		System.out.println(f);
 		*/
 		
+		/* PRUEBAS SI FUNCIONABAN LOS OBJETOS
+		//Debug de una Pelicula
+		Pelicula p = new Pelicula(1, "Fast&Forious", "2/4/2020", "10", "Paul", 2018);
+		System.out.println(p);
+		//Debug de una Serie
+		Serie s = new Serie(2, "Stranger Things", "1/2/2020", "5", "nombreE", 1, 2019);
+		System.out.println(s);
+		//Debug de un Documental
+		Documental d = new Documental(3, "Dinosaurios 211.a.c", "12/9/2020", "8", "Leopoldo", 2014);
+		System.out.println(d);
+		*/
+		// varable para iterar por la array de objetos
+		int i = 0;
+		// Array de objetos donde se guardan el historial de lo que ha visto el usuario
+		Netflix peliculasVistas[] = new Netflix[100];
+		
 		
 		boolean salir = false;
 		while (!salir) {
@@ -41,10 +57,9 @@ public class Menu {
 			Scanner lectorExt1 = new Scanner(System.in);
 			Scanner lectorExt2 = new Scanner(System.in);
 			Scanner lectorExt3 = new Scanner(System.in);
-
-			
-
+			int valoracionsn;
 			//Segun el numero que introduzca el usuario, hara una cosa u otra
+			
 			switch (opcion) {
 				case 1: 
 					System.out.println("Introduce el ID de la pelicula: ");
@@ -53,49 +68,89 @@ public class Menu {
 					NombreContenido = lectorNombre.nextLine();
 					System.out.println("Introduce la fecha de reproduccion de la pelicula: ");
 					Fecha = lectorFecha.nextLine();
-					System.out.println("Quieres introducir la valoracion? 1 = si");
-					if (lectorValoracionyn.nextInt() == 1) {
+					System.out.println("Quieres introducir la valoracion? 1 = si / 2 = no");
+					valoracionsn = lectorValoracionyn.nextInt();
+					if (valoracionsn == 1) {
 						System.out.println("Introduce la valoracion: ");
 						valoracion = lectorValoracion.nextLine();
-					} else {
+					} else if (valoracionsn == 2) {
 						valoracion = "Sin valoracion";
 					}
 					System.out.println("Introduce el director de la pelicula: ");
 					ext1 = lectorExt1.nextLine();
 					System.out.println("Introduce el año de publicacion: ");
-					ext3 = lectorExt3.nextInt();
-					
-					System.out.println(ID);
-					System.out.println(NombreContenido);
-					System.out.println(Fecha);
-					System.out.println(valoracion);
-					System.out.println(ext1);
-					System.out.println(ext3);
+					ext2 = lectorExt3.nextInt();
+					Pelicula p = new Pelicula(ID, NombreContenido, Fecha, valoracion, ext1, ext2);
+					peliculasVistas[i] = p; // Guarda el objeto en la ultima posicion disponible
+					i++; // Suma una posicion para siempre estar en la ultima posicion de la array
 					break;
 				case 2:
-					System.out.println("2");
+					System.out.println("Introduce el ID de la serie: ");
+					ID = lectorID.nextInt();
+					System.out.println("Introduce el nombre de la serie: ");
+					NombreContenido = lectorNombre.nextLine();
+					System.out.println("Introduce la fecha de reproduccion de la serie: ");
+					Fecha = lectorFecha.nextLine();
+					System.out.println("Quieres introducir la valoracion? 1 = si / 2 = no");
+					valoracionsn = lectorValoracionyn.nextInt();
+					if (valoracionsn == 1) {
+						System.out.println("Introduce la valoracion: ");
+						valoracion = lectorValoracion.nextLine();
+					} else if (valoracionsn == 2) {
+						valoracion = "Sin valoracion";
+					}
+					System.out.println("Introduce el nombre del estudio: ");
+					ext1 = lectorExt1.nextLine();
+					System.out.println("Introduce el numero de temporadas que tiene: ");
+					ext2 = lectorExt2.nextInt();
+					System.out.println("Introduce el año de publicacion de la primera temporada: ");
+					ext3 = lectorExt3.nextInt();
+					Serie s = new Serie(ID, NombreContenido, Fecha, valoracion, ext1, ext2, ext3);
+					peliculasVistas[i] = s; // Guarda el objeto en la ultima posicion disponible
+					i++; // Suma una posicion para siempre estar en la ultima posicion de la array
 					break;
 				case 3:
-					System.out.println("3");
+					System.out.println("Introduce el ID del documental: ");
+					ID = lectorID.nextInt();
+					System.out.println("Introduce el nombre del documental: ");
+					NombreContenido = lectorNombre.nextLine();
+					System.out.println("Introduce la fecha de reproduccion del documental: ");
+					Fecha = lectorFecha.nextLine();
+					System.out.println("Quieres introducir la valoracion? 1 = si / 2 = no");
+					valoracionsn = lectorValoracionyn.nextInt();
+					if (valoracionsn == 1) {
+						System.out.println("Introduce la valoracion: ");
+						valoracion = lectorValoracion.nextLine();
+					} else if (valoracionsn == 2) {
+						valoracion = "Sin valoracion";
+					}
+					System.out.println("Introduce el nombre del director: ");
+					ext1 = lectorExt1.nextLine();
+					System.out.println("Introduce el numero de temporadas que tiene: ");
+					ext2 = lectorExt2.nextInt();
+					System.out.println("Introduce el año de publicacion: ");
+					ext2 = lectorExt3.nextInt();
+					Documental d = new Documental(ID, NombreContenido, Fecha, valoracion, ext1, ext2);
+					peliculasVistas[i] = d; // Guarda el objeto en la ultima posicion disponible
+					i++; // Suma una posicion para siempre estar en la ultima posicion de la array
 					break;
 				case 4:
+					//Recorre el array de objetos mostrandolos
+					for (int x = 0; x < peliculasVistas.length; x++) {
+						if (peliculasVistas[x] == null) {
+							break;
+						} else {
+							System.out.println(peliculasVistas[x]);							
+						}
+					}
+					break;
+				case 5:
+					//Sale del menu
 					System.out.println("Saliendo...");
 					salir = true;
 					break;
 			}
 		} 
-		
-		
-		//Debug de una Pelicula
-		Pelicula p = new Pelicula(1, "Fast&Forious", "2/4/2020", "10", "Paul", 2018);
-		System.out.println(p);
-		//Debug de una Serie
-		Serie s = new Serie(2, "Stranger Things", "1/2/2020", "5", "nombreE", 1, 2019);
-		System.out.println(s);
-		//Debug de un Documental
-		Documental d = new Documental(3, "Dinosaurios 211.a.c", "12/9/2020", "8", "Leopoldo", 2014);
-		System.out.println(d);
-		
 	}
 	
 	//muestra las opciones segun lo que quiera introducir el usuario
@@ -106,7 +161,8 @@ public class Menu {
 				+ "1. Guardar historial de una Pelicula\n"
 				+ "2. Guardar historial de una Serie de TV\n"
 				+ "3. Guardar historial de un Documental\n"
-				+ "4. Salir\n");
+				+ "4. Mostrar historial\n"
+				+ "5. Salir\n");
 		System.out.println("****************************************\n");
 	}
 	
