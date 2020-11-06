@@ -40,7 +40,7 @@ public class Menu {
 		// varable para iterar por la array de objetos
 		int i = 0;
 		// Array de objetos donde se guardan el historial de lo que ha visto el usuario
-		Netflix peliculasVistas[] = new Netflix[100];
+		Netflix registro[] = new Netflix[100];
 		
 		
 		boolean salir = false;
@@ -81,7 +81,7 @@ public class Menu {
 					System.out.println("Introduce el año de publicacion: ");
 					ext2 = lectorExt3.nextInt();
 					Pelicula p = new Pelicula(ID, NombreContenido, Fecha, valoracion, ext1, ext2);
-					peliculasVistas[i] = p; // Guarda el objeto en la ultima posicion disponible
+					registro[i] = p; // Guarda el objeto en la ultima posicion disponible
 					i++; // Suma una posicion para siempre estar en la ultima posicion de la array
 					break;
 				case 2:
@@ -106,7 +106,7 @@ public class Menu {
 					System.out.println("Introduce el año de publicacion de la primera temporada: ");
 					ext3 = lectorExt3.nextInt();
 					Serie s = new Serie(ID, NombreContenido, Fecha, valoracion, ext1, ext2, ext3);
-					peliculasVistas[i] = s; // Guarda el objeto en la ultima posicion disponible
+					registro[i] = s; // Guarda el objeto en la ultima posicion disponible
 					i++; // Suma una posicion para siempre estar en la ultima posicion de la array
 					break;
 				case 3:
@@ -131,20 +131,39 @@ public class Menu {
 					System.out.println("Introduce el año de publicacion: ");
 					ext2 = lectorExt3.nextInt();
 					Documental d = new Documental(ID, NombreContenido, Fecha, valoracion, ext1, ext2);
-					peliculasVistas[i] = d; // Guarda el objeto en la ultima posicion disponible
+					registro[i] = d; // Guarda el objeto en la ultima posicion disponible
 					i++; // Suma una posicion para siempre estar en la ultima posicion de la array
 					break;
 				case 4:
 					//Recorre el array de objetos mostrandolos
-					for (int x = 0; x < peliculasVistas.length; x++) {
-						if (peliculasVistas[x] == null) {
+					for (int x = 0; x < registro.length; x++) {
+						if (registro[x] == null) {
 							break;
 						} else {
-							System.out.println(peliculasVistas[x]);							
+							System.out.println(registro[x]);							
 						}
 					}
 					break;
 				case 5:
+					Scanner lectorVal = new Scanner(System.in);
+					System.out.println("A que quieres darle una valoracion?");
+					String valoracion2 = lectorVal.nextLine();
+					for (int x = 0; x < registro.length; x++) {
+						if (registro[x] != null) {
+							if (valoracion2.equals(registro[x].getNombre())) {
+								System.out.println("Introduce la valoracion para " + registro[x].getNombre() + ":");
+								Scanner lectorNewVal = new Scanner(System.in);
+								String reemplaza = lectorNewVal.nextLine();
+								registro[x].setValoracion(reemplaza);
+								break;
+							}
+						} else {
+							System.out.println("No existe este registro");
+							break;
+						}
+					}
+					break;
+				case 6:
 					//Sale del menu
 					System.out.println("Saliendo...");
 					salir = true;
@@ -162,7 +181,8 @@ public class Menu {
 				+ "2. Guardar historial de una Serie de TV\n"
 				+ "3. Guardar historial de un Documental\n"
 				+ "4. Mostrar historial\n"
-				+ "5. Salir\n");
+				+ "5. Introducir valoracion\n"
+				+ "6. Salir\n");
 		System.out.println("****************************************\n");
 	}
 	
