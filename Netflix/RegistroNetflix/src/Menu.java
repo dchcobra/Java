@@ -126,8 +126,6 @@ public class Menu {
 					}
 					System.out.println("Introduce el nombre del director: ");
 					ext1 = lectorExt1.nextLine();
-					System.out.println("Introduce el numero de temporadas que tiene: ");
-					ext2 = lectorExt2.nextInt();
 					System.out.println("Introduce el año de publicacion: ");
 					ext2 = lectorExt3.nextInt();
 					Documental d = new Documental(ID, NombreContenido, Fecha, valoracion, ext1, ext2);
@@ -146,7 +144,7 @@ public class Menu {
 					break;
 				case 5:
 					Scanner lectorVal = new Scanner(System.in);
-					System.out.println("A que quieres darle una valoracion?");
+					System.out.println("Introduce el nombre del contenido para darle una valoracion: ");
 					String valoracion2 = lectorVal.nextLine();
 					// Los breaks son para que salgan del bucle cuando no hayan mas registros
 					for (int x = 0; x < registro.length; x++) {
@@ -169,13 +167,30 @@ public class Menu {
 										registro[x].setValoracion(reemplaza);
 										break;										
 									} else if (opcion == 2 ) {
+										String valTemporada;
+										//Esto hay que cambiarlo para que en vez de mostrarlo se guarde la informacion
 										System.out.println("A que temporada quieres introducir valoracion?");
+										for (int z = 1 ; z <= registro[x].getnumTemporadas() ; z++) {
+											System.out.println("Temporada " + z + ": ");
+										}
+										Scanner lectorTemporadaEscogida = new Scanner(System.in);
+										int TempEscogida = lectorTemporadaEscogida.nextInt();
+										System.out.println("Introduce la valoracion para la temporada: ");
+										Scanner lectorvalTemporada = new Scanner(System.in);
+										valTemporada = lectorvalTemporada.nextLine();
+										//Esto hay que cambiarlo para que en vez de mostrarlo se guarde la informacio
+										for (int z = 1 ; z <= registro[x].getnumTemporadas() ; z++) {
+											if (TempEscogida == z) {
+												System.out.println("Temporada " + z + ": " + valTemporada);
+											} else {
+												System.out.println("Temporada " + z + ": ");
+											}
+										}
 										break;
 									} else {
 										System.out.println("Opcion mal introducida, saliendo al menu...");
 										break;
 									}
-									
 								}
 							} 
 						} else {
@@ -197,7 +212,7 @@ public class Menu {
 	public static void mostrarMenu() {
 		System.out.println("\nNETFLIX HISTORIAL");
 		System.out.println("****************************************");
-		System.out.println("Que contenido quieres indtroducir?\n"
+		System.out.println("Que contenido quieres introducir?\n"
 				+ "1. Guardar historial de una Pelicula\n"
 				+ "2. Guardar historial de una Serie de TV\n"
 				+ "3. Guardar historial de un Documental\n"

@@ -45,6 +45,10 @@ public class Serie extends Netflix{
 		return tipo;
 	}
 	
+	public static String[] getTemporadas() {
+		String[] temporadas = null;
+		return temporadas;
+	}
 	
 	//Hacemos que muestre el contenido Serie
 	public String toString() {
@@ -55,5 +59,4 @@ public class Serie extends Netflix{
 								, getnumTemporadas()
 								, getañoTemporada());
 	}
-
 }

@@ -4,11 +4,13 @@ public class Netflix {
 	private String fechaR;
 	private String valoracion;
 	private String tipo = getTipo();
+	private int temporadas = getnumTemporadas();
 	private int ID;
-	
+	private String arrTemp = getTemporadas();
 	//Constructor que no hace nada
 	public Netflix() {	
 	}
+
 
 	//Constructor que hace que el objeto siempre tenga ID, nombre y fecha
 	public Netflix(int lID, String lnombre, String lfechaR, String lvaloracion) {
@@ -53,16 +55,14 @@ public class Netflix {
 	public String getTipo() {
 		return tipo;
 	}
-
 	
-	/* Comentado de momento
-	public void setValoracion(int value) {
-		valoracion = value;
+	public int getnumTemporadas() {
+		return temporadas;
 	}
-	
-	public int getValoracion() {
-		return valoracion;
-	}*/
+
+	private String getTemporadas() {
+		return arrTemp;
+	}
 	
 	public String toString() {
 		
