@@ -45,6 +45,7 @@ public class Serie extends Netflix{
 		return tipo;
 	}
 	
+	
 	//Hacemos que muestre el contenido Serie
 	public String toString() {
 		return String.format("Contenido: %s%sEstudio: %s\nNumero temporadas: %s\nAño primera temporada: %s\n"

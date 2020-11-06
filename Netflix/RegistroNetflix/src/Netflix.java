@@ -3,6 +3,7 @@ public class Netflix {
 	private String nombre;
 	private String fechaR;
 	private String valoracion;
+	private String tipo = getTipo();
 	private int ID;
 	
 	//Constructor que no hace nada
@@ -47,6 +48,10 @@ public class Netflix {
 	
 	public String getValoracion() {
 		return valoracion;
+	}
+	
+	public String getTipo() {
+		return tipo;
 	}
 
 	

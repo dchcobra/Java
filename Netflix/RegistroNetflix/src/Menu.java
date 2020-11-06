@@ -148,15 +148,36 @@ public class Menu {
 					Scanner lectorVal = new Scanner(System.in);
 					System.out.println("A que quieres darle una valoracion?");
 					String valoracion2 = lectorVal.nextLine();
+					// Los breaks son para que salgan del bucle cuando no hayan mas registros
 					for (int x = 0; x < registro.length; x++) {
 						if (registro[x] != null) {
 							if (valoracion2.equals(registro[x].getNombre())) {
-								System.out.println("Introduce la valoracion para " + registro[x].getNombre() + ":");
-								Scanner lectorNewVal = new Scanner(System.in);
-								String reemplaza = lectorNewVal.nextLine();
-								registro[x].setValoracion(reemplaza);
-								break;
-							}
+								if (registro[x].getTipo() == "Pelicula" || registro[x].getTipo() == "Documental") {
+									System.out.println("Introduce la valoracion para " + registro[x].getNombre() + ":");
+									Scanner lectorNewVal = new Scanner(System.in);
+									String reemplaza = lectorNewVal.nextLine();
+									registro[x].setValoracion(reemplaza);
+									break;
+								}	else if (registro[x].getTipo() == "Serie"){
+									System.out.println("1. Introducir valoracion global | 2. Introducir valoracion por temporadas");
+									Scanner lector12 = new Scanner(System.in);
+									opcion = lector12.nextInt();
+									if (opcion == 1) {
+										System.out.println("Introduce la valoracion para " + registro[x].getNombre() + ":");
+										Scanner lectorNewVal = new Scanner(System.in);
+										String reemplaza = lectorNewVal.nextLine();
+										registro[x].setValoracion(reemplaza);
+										break;										
+									} else if (opcion == 2 ) {
+										System.out.println("A que temporada quieres introducir valoracion?");
+										break;
+									} else {
+										System.out.println("Opcion mal introducida, saliendo al menu...");
+										break;
+									}
+									
+								}
+							} 
 						} else {
 							System.out.println("No existe este registro");
 							break;
