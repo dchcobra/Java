@@ -10,7 +10,9 @@ public class Menu {
 		String ext1;
 		int ext2;
 		int ext3;
+
 		//String valoracionyf;
+		
 		
 		/* Existen estos tipos
 		contenido = "Pelicula";
@@ -26,22 +28,24 @@ public class Menu {
 		System.out.println(f);
 		*/
 		
-		/* PRUEBAS SI FUNCIONABAN LOS OBJETOS
+		// PRUEBAS SI FUNCIONABAN LOS OBJETOS
 		//Debug de una Pelicula
-		Pelicula p = new Pelicula(1, "Fast&Forious", "2/4/2020", "10", "Paul", 2018);
-		System.out.println(p);
+		Pelicula p2 = new Pelicula(1, "Fast&Forious", "2/4/2020", "10", "Paul", 2005);
+		//System.out.println(p);
 		//Debug de una Serie
-		Serie s = new Serie(2, "Stranger Things", "1/2/2020", "5", "nombreE", 1, 2019);
-		System.out.println(s);
+		Serie s2 = new Serie(2, "Stranger Things", "1/2/2020", "5", "nombreE", 2, 2018);
+		//System.out.println(s2);
 		//Debug de un Documental
-		Documental d = new Documental(3, "Dinosaurios 211.a.c", "12/9/2020", "8", "Leopoldo", 2014);
-		System.out.println(d);
-		*/
+		Documental d2 = new Documental(3, "Dinosaurios 211.a.c", "12/9/2020", "8", "Leopoldo", 2014);
+		//System.out.println(d);
+		
 		// varable para iterar por la array de objetos
 		int i = 0;
 		// Array de objetos donde se guardan el historial de lo que ha visto el usuario
 		Netflix registro[] = new Netflix[100];
-		
+		registro[0] = p2;
+		registro[1] = s2;
+		registro[2] = d2;
 		
 		boolean salir = false;
 		while (!salir) {
@@ -170,8 +174,8 @@ public class Menu {
 										String valTemporada;
 										//Esto hay que cambiarlo para que en vez de mostrarlo se guarde la informacion
 										System.out.println("A que temporada quieres introducir valoracion?");
-										for (int z = 1 ; z <= registro[x].getnumTemporadas() ; z++) {
-											System.out.println("Temporada " + z + ": ");
+										for (int z = 1 ; z <= registro[x].getNumTemporadasTotal() ; z++) {
+											System.out.println("Temporada " + z + ": [" + z +"]" );
 										}
 										Scanner lectorTemporadaEscogida = new Scanner(System.in);
 										int TempEscogida = lectorTemporadaEscogida.nextInt();
@@ -179,7 +183,7 @@ public class Menu {
 										Scanner lectorvalTemporada = new Scanner(System.in);
 										valTemporada = lectorvalTemporada.nextLine();
 										//Esto hay que cambiarlo para que en vez de mostrarlo se guarde la informacio
-										for (int z = 1 ; z <= registro[x].getnumTemporadas() ; z++) {
+										for (int z = 1 ; z <= registro[x].getNumTemporadasTotal() ; z++) {
 											if (TempEscogida == z) {
 												System.out.println("Temporada " + z + ": " + valTemporada);
 											} else {

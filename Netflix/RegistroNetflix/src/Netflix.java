@@ -4,9 +4,9 @@ public class Netflix {
 	private String fechaR;
 	private String valoracion;
 	private String tipo = getTipo();
-	private int temporadas = getnumTemporadas();
+	private int temporadas = getNumTemporadasTotal();
 	private int ID;
-	private String arrTemp = getTemporadas();
+	
 	//Constructor que no hace nada
 	public Netflix() {	
 	}
@@ -56,13 +56,10 @@ public class Netflix {
 		return tipo;
 	}
 	
-	public int getnumTemporadas() {
+	public int getNumTemporadasTotal() {
 		return temporadas;
 	}
 
-	private String getTemporadas() {
-		return arrTemp;
-	}
 	
 	public String toString() {
 		

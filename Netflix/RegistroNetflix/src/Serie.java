@@ -1,41 +1,32 @@
-
 public class Serie extends Netflix{
 	private String nombreEstudio;
-	private int numTemporadas;
-	private int añoTemporada;
+	private int numTemporadasTotal;
+	private String valoracionTemporadas[] = new String[numTemporadasTotal];
+	
+	private int añoPrimeraTemporada;
 	static String tipo = "Serie";
 	
-	public Serie(int lID, String lnombre, String lfechaR, String lvaloracion, String lnombreEstudio,
-			int lnumTemporadas, int lañoTemporada) {
-		super(lID, lnombre, lfechaR, lvaloracion);
-		nombreEstudio = lnombreEstudio;
-		numTemporadas = lnumTemporadas;
-		añoTemporada = lañoTemporada;
+	public Serie(int lID, String lnombre, String lfechaR, String lValoracion, String lNombreEstudio, int lNumTemporadasTotal, int lAñoPrimeraTemporada) {
+		super(lID, lnombre, lfechaR, lValoracion);
+		nombreEstudio = lNombreEstudio;
+		numTemporadasTotal = lNumTemporadasTotal;
+		añoPrimeraTemporada = lAñoPrimeraTemporada;
 	}
 	
 	//Asignamos el estudio segun el usuario introduzca y Recogemos el valor estudio (setnombreEstudio)
 	public void setnombreEstudio(String value) {
 		nombreEstudio = value;
 	}
-	public String getnombreEstudio() {
+	public String getNombreEstudio() {
 		return nombreEstudio;
 	}
 	
-	//Asignamos el numTemporadas segun el usuario introduzca y Recogemos el valor temporadas (setnumTemporadas)
-	public void setnumTemporadas(int value) {
-		numTemporadas = value;
-	}
-	public int getnumTemporadas() {
-		return numTemporadas;
-	}
 	
-	//Asignamos el añoTemporada segun el usuario introduzca y Recogemos el valor del año de temporada (setañoTemporada)
-	public void setañoTemporada(int value) {
-		añoTemporada = value;
+	//Asignamos el numTemporadas segun el usuario introduzca y Recogemos el valor temporadas (setnumTemporadas)
+	public int getNumTemporadas() {
+		return valoracionTemporadas.length;
 	}
-	public int getañoTemporada() {
-		return añoTemporada;
-	}
+
 	//Asignamos a la variable tipo el valor: Serie
 	public void setTipo(String value) {
 		value = "Serie";
@@ -45,18 +36,34 @@ public class Serie extends Netflix{
 		return tipo;
 	}
 	
-	public static String[] getTemporadas() {
-		String[] temporadas = null;
-		return temporadas;
+	public void setValoracionTemporadas() {
+		valoracionTemporadas[0] = "hola";
+
+	}
+	
+	//Asignamos el añoTemporada segun el usuario introduzca y Recogemos el valor del año de temporada (setañoTemporada)
+	public void setAñoPrimeraTemporada(int value) {
+		añoPrimeraTemporada = value;
+	}
+	public int getAñoPrimeraTemporada() {
+		return añoPrimeraTemporada;
+	}
+	
+	public void setNumTemporadasTotal(int value) {
+		numTemporadasTotal = value;
+	}
+	
+	public int getNumTemporadasTotal() {
+		return numTemporadasTotal;
 	}
 	
 	//Hacemos que muestre el contenido Serie
 	public String toString() {
-		return String.format("Contenido: %s%sEstudio: %s\nNumero temporadas: %s\nAño primera temporada: %s\n"
+		return String.format("Contenido: %s%sEstudio: %s\nNumero temporadas: %s\nAño primera temporada: %s\n%s\n"
 								, getTipo()
 								, super.toString()
-								, getnombreEstudio()
-								, getnumTemporadas()
-								, getañoTemporada());
+								, getNombreEstudio()
+								, getNumTemporadasTotal()
+								, getAñoPrimeraTemporada());
 	}
 }
