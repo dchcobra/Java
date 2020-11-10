@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Serie extends Netflix{
 	private String nombreEstudio;
 	private int numTemporadasTotal;
@@ -36,11 +38,6 @@ public class Serie extends Netflix{
 		return tipo;
 	}
 	
-	public void setValoracionTemporadas() {
-		valoracionTemporadas[0] = "hola";
-
-	}
-	
 	//Asignamos el añoTemporada segun el usuario introduzca y Recogemos el valor del año de temporada (setañoTemporada)
 	public void setAñoPrimeraTemporada(int value) {
 		añoPrimeraTemporada = value;
@@ -59,7 +56,7 @@ public class Serie extends Netflix{
 	
 	//Hacemos que muestre el contenido Serie
 	public String toString() {
-		return String.format("Contenido: %s%sEstudio: %s\nNumero temporadas: %s\nAño primera temporada: %s\n%s\n"
+		return String.format("Contenido: %s%sEstudio: %s\nNumero temporadas: %s\nAño primera temporada: %s\n"
 								, getTipo()
 								, super.toString()
 								, getNombreEstudio()

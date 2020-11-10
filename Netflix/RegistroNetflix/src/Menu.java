@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Menu {
 	public static void main(String[] args) {
@@ -10,6 +11,7 @@ public class Menu {
 		String ext1;
 		int ext2;
 		int ext3;
+		String[] temporadas = new String[100];
 
 		//String valoracionyf;
 		
@@ -33,7 +35,7 @@ public class Menu {
 		Pelicula p2 = new Pelicula(1, "Fast&Forious", "2/4/2020", "10", "Paul", 2005);
 		//System.out.println(p);
 		//Debug de una Serie
-		Serie s2 = new Serie(2, "Stranger Things", "1/2/2020", "5", "nombreE", 2, 2018);
+		Serie s2 = new Serie(2, "Stranger Things", "1/2/2020", "5", "nombreE", 3, 2018);
 		//System.out.println(s2);
 		//Debug de un Documental
 		Documental d2 = new Documental(3, "Dinosaurios 211.a.c", "12/9/2020", "8", "Leopoldo", 2014);
@@ -171,28 +173,26 @@ public class Menu {
 										registro[x].setValoracion(reemplaza);
 										break;										
 									} else if (opcion == 2 ) {
-										String valTemporada;
-										//Esto hay que cambiarlo para que en vez de mostrarlo se guarde la informacion
+										int valTemporada;
 										System.out.println("A que temporada quieres introducir valoracion?");
 										for (int z = 1 ; z <= registro[x].getNumTemporadasTotal() ; z++) {
-											System.out.println("Temporada " + z + ": [" + z +"]" );
+											System.out.println("Temporada " + z + ": [" + z +"]");
 										}
 										Scanner lectorTemporadaEscogida = new Scanner(System.in);
 										int TempEscogida = lectorTemporadaEscogida.nextInt();
 										System.out.println("Introduce la valoracion para la temporada: ");
 										Scanner lectorvalTemporada = new Scanner(System.in);
-										valTemporada = lectorvalTemporada.nextLine();
-										//Esto hay que cambiarlo para que en vez de mostrarlo se guarde la informacio
+										valTemporada = lectorvalTemporada.nextInt();
 										for (int z = 1 ; z <= registro[x].getNumTemporadasTotal() ; z++) {
 											if (TempEscogida == z) {
-												System.out.println("Temporada " + z + ": " + valTemporada);
-											} else {
-												System.out.println("Temporada " + z + ": ");
+												Temporada t = new Temporada(TempEscogida, valTemporada);
+												registro[x].setValoracionTemporadas(t.toString(), TempEscogida);
+												System.out.println(t.toString().substring(0, 13));
 											}
 										}
 										break;
 									} else {
-										System.out.println("Opcion mal introducida, saliendo al menu...");
+										System.out.println("Opcion mal introducida");
 										break;
 									}
 								}

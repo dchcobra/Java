@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class Netflix {
 	private String nombre;
@@ -6,6 +7,7 @@ public class Netflix {
 	private String tipo = getTipo();
 	private int temporadas = getNumTemporadasTotal();
 	private int ID;
+	private ArrayList<String> valoracionTemporadas = new ArrayList<String>();
 	
 	//Constructor que no hace nada
 	public Netflix() {	
@@ -59,14 +61,47 @@ public class Netflix {
 	public int getNumTemporadasTotal() {
 		return temporadas;
 	}
-
+	//t.substring(0, 12) == valoracionTemporadas.get(i).substring(0, 12)
+	public void setValoracionTemporadas(String t, int i) {
+			int x = i - 1;
+			if (valoracionTemporadas.size() == 0) {
+				valoracionTemporadas.add(0, t);
+			} else if (valoracionTemporadas.get(x).substring(0, 13) != t.toString().substring(0,13)) {
+				valoracionTemporadas.add(t);
+			} /*else if (valoracionTemporadas.get(x).substring(0, 13) == t.toString().substring(0,13)) {
+				valoracionTemporadas.add(x, t);
+				valoracionTemporadas.remove(x);
+			} else if (valoracionTemporadas.get(x).substring(0, 13).compareTo(t.toString().substring(0,13)) == 0) {
+				valoracionTemporadas.add(x, t);
+				valoracionTemporadas.remove(x);
+			} else {
+				valoracionTemporadas.add("no funciona nada");
+			}*/
+		}
+	/*
+	public String getValoracionTemporadas() {
+		return valoracionTemporadas.get(0).substring(0, 13);
+	} 
+	*/
+	public ArrayList<String> getValoracionTemporadas() {
+		return valoracionTemporadas;
+	} 
 	
 	public String toString() {
-		
-		return String.format("\nID: %s.\nHa visto: %s\nLa vió el dia: %s\nValoracion: %s\n"
-				, getID()
-				, getNombre()
-				, getDiaReproduccion()
-				, getValoracion());
+		if (valoracionTemporadas.size() == 0) {
+			return String.format("\nID: %s.\nHa visto: %s\nLa vió el dia: %s\nValoracion: %s\n"
+					, getID()
+					, getNombre()
+					, getDiaReproduccion()
+					, getValoracion());
+		} else {
+			return String.format("\nID: %s.\nHa visto: %s\nLa vió el dia: %s\nValoracion: %s\n%s\n"
+					, getID()
+					, getNombre()
+					, getDiaReproduccion()
+					, getValoracion()
+					, getValoracionTemporadas());			
+		}
 	}
+
 }
