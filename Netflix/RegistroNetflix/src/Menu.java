@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Menu {
 	public static void main(String[] args) {
@@ -139,14 +141,23 @@ public class Menu {
 					i++; // Suma una posicion para siempre estar en la ultima posicion de la array
 					break;
 				case 4:
+					List<Netflix> register = Arrays.asList(registro);
+					//register.stream().filter(one -> one != null).forEach((one) -> System.out.println(one));
+					register.stream().forEach(register = System.out::println) ;
+
+
 					//Recorre el array de objetos mostrandolos
-					for (int x = 0; x < registro.length; x++) {
+					/*for (int x = 0; x < registro.length; x++) {
 						if (registro[x] == null) {
 							break;
 						} else {
-							System.out.println(registro[x]);							
+							System.out.println(registro[x]);					
 						}
 					}
+					*/
+					
+					
+					
 					break;
 				case 5:
 					Scanner lectorVal = new Scanner(System.in);
