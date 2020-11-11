@@ -143,7 +143,7 @@ public class Menu {
 				case 4:
 					List<Netflix> register = Arrays.asList(registro);
 					//register.stream().filter(one -> one != null).forEach((one) -> System.out.println(one));
-					register.stream().forEach(register = System.out::println) ;
+					register.stream().filter(one -> one != null).forEach((register) = System.out::println);
 
 
 					//Recorre el array de objetos mostrandolos
