@@ -62,6 +62,7 @@ public class Netflix {
 		return temporadas;
 	}
 	public void setValoracionTemporadas(String t, int i) {
+			//iterate position on array
 			int x = i - 1;
 			if (valoracionTemporadas.size() == 0 || valoracionTemporadas.size() <= x) {
 				if (valoracionTemporadas.size() == x) {
@@ -83,12 +84,14 @@ public class Netflix {
 	
 	public String toString() {
 		if (valoracionTemporadas.size() == 0) {
+			//return this when object hasn't seasons to evaluated
 			return String.format("\nID: %s.\nHa visto: %s\nLa vió el dia: %s\nValoracion: %s\n"
 					, getID()
 					, getNombre()
 					, getDiaReproduccion()
 					, getValoracion());
 		} else {
+			// return this when object has seasons evaluated
 			return String.format("\nID: %s.\nHa visto: %s\nLa vió el dia: %s\nValoracion: %s\n%s\n"
 					, getID()
 					, getNombre()
