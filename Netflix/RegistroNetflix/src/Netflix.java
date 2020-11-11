@@ -64,19 +64,14 @@ public class Netflix {
 	//t.substring(0, 12) == valoracionTemporadas.get(i).substring(0, 12)
 	public void setValoracionTemporadas(String t, int i) {
 			int x = i - 1;
-			if (valoracionTemporadas.size() == 0) {
-				valoracionTemporadas.add(0, t);
-			} else if (valoracionTemporadas.get(x).substring(0, 13) != t.toString().substring(0,13)) {
+			if (valoracionTemporadas.size() == 0 && valoracionTemporadas.size() < x) {
 				valoracionTemporadas.add(t);
-			} /*else if (valoracionTemporadas.get(x).substring(0, 13) == t.toString().substring(0,13)) {
+			} else if (!(valoracionTemporadas.get(x).substring(0, 13).equals(t.toString().substring(0,13)))) {
 				valoracionTemporadas.add(x, t);
-				valoracionTemporadas.remove(x);
-			} else if (valoracionTemporadas.get(x).substring(0, 13).compareTo(t.toString().substring(0,13)) == 0) {
+			} else if (valoracionTemporadas.get(x).substring(0, 13).equals(t.toString().substring(0,13))) {
 				valoracionTemporadas.add(x, t);
-				valoracionTemporadas.remove(x);
-			} else {
-				valoracionTemporadas.add("no funciona nada");
-			}*/
+				valoracionTemporadas.remove(i);
+			}
 		}
 	/*
 	public String getValoracionTemporadas() {

@@ -180,6 +180,10 @@ public class Menu {
 										}
 										Scanner lectorTemporadaEscogida = new Scanner(System.in);
 										int TempEscogida = lectorTemporadaEscogida.nextInt();
+										if (TempEscogida > registro[x].getNumTemporadasTotal()) {
+											System.out.println("Esta serie no tiene tantas temporadas, saliendo al menu");
+											break;
+										}
 										System.out.println("Introduce la valoracion para la temporada: ");
 										Scanner lectorvalTemporada = new Scanner(System.in);
 										valTemporada = lectorvalTemporada.nextInt();
@@ -187,7 +191,6 @@ public class Menu {
 											if (TempEscogida == z) {
 												Temporada t = new Temporada(TempEscogida, valTemporada);
 												registro[x].setValoracionTemporadas(t.toString(), TempEscogida);
-												System.out.println(t.toString().substring(0, 13));
 											}
 										}
 										break;
