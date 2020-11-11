@@ -61,7 +61,6 @@ public class Netflix {
 	public int getNumTemporadasTotal() {
 		return temporadas;
 	}
-	//t.substring(0, 12) == valoracionTemporadas.get(i).substring(0, 12)
 	public void setValoracionTemporadas(String t, int i) {
 			int x = i - 1;
 			if (valoracionTemporadas.size() == 0 || valoracionTemporadas.size() <= x) {
@@ -70,18 +69,14 @@ public class Netflix {
 				} else {
 					valoracionTemporadas.add(t);					
 				}
-			} else if (!(valoracionTemporadas.get(x).substring(0, 13).equals(t.toString().substring(0,13)))) {
+			} else if (!(valoracionTemporadas.get(x).substring(11, 13).equals(t.toString().substring(11,13)))) {
 				valoracionTemporadas.add(x, t);
-			} else if (valoracionTemporadas.get(x).substring(0, 13).equals(t.toString().substring(0,13))) {
+			} else if (valoracionTemporadas.get(x).substring(11, 13).equals(t.toString().substring(11,13))) {
 				valoracionTemporadas.add(x, t);
 				valoracionTemporadas.remove(i);
 			}
 		}
-	/*
-	public String getValoracionTemporadas() {
-		return valoracionTemporadas.get(0).substring(0, 13);
-	} 
-	*/
+
 	public ArrayList<String> getValoracionTemporadas() {
 		return valoracionTemporadas;
 	} 

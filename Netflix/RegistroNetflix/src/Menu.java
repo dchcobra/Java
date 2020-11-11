@@ -199,7 +199,7 @@ public class Menu {
 										break;
 									}
 								}
-							} 
+							}
 						} else {
 							System.out.println("No existe este registro");
 							break;
