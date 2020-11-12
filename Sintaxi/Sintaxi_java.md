@@ -613,5 +613,13 @@ procesarse el mensaje
 
 ![SOAP STRUCTURE](https://www.springboottutorial.com/images/ExecutingSOAPRequestsWithWizdler-3.png)
 
+### RESTFUL (Representational State Transfer)
 
-### RESTFUL
+REST es un estilo de representar la arquitectura del software, esta representacion de software puede ser a traves de distintos
+formatos como por ejemplo HTML, XML, JSON... 
+La informacion se enviar a traves del protocolo HTTP
+
+### REST VS SOAP
+
+![SOAP VS REST](https://raw.githubusercontent.com/dchcobra/java/main/Sintaxi/restvssoap.png)
+Cada vez REST va escalando a SOAP pero al fin y al cabo un metodo sirve mejor para diseño y otro para rendimiento.
