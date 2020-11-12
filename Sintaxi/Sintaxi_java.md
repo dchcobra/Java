@@ -580,3 +580,21 @@ try {
 	//Devuelve que hay algun error
 	throw new IllegalArgumentException(); }
 ```
+
+# WEB SERVICES
+
+Un servicio web es una tecnologia que utilza un conjunto de protocolos 
+y estandartes para cambiar información entre distintas aplicaciones 
+a traves de él (servicio web).
+Distintos softwares pueden intercambiar información a traves de él 
+aunque esten escritos en distintos lenguajes.
+Estos servicios han de seguir la arquitectura de W3C/OASIS.
+
+## ARQUITECTURA
+
+Esta arquitectura esta dividida en 3 partes:
+- Proveedor de servicio web
+- El que pide el servicio web
+- El publicador
+
+![Cuál es la diferencia entre up-casting y down-casting con respecto a la  variable de clase DOKRY Desarrollo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Webservices.png/220px-Webservices.png)
