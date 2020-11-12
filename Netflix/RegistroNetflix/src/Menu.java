@@ -159,14 +159,14 @@ public class Menu {
 					*/
 					break;
 				case 5:
-					String valoracion2 = ScannerNameContentReplace();
+					String valoracion2 = scannerNameContentReplace();
 					List<Netflix> registerInputVal = Arrays.asList(registro);
 					//cambia la valoracion de las peliculas y de los documentales
-					registerInputVal.stream().filter(one -> one != null && one.getNombre().equals(valoracion2)).filter(one -> one.getTipo() == "Pelicula" || one.getTipo() == "Documental")
-					.forEach((one) -> one.setValoracion(ScannerValReplace()));
+					registerInputVal.stream().filter(one -> one != null && one.getNombre().equals(valoracion2) && (one.getTipo() == "Pelicula" || one.getTipo() == "Documental"))
+					.forEach((one) -> one.setValoracion(scannerValReplace()));
 					
 					// cambia la valoracion a las series global o por temporadas
-					registerInputVal.stream().filter(one -> one != null && one.getNombre().equals(valoracion2)).filter(one -> one.getTipo() == "Serie")
+					registerInputVal.stream().filter(one -> one != null && one.getNombre().equals(valoracion2) && (one.getTipo() == "Serie"))
 					.forEach((one) -> one.setValoracion(inputGlobalOrTemp(one)));
 					
 					/*for (int x = 0; x < registro.length; x++) {
@@ -246,21 +246,21 @@ public class Menu {
 		System.out.println("****************************************\n");
 	}
 	
-	public static String ScannerNameContentReplace() {
+	public static String scannerNameContentReplace() {
 		System.out.println("Introduce el nombre del contenido para darle una valoracion: ");
 		Scanner lectorVal = new Scanner(System.in);
 		String Name = lectorVal.nextLine();
 		return Name;
 	}
 	
-	public static String ScannerValReplace() {
+	public static String scannerValReplace() {
 		System.out.println("Introduce la valoracion para el registro:");
 		Scanner lectorNewVal = new Scanner(System.in);
 		String reemplaza = lectorNewVal.nextLine();
 		return reemplaza;
 	}
 	
-	public static String ScannerTempReplace(Netflix one) {
+	public static String scannerTempReplace(Netflix one) {
 		int valTemporada;
 		System.out.println("A que temporada quieres introducir valoracion?");
 		for (int z = 1 ; z <= ((Serie) one).getNumTemporadasTotal() ; z++) {
@@ -289,13 +289,13 @@ public class Menu {
 	}
 	
 	public static String inputGlobalOrTemp(Netflix one) {
-		System.out.println("1. Introducir valoracion global | 2. Introducir valoracion por temporadas");
+		System.out.println("Como quieres que sea la valoracion (1. Introducir valoracion global | 2. Introducir valoracion por temporadas)");
 		Scanner lector12 = new Scanner(System.in);
 		int opcion = lector12.nextInt();
 		if (opcion == 1) {
-			return ScannerValReplace();
+			return scannerValReplace();
 		} else if (opcion == 2) {
-			return ScannerTempReplace(one);
+			return scannerTempReplace(one);
 		} else {
 			return doestExist();
 		}
