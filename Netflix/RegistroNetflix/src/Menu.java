@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.function.Consumer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -141,12 +142,13 @@ public class Menu {
 					i++; // Suma una posicion para siempre estar en la ultima posicion de la array
 					break;
 				case 4:
-					List<Netflix> register = Arrays.asList(registro);
-					//register.stream().filter(one -> one != null).forEach((one) -> System.out.println(one));
-					register.stream().filter(one -> one != null).forEach((register) = System.out::println);
-
-
 					//Recorre el array de objetos mostrandolos
+					List<Netflix> register = Arrays.asList(registro);
+					//lambda
+					//register.stream().filter(one -> one != null).forEach((one) -> System.out.println(one));
+					//method reference
+					register.stream().filter(one -> one != null).forEach(System.out::print);
+					//normal method
 					/*for (int x = 0; x < registro.length; x++) {
 						if (registro[x] == null) {
 							break;
@@ -155,16 +157,19 @@ public class Menu {
 						}
 					}
 					*/
-					
-					
-					
 					break;
 				case 5:
-					Scanner lectorVal = new Scanner(System.in);
-					System.out.println("Introduce el nombre del contenido para darle una valoracion: ");
-					String valoracion2 = lectorVal.nextLine();
-					// Los breaks son para que salgan del bucle cuando no hayan mas registros
-					for (int x = 0; x < registro.length; x++) {
+					String valoracion2 = ScannerNameContentReplace();
+					List<Netflix> registerInputVal = Arrays.asList(registro);
+					//cambia la valoracion de las peliculas y de los documentales
+					registerInputVal.stream().filter(one -> one != null && one.getNombre().equals(valoracion2)).filter(one -> one.getTipo() == "Pelicula" || one.getTipo() == "Documental")
+					.forEach((one) -> one.setValoracion(ScannerValReplace()));
+					
+					// cambia la valoracion a las series global o por temporadas
+					registerInputVal.stream().filter(one -> one != null && one.getNombre().equals(valoracion2)).filter(one -> one.getTipo() == "Serie")
+					.forEach((one) -> one.setValoracion(inputGlobalOrTemp(one)));
+					
+					/*for (int x = 0; x < registro.length; x++) {
 						if (registro[x] != null) {
 							if (valoracion2.equals(registro[x].getNombre())) {
 								if (registro[x].getTipo() == "Pelicula" || registro[x].getTipo() == "Documental") {
@@ -216,6 +221,7 @@ public class Menu {
 							break;
 						}
 					}
+					*/
 					break;
 				case 6:
 					//Sale del menu
@@ -223,7 +229,7 @@ public class Menu {
 					salir = true;
 					break;
 			}
-		} 
+		}
 	}
 	
 	//muestra las opciones segun lo que quiera introducir el usuario
@@ -240,5 +246,59 @@ public class Menu {
 		System.out.println("****************************************\n");
 	}
 	
+	public static String ScannerNameContentReplace() {
+		System.out.println("Introduce el nombre del contenido para darle una valoracion: ");
+		Scanner lectorVal = new Scanner(System.in);
+		String Name = lectorVal.nextLine();
+		return Name;
+	}
+	
+	public static String ScannerValReplace() {
+		System.out.println("Introduce la valoracion para el registro:");
+		Scanner lectorNewVal = new Scanner(System.in);
+		String reemplaza = lectorNewVal.nextLine();
+		return reemplaza;
+	}
+	
+	public static String ScannerTempReplace(Netflix one) {
+		int valTemporada;
+		System.out.println("A que temporada quieres introducir valoracion?");
+		for (int z = 1 ; z <= ((Serie) one).getNumTemporadasTotal() ; z++) {
+			System.out.println("Temporada " + z + ": [" + z +"]");
+		}
+		Scanner lectorTemporadaEscogida = new Scanner(System.in);
+		int TempEscogida = lectorTemporadaEscogida.nextInt();
+		if (TempEscogida > ((Serie) one).getNumTemporadasTotal()) {
+			System.out.println("Esta serie no tiene tantas temporadas, saliendo al menu");
+		}
+		System.out.println("Introduce la valoracion para la temporada: ");
+		Scanner lectorvalTemporada = new Scanner(System.in);
+		valTemporada = lectorvalTemporada.nextInt();
+		for (int z = 1 ; z <= ((Serie) one).getNumTemporadasTotal() ; z++) {
+			if (TempEscogida == z) {
+				Temporada t = new Temporada(TempEscogida, valTemporada);
+				((Serie) one).setValoracionTemporadas(t.toString(), TempEscogida);
+			}
+		}
+		return null;
+	}
+	
+	public static String doestExist() {
+		String DoesExist = "No existe este registro";
+		return DoesExist;
+	}
+	
+	public static String inputGlobalOrTemp(Netflix one) {
+		System.out.println("1. Introducir valoracion global | 2. Introducir valoracion por temporadas");
+		Scanner lector12 = new Scanner(System.in);
+		int opcion = lector12.nextInt();
+		if (opcion == 1) {
+			return ScannerValReplace();
+		} else if (opcion == 2) {
+			return ScannerTempReplace(one);
+		} else {
+			return doestExist();
+		}
+	}
 }
 
