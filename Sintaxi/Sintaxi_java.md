@@ -622,4 +622,5 @@ La informacion se enviar a traves del protocolo HTTP
 ### REST VS SOAP
 
 ![SOAP VS REST](https://raw.githubusercontent.com/dchcobra/java/main/Sintaxi/restvssoap.png)
+
 Cada vez REST va escalando a SOAP pero al fin y al cabo un metodo sirve mejor para diseño y otro para rendimiento.
