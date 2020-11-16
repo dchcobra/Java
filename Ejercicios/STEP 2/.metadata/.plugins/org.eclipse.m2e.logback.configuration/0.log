@@ -2893,3 +2893,673 @@ org.eclipse.core.runtime.CoreException: Could not read maven project
 2020-11-13 13:13:27,692 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2020-11-13 13:13:27,693 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
 2020-11-13 13:19:10,431 [Worker-55: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 08:45:59,722 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-16 08:46:23,607 [Worker-0: Decoration Calculation] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2020-11-16 08:51:44,517 [Worker-14: reload maven project] ERROR o.e.m2e.editor.pom.MavenPomEditor - failed to load maven project for org.eclipse.ui.part.FileEditorInput(/springbootdchcobrain10steps/pom.xml)
+org.eclipse.core.runtime.CoreException: Could not read maven project
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:850)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.lambda$22(ProjectRegistryManager.java:1069)
+	at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4878)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3529)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2278)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2155)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2045)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3953)
+	at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4873)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.getMavenProject(ProjectRegistryManager.java:1068)
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectFacade.getMavenProject(MavenProjectFacade.java:243)
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:261)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:634)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$3.run(MavenPomEditor.java:938)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2020-11-16 09:02:37,167 [Worker-20: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:02:48,516 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:02:48,517 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:02:48,550 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 09:02:48,608 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:02:48,609 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 09:02:48,620 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:02:48,620 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:02:48,621 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:28:18,102 [Worker-31: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:28:19,686 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-jpa/2.4.1/spring-data-jpa-2.4.1.pom
+2020-11-16 09:28:20,087 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-jpa/2.4.1/spring-data-jpa-2.4.1.pom
+2020-11-16 09:28:20,313 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/build/spring-data-build/2.4.1/spring-data-build-2.4.1.pom
+2020-11-16 09:28:20,588 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/build/spring-data-build/2.4.1/spring-data-build-2.4.1.pom
+2020-11-16 09:28:20,831 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1.pom
+2020-11-16 09:28:21,094 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1.pom
+2020-11-16 09:28:21,339 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/spring-orm/5.3.1/spring-orm-5.3.1.pom
+2020-11-16 09:28:21,536 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/spring-orm/5.3.1/spring-orm-5.3.1.pom
+2020-11-16 09:28:21,776 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/spring-jdbc/5.3.1/spring-jdbc-5.3.1.pom
+2020-11-16 09:28:22,127 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/spring-jdbc/5.3.1/spring-jdbc-5.3.1.pom
+2020-11-16 09:28:22,648 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/spring-tx/5.3.1/spring-tx-5.3.1.pom
+2020-11-16 09:28:22,838 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/spring-tx/5.3.1/spring-tx-5.3.1.pom
+2020-11-16 09:28:23,036 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6.pom
+2020-11-16 09:28:23,513 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6.pom
+2020-11-16 09:28:24,140 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6.pom
+2020-11-16 09:28:24,517 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6.pom
+2020-11-16 09:28:25,026 [AetherRepositoryConnector-repo.spring.io-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1.jar
+2020-11-16 09:28:25,099 [AetherRepositoryConnector-repo.spring.io-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-jpa/2.4.1/spring-data-jpa-2.4.1.jar
+2020-11-16 09:28:25,102 [AetherRepositoryConnector-repo.spring.io-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/spring-orm/5.3.1/spring-orm-5.3.1.jar
+2020-11-16 09:28:25,132 [AetherRepositoryConnector-repo.spring.io-0-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/spring-jdbc/5.3.1/spring-jdbc-5.3.1.jar
+2020-11-16 09:28:25,143 [AetherRepositoryConnector-repo.spring.io-0-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/spring-tx/5.3.1/spring-tx-5.3.1.jar
+2020-11-16 09:28:26,570 [AetherRepositoryConnector-repo.spring.io-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/spring-orm/5.3.1/spring-orm-5.3.1.jar
+2020-11-16 09:28:26,603 [AetherRepositoryConnector-repo.spring.io-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-jpa/2.4.1/spring-data-jpa-2.4.1.jar
+2020-11-16 09:28:26,635 [AetherRepositoryConnector-repo.spring.io-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1.jar
+2020-11-16 09:28:26,779 [AetherRepositoryConnector-repo.spring.io-0-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/spring-tx/5.3.1/spring-tx-5.3.1.jar
+2020-11-16 09:28:26,827 [AetherRepositoryConnector-repo.spring.io-0-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/spring-jdbc/5.3.1/spring-jdbc-5.3.1.jar
+2020-11-16 09:28:26,886 [AetherRepositoryConnector-repo.spring.io-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6.jar
+2020-11-16 09:28:29,294 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6.jar
+2020-11-16 09:28:29,344 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6.jar
+2020-11-16 09:28:29,583 [Worker-31: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6.jar
+2020-11-16 09:28:32,985 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:28:32,986 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:28:33,006 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:28:33,007 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:28:33,014 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:28:33,015 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:28:33,015 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:28:35,784 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-jpa/2.4.1/spring-data-jpa-2.4.1-sources.jar
+2020-11-16 09:28:36,946 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-jpa/2.4.1/spring-data-jpa-2.4.1-sources.jar
+2020-11-16 09:28:37,381 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.data:spring-data-jpa:2.4.1
+2020-11-16 09:28:39,284 [Worker-32: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:28:40,216 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1-sources.jar
+2020-11-16 09:28:41,530 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-commons/2.4.1/spring-data-commons-2.4.1-sources.jar
+2020-11-16 09:28:41,857 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.data:spring-data-commons:2.4.1
+2020-11-16 09:28:43,490 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:28:43,491 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:28:43,507 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 09:28:43,542 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:28:43,542 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 09:28:43,548 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:28:43,548 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:28:43,549 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:28:45,735 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/spring-orm/5.3.1/spring-orm-5.3.1-sources.jar
+2020-11-16 09:28:46,183 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/spring-orm/5.3.1/spring-orm-5.3.1-sources.jar
+2020-11-16 09:28:46,645 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-orm:5.3.1
+2020-11-16 09:28:47,879 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/spring-jdbc/5.3.1/spring-jdbc-5.3.1-sources.jar
+2020-11-16 09:28:48,512 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/spring-jdbc/5.3.1/spring-jdbc-5.3.1-sources.jar
+2020-11-16 09:28:49,006 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-jdbc:5.3.1
+2020-11-16 09:28:49,357 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/spring-tx/5.3.1/spring-tx-5.3.1-sources.jar
+2020-11-16 09:28:50,299 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/spring-tx/5.3.1/spring-tx-5.3.1-sources.jar
+2020-11-16 09:28:50,730 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-tx:5.3.1
+2020-11-16 09:28:51,159 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6-sources.jar
+2020-11-16 09:28:51,677 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6-sources.jar
+2020-11-16 09:28:52,099 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6-sources.jar
+2020-11-16 09:28:52,385 [Worker-26: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/aspectj/aspectjrt/1.9.6/aspectjrt-1.9.6-sources.jar
+2020-11-16 09:28:52,799 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.aspectj:aspectjrt:1.9.6
+2020-11-16 09:28:52,827 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.data:spring-data-commons:2.4.1
+2020-11-16 09:28:52,857 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-orm:5.3.1
+2020-11-16 09:28:52,889 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-jdbc:5.3.1
+2020-11-16 09:28:52,951 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-tx:5.3.1
+2020-11-16 09:28:52,975 [Worker-26: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.aspectj:aspectjrt:1.9.6
+2020-11-16 09:28:54,915 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:28:54,915 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:28:54,916 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:28:54,917 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:28:54,921 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:28:54,922 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:28:54,922 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:30:19,298 [Worker-36: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:30:21,818 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:30:21,819 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:30:21,824 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:30:21,825 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:30:21,829 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:30:21,830 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:30:21,830 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:35:52,567 [Worker-33: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:35:56,188 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:35:56,189 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:35:56,192 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:35:56,193 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:35:56,198 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:35:56,198 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:35:56,198 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:35:56,816 [Worker-29: reload maven project] ERROR o.e.m2e.editor.pom.MavenPomEditor - failed to load maven project for org.eclipse.ui.part.FileEditorInput(/springbootdchcobrain10steps/pom.xml)
+org.eclipse.core.runtime.CoreException: Could not read maven project
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:850)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.lambda$22(ProjectRegistryManager.java:1069)
+	at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4878)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3529)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2278)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2155)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2045)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3953)
+	at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4873)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.getMavenProject(ProjectRegistryManager.java:1068)
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectFacade.getMavenProject(MavenProjectFacade.java:243)
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:261)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:634)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$3.run(MavenPomEditor.java:938)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2020-11-16 09:35:58,695 [Worker-39: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:36:43,422 [Worker-33: reload maven project] ERROR o.e.m2e.editor.pom.MavenPomEditor - failed to load maven project for org.eclipse.ui.part.FileEditorInput(/springbootdchcobrain10steps/pom.xml)
+org.eclipse.core.runtime.CoreException: Could not read maven project
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:850)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.lambda$22(ProjectRegistryManager.java:1069)
+	at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4878)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3529)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2278)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2155)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2045)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3953)
+	at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4873)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.getMavenProject(ProjectRegistryManager.java:1068)
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectFacade.getMavenProject(MavenProjectFacade.java:243)
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:261)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:634)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$3.run(MavenPomEditor.java:938)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2020-11-16 09:36:46,008 [Worker-40: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:37:00,738 [Worker-39: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:37:03,461 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:37:03,462 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:37:03,466 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:37:03,467 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:37:03,471 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:37:03,471 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:37:03,471 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:44:52,484 [Worker-39: Launching Executing test in C__Users_dcastilh_Documents_GitHub_Java_Ejercicios_STEP 2_springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps
+2020-11-16 09:44:52,485 [Worker-39: Launching Executing test in C__Users_dcastilh_Documents_GitHub_Java_Ejercicios_STEP 2_springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2020-11-16 09:48:03,357 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:48:03,358 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:48:03,362 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 09:48:03,639 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:48:03,640 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 09:48:03,653 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:48:03,653 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:48:03,655 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:48:17,161 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:48:17,161 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:48:17,162 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:48:17,163 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:48:17,166 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:48:17,167 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:48:17,167 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:48:38,084 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:48:38,086 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:48:38,086 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:48:38,086 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:48:38,105 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:48:38,105 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:48:38,106 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:54:04,040 [Worker-48: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:54:09,232 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:54:09,233 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:54:09,253 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:54:09,254 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:54:09,259 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:54:09,259 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:54:09,259 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:54:34,510 [Worker-48: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:54:37,790 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:54:37,791 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:54:37,795 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:54:37,796 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:54:37,801 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:54:37,801 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:54:37,801 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:55:32,030 [Worker-44: reload maven project] ERROR o.e.m2e.editor.pom.MavenPomEditor - failed to load maven project for org.eclipse.ui.part.FileEditorInput(/springbootdchcobrain10steps/pom.xml)
+org.eclipse.core.runtime.CoreException: Could not read maven project
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:850)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.lambda$22(ProjectRegistryManager.java:1069)
+	at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4878)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3529)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2278)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2155)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2045)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3953)
+	at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4873)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.getMavenProject(ProjectRegistryManager.java:1068)
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectFacade.getMavenProject(MavenProjectFacade.java:243)
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:261)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:634)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$3.run(MavenPomEditor.java:938)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2020-11-16 09:55:34,190 [Worker-51: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:57:54,316 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/io/projectreactor/reactor-bom/Dysprosium-SR13/reactor-bom-Dysprosium-SR13.pom
+2020-11-16 09:57:54,649 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/io/projectreactor/reactor-bom/Dysprosium-SR13/reactor-bom-Dysprosium-SR13.pom
+2020-11-16 09:57:55,585 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/Dysprosium-SR13/reactor-bom-Dysprosium-SR13.pom
+2020-11-16 09:57:55,726 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/Dysprosium-SR13/reactor-bom-Dysprosium-SR13.pom
+2020-11-16 09:57:55,885 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/spring-framework-bom/5.2.10.RELEASE/spring-framework-bom-5.2.10.RELEASE.pom
+2020-11-16 09:57:56,075 [Worker-53: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:57:56,087 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/spring-framework-bom/5.2.10.RELEASE/spring-framework-bom-5.2.10.RELEASE.pom
+2020-11-16 09:57:56,265 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/jetbrains/kotlin/kotlin-bom/1.3.72/kotlin-bom-1.3.72.pom
+2020-11-16 09:57:56,417 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/jetbrains/kotlin/kotlin-bom/1.3.72/kotlin-bom-1.3.72.pom
+2020-11-16 09:57:56,534 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-bom/1.3.72/kotlin-bom-1.3.72.pom
+2020-11-16 09:57:56,681 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-bom/1.3.72/kotlin-bom-1.3.72.pom
+2020-11-16 09:57:56,856 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.9/kotlinx-coroutines-bom-1.3.9.pom
+2020-11-16 09:57:57,192 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.9/kotlinx-coroutines-bom-1.3.9.pom
+2020-11-16 09:57:57,201 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.9/kotlinx-coroutines-bom-1.3.9.pom
+2020-11-16 09:57:57,341 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.9/kotlinx-coroutines-bom-1.3.9.pom
+2020-11-16 09:57:57,470 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.9/kotlinx-coroutines-bom-1.3.9.pom
+2020-11-16 09:57:57,652 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/junit/junit-bom/5.6.2/junit-bom-5.6.2.pom
+2020-11-16 09:57:57,766 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.9/kotlinx-coroutines-bom-1.3.9.pom
+2020-11-16 09:57:57,815 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/junit/junit-bom/5.6.2/junit-bom-5.6.2.pom
+2020-11-16 09:57:57,862 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.6.2/junit-bom-5.6.2.pom
+2020-11-16 09:57:57,908 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.6.2/junit-bom-5.6.2.pom
+2020-11-16 09:57:57,919 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.9/kotlinx-coroutines-bom-1.3.9.pom
+2020-11-16 09:57:58,170 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-webmvc/3.4.1/spring-data-rest-webmvc-3.4.1.pom
+2020-11-16 09:57:58,449 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-webmvc/3.4.1/spring-data-rest-webmvc-3.4.1.pom
+2020-11-16 09:57:58,481 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-webmvc/3.4.1/spring-data-rest-webmvc-3.4.1.pom
+2020-11-16 09:57:58,614 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-parent/3.4.1/spring-data-rest-parent-3.4.1.pom
+2020-11-16 09:57:58,692 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-webmvc/3.4.1/spring-data-rest-webmvc-3.4.1.pom
+2020-11-16 09:57:58,853 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-parent/3.4.1/spring-data-rest-parent-3.4.1.pom
+2020-11-16 09:57:58,855 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-parent/3.4.1/spring-data-rest-parent-3.4.1.pom
+2020-11-16 09:57:59,105 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-core/3.4.1/spring-data-rest-core-3.4.1.pom
+2020-11-16 09:57:59,166 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-parent/3.4.1/spring-data-rest-parent-3.4.1.pom
+2020-11-16 09:57:59,340 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-core/3.4.1/spring-data-rest-core-3.4.1.pom
+2020-11-16 09:57:59,461 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-core/3.4.1/spring-data-rest-core-3.4.1.pom
+2020-11-16 09:57:59,583 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-core/3.4.1/spring-data-rest-core-3.4.1.pom
+2020-11-16 09:57:59,674 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/hateoas/spring-hateoas/1.2.1/spring-hateoas-1.2.1.pom
+2020-11-16 09:57:59,763 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/hateoas/spring-hateoas/1.2.1/spring-hateoas-1.2.1.pom
+2020-11-16 09:58:00,032 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/hateoas/spring-hateoas/1.2.1/spring-hateoas-1.2.1.pom
+2020-11-16 09:58:00,115 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/hateoas/spring-hateoas/1.2.1/spring-hateoas-1.2.1.pom
+2020-11-16 09:58:00,452 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/io/projectreactor/reactor-bom/2020.0.0/reactor-bom-2020.0.0.pom
+2020-11-16 09:58:00,500 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/io/projectreactor/reactor-bom/2020.0.0/reactor-bom-2020.0.0.pom
+2020-11-16 09:58:00,689 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/io/projectreactor/reactor-bom/2020.0.0/reactor-bom-2020.0.0.pom
+2020-11-16 09:58:00,702 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/io/projectreactor/reactor-bom/2020.0.0/reactor-bom-2020.0.0.pom
+2020-11-16 09:58:00,766 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2020.0.0/reactor-bom-2020.0.0.pom
+2020-11-16 09:58:00,779 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2020.0.0/reactor-bom-2020.0.0.pom
+2020-11-16 09:58:00,924 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2020.0.0/reactor-bom-2020.0.0.pom
+2020-11-16 09:58:00,945 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2020.0.0/reactor-bom-2020.0.0.pom
+2020-11-16 09:58:01,232 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.4.0/kotlinx-coroutines-bom-1.4.0.pom
+2020-11-16 09:58:01,232 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.4.0/kotlinx-coroutines-bom-1.4.0.pom
+2020-11-16 09:58:01,473 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.4.0/kotlinx-coroutines-bom-1.4.0.pom
+2020-11-16 09:58:01,487 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.4.0/kotlinx-coroutines-bom-1.4.0.pom
+2020-11-16 09:58:01,559 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.4.0/kotlinx-coroutines-bom-1.4.0.pom
+2020-11-16 09:58:01,559 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.4.0/kotlinx-coroutines-bom-1.4.0.pom
+2020-11-16 09:58:01,651 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.4.0/kotlinx-coroutines-bom-1.4.0.pom
+2020-11-16 09:58:01,670 [Worker-53: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.springframework.hateoas:spring-hateoas:jar:1.2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2020-11-16 09:58:01,675 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.4.0/kotlinx-coroutines-bom-1.4.0.pom
+2020-11-16 09:58:01,826 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin-core/2.0.0.RELEASE/spring-plugin-core-2.0.0.RELEASE.pom
+2020-11-16 09:58:01,842 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin-core/2.0.0.RELEASE/spring-plugin-core-2.0.0.RELEASE.pom
+2020-11-16 09:58:02,020 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin-core/2.0.0.RELEASE/spring-plugin-core-2.0.0.RELEASE.pom
+2020-11-16 09:58:02,048 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin-core/2.0.0.RELEASE/spring-plugin-core-2.0.0.RELEASE.pom
+2020-11-16 09:58:02,211 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin/2.0.0.RELEASE/spring-plugin-2.0.0.RELEASE.pom
+2020-11-16 09:58:02,219 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin/2.0.0.RELEASE/spring-plugin-2.0.0.RELEASE.pom
+2020-11-16 09:58:02,422 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin/2.0.0.RELEASE/spring-plugin-2.0.0.RELEASE.pom
+2020-11-16 09:58:02,431 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin/2.0.0.RELEASE/spring-plugin-2.0.0.RELEASE.pom
+2020-11-16 09:58:02,630 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.pom
+2020-11-16 09:58:03,108 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.pom
+2020-11-16 09:58:03,204 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.pom
+2020-11-16 09:58:03,208 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.pom
+2020-11-16 09:58:03,287 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.pom
+2020-11-16 09:58:03,323 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.pom
+2020-11-16 09:58:03,481 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/atteo/parent/1.14/parent-1.14.pom
+2020-11-16 09:58:03,673 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/atteo/parent/1.14/parent-1.14.pom
+2020-11-16 09:58:03,774 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/parent/1.14/parent-1.14.pom
+2020-11-16 09:58:03,829 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/parent/1.14/parent-1.14.pom
+2020-11-16 09:58:04,500 [AetherRepositoryConnector-repo.spring.io-1-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin-core/2.0.0.RELEASE/spring-plugin-core-2.0.0.RELEASE.jar
+2020-11-16 09:58:04,506 [AetherRepositoryConnector-repo.spring.io-1-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-webmvc/3.4.1/spring-data-rest-webmvc-3.4.1.jar
+2020-11-16 09:58:04,507 [AetherRepositoryConnector-repo.spring.io-1-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-core/3.4.1/spring-data-rest-core-3.4.1.jar
+2020-11-16 09:58:04,534 [AetherRepositoryConnector-repo.spring.io-1-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/hateoas/spring-hateoas/1.2.1/spring-hateoas-1.2.1.jar
+2020-11-16 09:58:04,794 [AetherRepositoryConnector-repo.spring.io-1-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE.jar
+2020-11-16 09:58:05,350 [AetherRepositoryConnector-repo.spring.io-1-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin-core/2.0.0.RELEASE/spring-plugin-core-2.0.0.RELEASE.jar
+2020-11-16 09:58:05,702 [AetherRepositoryConnector-repo.spring.io-1-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.jar
+2020-11-16 09:58:05,716 [AetherRepositoryConnector-repo.spring.io-1-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-core/3.4.1/spring-data-rest-core-3.4.1.jar
+2020-11-16 09:58:05,716 [AetherRepositoryConnector-repo.spring.io-1-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-webmvc/3.4.1/spring-data-rest-webmvc-3.4.1.jar
+2020-11-16 09:58:05,834 [AetherRepositoryConnector-repo.spring.io-1-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE.jar
+2020-11-16 09:58:05,887 [AetherRepositoryConnector-repo.spring.io-1-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/hateoas/spring-hateoas/1.2.1/spring-hateoas-1.2.1.jar
+2020-11-16 09:58:07,953 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.jar
+2020-11-16 09:58:08,105 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.jar
+2020-11-16 09:58:08,245 [Worker-48: reload maven project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.jar
+2020-11-16 09:58:08,481 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/atteo/parent/1.14/parent-1.14.pom
+2020-11-16 09:58:08,582 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/parent/1.14/parent-1.14.pom
+2020-11-16 09:58:08,692 [Worker-53: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/parent/1.14/parent-1.14.pom
+2020-11-16 09:58:10,213 [Worker-53: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.dchcobra:dchcobraSpring:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\dchcobraSpring\pom.xml.
+2020-11-16 09:58:11,819 [Worker-53: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:58:16,051 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:16,052 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:16,056 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:58:16,058 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:58:16,062 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:16,063 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:16,063 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:58:16,311 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE-sources.jar
+2020-11-16 09:58:16,501 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE-sources.jar
+2020-11-16 09:58:17,102 [Worker-52: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.data:spring-data-rest-hal-browser:3.3.5.RELEASE
+2020-11-16 09:58:18,252 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-webmvc/3.4.1/spring-data-rest-webmvc-3.4.1-sources.jar
+2020-11-16 09:58:19,100 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-webmvc/3.4.1/spring-data-rest-webmvc-3.4.1-sources.jar
+2020-11-16 09:58:19,371 [Worker-52: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.data:spring-data-rest-webmvc:3.4.1
+2020-11-16 09:58:20,173 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-core/3.4.1/spring-data-rest-core-3.4.1-sources.jar
+2020-11-16 09:58:20,585 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/data/spring-data-rest-core/3.4.1/spring-data-rest-core-3.4.1-sources.jar
+2020-11-16 09:58:20,708 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:20,708 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:20,710 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 09:58:20,747 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:58:20,747 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 09:58:20,753 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:20,754 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:20,754 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\dchcobraSpring\src\test\resources
+2020-11-16 09:58:20,875 [Worker-52: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.data:spring-data-rest-core:3.4.1
+2020-11-16 09:58:21,128 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/hateoas/spring-hateoas/1.2.1/spring-hateoas-1.2.1-sources.jar
+2020-11-16 09:58:21,790 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/hateoas/spring-hateoas/1.2.1/spring-hateoas-1.2.1-sources.jar
+2020-11-16 09:58:22,062 [Worker-52: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.hateoas:spring-hateoas:1.2.1
+2020-11-16 09:58:23,783 [Worker-53: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:58:26,009 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin-core/2.0.0.RELEASE/spring-plugin-core-2.0.0.RELEASE-sources.jar
+2020-11-16 09:58:26,673 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/plugin/spring-plugin-core/2.0.0.RELEASE/spring-plugin-core-2.0.0.RELEASE-sources.jar
+2020-11-16 09:58:26,688 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:26,689 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:26,697 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 09:58:26,711 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:58:26,712 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 09:58:26,715 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:26,716 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:26,716 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:58:27,225 [Worker-52: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.plugin:spring-plugin-core:2.0.0.RELEASE
+2020-11-16 09:58:30,123 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2-sources.jar
+2020-11-16 09:58:30,810 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2-sources.jar
+2020-11-16 09:58:31,292 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2-sources.jar
+2020-11-16 09:58:31,472 [Worker-52: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2-sources.jar
+2020-11-16 09:58:31,725 [Worker-52: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.atteo:evo-inflector:1.2.2
+2020-11-16 09:58:32,885 [Worker-56: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:58:33,921 [Worker-52: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.plugin:spring-plugin-core:2.0.0.RELEASE
+2020-11-16 09:58:33,937 [Worker-52: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.atteo:evo-inflector:1.2.2
+2020-11-16 09:58:35,336 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:35,336 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:35,340 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 09:58:35,352 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:58:35,352 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 09:58:35,357 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:35,357 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:35,357 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:58:41,164 [Worker-56: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:58:49,516 [Worker-54: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:58:51,449 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:51,449 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:51,450 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:58:51,451 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:58:51,453 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:51,453 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:51,454 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:58:55,567 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:55,567 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:55,572 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 09:58:55,586 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:58:55,586 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 09:58:55,591 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:58:55,591 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:58:55,592 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:59:13,374 [Worker-57: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 09:59:15,330 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:59:15,331 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:59:15,332 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:59:15,332 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 09:59:15,335 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 09:59:15,336 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 09:59:15,336 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 09:59:25,770 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2020-11-16 10:02:21,261 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2020-11-16 10:02:24,849 [Worker-52: Launching springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps
+2020-11-16 10:02:24,849 [Worker-52: Launching springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B 
+2020-11-16 10:02:56,454 [Worker-57: Launching Executing install in C__Users_dcastilh_Documents_GitHub_Java_Ejercicios_STEP 2_springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps
+2020-11-16 10:02:56,455 [Worker-57: Launching Executing install in C__Users_dcastilh_Documents_GitHub_Java_Ejercicios_STEP 2_springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2020-11-16 10:04:02,614 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:04:02,614 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:04:02,615 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:04:02,616 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:04:02,619 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:04:02,619 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:04:02,619 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 10:04:10,437 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:04:10,438 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:04:10,439 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:04:10,439 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:04:10,444 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:04:10,444 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:04:10,445 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 10:04:40,073 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:04:40,074 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:04:40,077 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 10:04:40,090 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:04:40,090 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 10:04:40,093 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:04:40,093 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:04:40,093 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 10:11:00,222 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:11:00,223 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:11:00,223 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:11:00,224 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:11:00,227 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:11:00,227 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:11:00,227 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 10:11:27,466 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2020-11-16 10:11:32,457 [Worker-61: Launching springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps
+2020-11-16 10:11:32,458 [Worker-61: Launching springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B 
+2020-11-16 10:12:07,250 [Worker-61: Launching springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps
+2020-11-16 10:12:07,257 [Worker-61: Launching springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B 
+2020-11-16 10:13:47,073 [Worker-61: Launching Executing install in C__Users_dcastilh_Documents_GitHub_Java_Ejercicios_STEP 2_springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps
+2020-11-16 10:13:47,074 [Worker-61: Launching Executing install in C__Users_dcastilh_Documents_GitHub_Java_Ejercicios_STEP 2_springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2020-11-16 10:21:22,472 [Worker-68: Launching springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps
+2020-11-16 10:21:22,473 [Worker-68: Launching springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B 
+2020-11-16 10:22:00,787 [Worker-70: Launching springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps
+2020-11-16 10:22:00,788 [Worker-70: Launching springbootdchcobrain10steps] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B 
+2020-11-16 10:42:13,935 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:42:13,935 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:42:13,980 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 10:42:14,675 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:42:14,675 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 10:42:14,680 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:42:14,680 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:42:14,681 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 10:51:24,669 [Worker-70: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 10:51:28,157 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:51:28,158 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:51:28,159 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:51:28,159 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:51:28,167 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:51:28,167 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:51:28,168 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 10:51:30,918 [Worker-82: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:51:30,918 [Worker-82: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:51:30,921 [Worker-82: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 10:51:30,931 [Worker-82: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:51:30,931 [Worker-82: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 10:51:30,934 [Worker-82: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:51:30,934 [Worker-82: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:51:30,934 [Worker-82: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 10:55:03,059 [Worker-83: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 10:55:09,708 [Worker-83: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE.pom
+2020-11-16 10:55:10,078 [Worker-83: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE.pom
+2020-11-16 10:55:10,792 [Worker-83: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE.pom
+2020-11-16 10:55:10,831 [Worker-83: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.springframework.boot:spring-data-rest-hal-browser:jar:3.3.5.RELEASE is missing, no dependency information available
+2020-11-16 10:55:11,513 [Worker-83: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE.jar
+2020-11-16 10:55:11,686 [Worker-83: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE.jar
+2020-11-16 10:55:11,892 [Worker-83: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE.jar
+2020-11-16 10:55:13,013 [Worker-83: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:55:13,014 [Worker-83: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:55:13,015 [Worker-83: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:55:13,016 [Worker-83: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:55:13,019 [Worker-83: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:55:13,019 [Worker-83: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:55:13,020 [Worker-83: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 10:55:15,468 [Worker-68: Download sources and javadoc] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.springframework.boot:spring-data-rest-hal-browser:jar:3.3.5.RELEASE is missing, no dependency information available
+2020-11-16 10:55:16,446 [Worker-68: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE-sources.jar
+2020-11-16 10:55:16,937 [Worker-68: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE-sources.jar
+2020-11-16 10:55:17,534 [Worker-68: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-data-rest-hal-browser/3.3.5.RELEASE/spring-data-rest-hal-browser-3.3.5.RELEASE-sources.jar
+2020-11-16 10:55:17,558 [Worker-68: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download sources for org.springframework.boot:spring-data-rest-hal-browser:3.3.5.RELEASE
+org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springframework.boot:spring-data-rest-hal-browser:jar:sources:3.3.5.RELEASE
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:804)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:114)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:772)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:749)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:330)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:304)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:269)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:233)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:161)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2020-11-16 10:56:25,389 [Worker-68: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 10:56:27,728 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:56:27,728 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:56:27,728 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:56:27,729 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:56:27,741 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:56:27,741 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:56:27,741 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 10:56:30,076 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:56:30,077 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:56:30,082 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 10:56:30,094 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 10:56:30,094 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 10:56:30,279 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:56:30,279 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 10:56:30,279 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 11:35:59,502 [Worker-97: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 11:36:08,160 [DefaultMetadataResolver-2-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 11:36:08,161 [DefaultMetadataResolver-2-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 11:36:08,566 [DefaultMetadataResolver-2-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 11:36:09,140 [Worker-97: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/spring-boot-devtools-2.4.1-20201116.063333-2.pom
+2020-11-16 11:36:09,456 [Worker-97: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/spring-boot-devtools-2.4.1-20201116.063333-2.pom
+2020-11-16 11:36:10,053 [Worker-97: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/spring-boot-devtools-2.4.1-20201116.063333-2.pom
+2020-11-16 11:36:11,180 [Worker-97: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/spring-boot-devtools-2.4.1-20201116.063333-2.jar
+2020-11-16 11:36:13,606 [Worker-97: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/spring-boot-devtools-2.4.1-20201116.063333-2.jar
+2020-11-16 11:36:19,940 [Worker-97: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 11:36:19,940 [Worker-97: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 11:36:19,942 [Worker-97: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 11:36:19,943 [Worker-97: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 11:36:19,947 [Worker-97: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 11:36:19,947 [Worker-97: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 11:36:19,947 [Worker-97: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 11:36:22,655 [Worker-100: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 11:36:22,655 [Worker-100: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 11:36:22,659 [Worker-100: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 11:36:22,745 [Worker-100: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 11:36:22,746 [Worker-100: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 11:36:22,750 [Worker-100: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 11:36:22,750 [Worker-100: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 11:36:22,750 [Worker-100: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 11:36:23,236 [Worker-96: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/spring-boot-devtools-2.4.1-20201116.063333-2-sources.jar
+2020-11-16 11:36:23,819 [Worker-96: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/spring-boot-devtools-2.4.1-20201116.063333-2-sources.jar
+2020-11-16 11:36:24,347 [Worker-96: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-devtools:2.4.1-SNAPSHOT
+2020-11-16 11:36:25,924 [Worker-98: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 11:36:25,924 [Worker-98: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 11:36:25,925 [Worker-98: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 11:36:25,925 [Worker-98: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 11:36:26,007 [Worker-98: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 11:36:26,007 [Worker-98: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 11:36:26,008 [Worker-98: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 11:37:46,036 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 11:37:46,036 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 11:37:46,039 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 11:37:46,824 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 11:37:46,824 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 11:37:46,829 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 11:37:46,829 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 11:37:46,830 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 12:01:32,263 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-11-16 12:01:32,981 [DefaultMetadataResolver-3-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-starter-parent/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:33,021 [DefaultMetadataResolver-3-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-parent/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:33,218 [DefaultMetadataResolver-3-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-parent/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:33,479 [DefaultMetadataResolver-4-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-dependencies/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:33,485 [DefaultMetadataResolver-4-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-dependencies/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:33,706 [DefaultMetadataResolver-4-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-dependencies/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:36,157 [DefaultMetadataResolver-5-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-maven-plugin/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:36,158 [DefaultMetadataResolver-5-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-maven-plugin/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:36,377 [DefaultMetadataResolver-5-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-maven-plugin/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:39,754 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 12:01:39,900 [DefaultMetadataResolver-6-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-starter-web/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:39,907 [DefaultMetadataResolver-6-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-web/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:40,086 [DefaultMetadataResolver-6-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-web/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:40,259 [DefaultMetadataResolver-7-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-starter/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:40,264 [DefaultMetadataResolver-7-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:40,465 [DefaultMetadataResolver-7-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:40,637 [DefaultMetadataResolver-8-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:40,643 [DefaultMetadataResolver-8-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:40,823 [DefaultMetadataResolver-8-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:41,084 [DefaultMetadataResolver-9-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-autoconfigure/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:41,096 [DefaultMetadataResolver-9-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-autoconfigure/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:41,361 [DefaultMetadataResolver-9-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-autoconfigure/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:41,540 [DefaultMetadataResolver-10-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-starter-logging/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:41,545 [DefaultMetadataResolver-10-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-logging/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:41,739 [DefaultMetadataResolver-10-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-logging/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:42,095 [DefaultMetadataResolver-11-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-starter-json/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:42,209 [DefaultMetadataResolver-11-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-json/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:42,396 [DefaultMetadataResolver-11-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-json/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:42,781 [DefaultMetadataResolver-12-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-starter-tomcat/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:42,864 [DefaultMetadataResolver-12-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-tomcat/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:43,062 [DefaultMetadataResolver-12-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-tomcat/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:43,341 [DefaultMetadataResolver-13-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-starter-actuator/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:43,423 [DefaultMetadataResolver-13-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-actuator/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:43,613 [DefaultMetadataResolver-13-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-actuator/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:43,784 [DefaultMetadataResolver-14-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-actuator-autoconfigure/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:43,859 [DefaultMetadataResolver-14-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-actuator-autoconfigure/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:44,125 [DefaultMetadataResolver-14-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-actuator-autoconfigure/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:44,356 [DefaultMetadataResolver-15-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-actuator/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:44,436 [DefaultMetadataResolver-15-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-actuator/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:44,611 [DefaultMetadataResolver-15-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-actuator/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:45,382 [DefaultMetadataResolver-16-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:45,457 [DefaultMetadataResolver-16-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:45,722 [DefaultMetadataResolver-16-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-devtools/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:46,570 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.dchcobra:dchcobraSpring:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\dchcobraSpring\pom.xml.
+2020-11-16 12:01:46,760 [DefaultMetadataResolver-17-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-starter-test/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:46,762 [DefaultMetadataResolver-17-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-test/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:46,939 [DefaultMetadataResolver-17-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-test/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:47,087 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-starter-test/2.4.1-SNAPSHOT/spring-boot-starter-test-2.4.1-20201116.063333-2.pom
+2020-11-16 12:01:47,242 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-test/2.4.1-SNAPSHOT/spring-boot-starter-test-2.4.1-20201116.063333-2.pom
+2020-11-16 12:01:47,396 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-test/2.4.1-SNAPSHOT/spring-boot-starter-test-2.4.1-20201116.063333-2.pom
+2020-11-16 12:01:47,565 [DefaultMetadataResolver-18-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-test/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:47,640 [DefaultMetadataResolver-18-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:47,911 [DefaultMetadataResolver-18-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:48,081 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-test/2.4.1-SNAPSHOT/spring-boot-test-2.4.1-20201116.063333-2.pom
+2020-11-16 12:01:48,244 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test/2.4.1-SNAPSHOT/spring-boot-test-2.4.1-20201116.063333-2.pom
+2020-11-16 12:01:48,406 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test/2.4.1-SNAPSHOT/spring-boot-test-2.4.1-20201116.063333-2.pom
+2020-11-16 12:01:48,583 [DefaultMetadataResolver-19-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-test-autoconfigure/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:48,586 [DefaultMetadataResolver-19-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test-autoconfigure/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:48,856 [DefaultMetadataResolver-19-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test-autoconfigure/2.4.1-SNAPSHOT/maven-metadata.xml
+2020-11-16 12:01:49,005 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/milestone/org/springframework/boot/spring-boot-test-autoconfigure/2.4.1-SNAPSHOT/spring-boot-test-autoconfigure-2.4.1-20201116.063333-2.pom
+2020-11-16 12:01:49,150 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test-autoconfigure/2.4.1-SNAPSHOT/spring-boot-test-autoconfigure-2.4.1-20201116.063333-2.pom
+2020-11-16 12:01:49,324 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test-autoconfigure/2.4.1-SNAPSHOT/spring-boot-test-autoconfigure-2.4.1-20201116.063333-2.pom
+2020-11-16 12:01:50,025 [AetherRepositoryConnector-repo.spring.io-20-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-test/2.4.1-SNAPSHOT/spring-boot-starter-test-2.4.1-20201116.063333-2.jar
+2020-11-16 12:01:50,045 [AetherRepositoryConnector-repo.spring.io-20-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test/2.4.1-SNAPSHOT/spring-boot-test-2.4.1-20201116.063333-2.jar
+2020-11-16 12:01:50,061 [AetherRepositoryConnector-repo.spring.io-20-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test-autoconfigure/2.4.1-SNAPSHOT/spring-boot-test-autoconfigure-2.4.1-20201116.063333-2.jar
+2020-11-16 12:01:50,211 [AetherRepositoryConnector-repo.spring.io-20-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-starter-test/2.4.1-SNAPSHOT/spring-boot-starter-test-2.4.1-20201116.063333-2.jar
+2020-11-16 12:01:50,334 [AetherRepositoryConnector-repo.spring.io-20-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test/2.4.1-SNAPSHOT/spring-boot-test-2.4.1-20201116.063333-2.jar
+2020-11-16 12:01:50,453 [AetherRepositoryConnector-repo.spring.io-20-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/snapshot/org/springframework/boot/spring-boot-test-autoconfigure/2.4.1-SNAPSHOT/spring-boot-test-autoconfigure-2.4.1-20201116.063333-2.jar
+2020-11-16 12:01:55,998 [Worker-102: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /springbootdchcobrain10steps/src/main/java
+2020-11-16 12:01:55,999 [Worker-102: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /springbootdchcobrain10steps/src/main/resources
+2020-11-16 12:01:56,000 [Worker-102: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /springbootdchcobrain10steps/src/main/resources
+2020-11-16 12:01:56,001 [Worker-102: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /springbootdchcobrain10steps/src/test/java
+2020-11-16 12:01:57,661 [Worker-102: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 25 sec
+2020-11-16 12:02:01,959 [Worker-104: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 12:02:01,959 [Worker-104: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 12:02:01,981 [Worker-104: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 12:02:02,064 [Worker-104: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 12:02:02,065 [Worker-104: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 12:02:02,070 [Worker-104: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 12:02:02,071 [Worker-104: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 12:02:02,071 [Worker-104: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\dchcobraSpring\src\test\resources
+2020-11-16 12:02:05,323 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 12:02:05,323 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 12:02:05,324 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 12:02:05,334 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 12:02:05,334 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 12:02:05,338 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 12:02:05,339 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 12:02:05,339 [Worker-109: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 12:08:19,798 [Worker-111: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 12:10:29,344 [Worker-116: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.springbootdchcobrain10steps:springbootdchcobrain10steps:0.0.1-SNAPSHOT @ C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\pom.xml.
+2020-11-16 12:10:31,905 [Worker-116: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 12:10:31,905 [Worker-116: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 12:10:31,906 [Worker-116: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 12:10:31,907 [Worker-116: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 12:10:31,938 [Worker-116: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 12:10:31,938 [Worker-116: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 12:10:31,939 [Worker-116: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
+2020-11-16 12:10:36,637 [Worker-117: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 12:10:36,638 [Worker-117: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 12:10:36,644 [Worker-117: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-16 12:10:36,660 [Worker-117: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-16 12:10:36,661 [Worker-117: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2020-11-16 12:10:36,709 [Worker-117: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 12:10:36,709 [Worker-117: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2020-11-16 12:10:36,709 [Worker-117: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\springbootdchcobrain10steps\src\test\resources
