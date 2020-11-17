@@ -2,10 +2,16 @@ package springBootRestfulwebservices.restfulwebservices.user;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
+
+
 public class User {
-	private Integer id;
+	@NotBlank
 	private String name;
+	@Past
 	private Date birthData;
+	private Integer id;
 	
 	protected User() {
 		
