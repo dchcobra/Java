@@ -1,22 +1,30 @@
 package springBootRestfulwebservices.restfulwebservices.user;
 
+// @ApiModel Allow print annotations on the http://localhost:8080/v2/api-docs
+
 import java.util.Date;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
+@ApiModel(description="All detauls about the user. ") 
 public class User {
 	/* message = text when return error
 	 Referencia to javax.validation, you can see on pom.xml 
 	 and use @valid when you create a user
 	 */
-	@Size(min=2, message="El nombre ha de tener almenos 2 caracteres")
+	@Size(min=2, message="Name contains min 2 character")
+	@ApiModelProperty(notes="Name contains min 2 character")
 	private String name;
 	// Validate date introduce user, can't introduce date future
-	@Past(message="La fecha ha de ser igual o anterior a la actual")
+	@Past(message="Birth date should be in the past")
+	@ApiModelProperty(notes="Birth date should be in the past")
 	private Date birthData;
+	@ApiModelProperty(notes="ID Auto-Generated ")
 	private Integer id;
 	
 	protected User() {
