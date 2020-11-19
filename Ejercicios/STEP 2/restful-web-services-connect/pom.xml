@@ -32,6 +32,12 @@
 		    <version>6.0.12.Final</version>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+		
+		
 		<!-- Introduce in browser http://localhost:8080/v2/api-docs || http://localhost:8080/swagger-ui.html#/ -->
 		<dependency>
 		    <groupId>io.springfox</groupId>
