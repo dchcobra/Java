@@ -4,23 +4,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+//access to database http://localhost:8080/h2-console
+
 @Entity
 public class User {
 	@Id
 	@GeneratedValue
 	private long id;
+	
 	private String name;
+	
 	private String role;
 	
 	protected User() {
 		
 	}
 
-	
-	
-	public User(long id, String name, String role) {
+	public User(String name, String role) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.role = role;
 	}
