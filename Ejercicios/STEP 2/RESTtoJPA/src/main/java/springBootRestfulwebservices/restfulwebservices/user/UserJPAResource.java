@@ -16,13 +16,16 @@ public class UserJPAResource {
 	@Autowired
 	private UserDaoService service;
 	
+	@Autowired
+	private UserRepository userRepository;
+	
 	//give all users
-	@GetMapping("/users")
+	@GetMapping("/jpa/users")
 	public List<User> retrieveAllUsers() {
 		return service.findAll();
 	}
 	//give a user that you introduce a ID
-	@GetMapping("/users/{id}")
+	@GetMapping("/jpa/users/{id}")
 	public User retreveUser(@PathVariable int id) {
 		User user = service.findOne(id);
 		if (user == null) 
@@ -30,7 +33,7 @@ public class UserJPAResource {
 		return user;
 	}
 	//Create a user method POST
-	@PostMapping("/users")
+	@PostMapping("/jpa/users")
 	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
 		 
 		 User savedUser = service.save(user);
@@ -42,10 +45,8 @@ public class UserJPAResource {
 		return ResponseEntity.created(location).build();
 	}
 	//Delete a user that you introduce a ID
-	@DeleteMapping("/users/{id}")
+	@DeleteMapping("/jpa/users/{id}")
 	public void deleteUser(@PathVariable int id) {
-		User user = service.deleteById(id);
-		if (user == null) 
-			throw new UserNotFoundException("id-" + id);		
+		userRepository.deleteById(id);	
 	}
 }
