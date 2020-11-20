@@ -2272,3 +2272,9 @@ org.eclipse.core.runtime.CoreException: Launch configuration RestfulWebServicesA
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2020-11-20 10:26:50.649
 !MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.12.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.12.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-11-20 10:28:13.424
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.12.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.12.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-11-20 10:28:22.170
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.12.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.12.Final
