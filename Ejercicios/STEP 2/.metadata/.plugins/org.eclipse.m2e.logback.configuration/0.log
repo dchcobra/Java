@@ -8685,6 +8685,7 @@ org.eclipse.core.runtime.CoreException: Could not read maven project
 2020-11-19 10:46:27,138 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-11-19 10:46:27,138 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2020-11-19 10:46:27,138 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\jpa10Steps\src\test\resources
+<<<<<<< HEAD
 2020-11-19 10:53:13,545 [Worker-74: Check for devtools] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.hibernate:hibernate-validator:jar:6.0.12.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.12.Final
 2020-11-19 10:53:17,595 [Worker-79: Updating Maven Dependencies] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration RestfulWebServicesApplication references closed project restful-web-services
 org.eclipse.core.runtime.CoreException: Launch configuration RestfulWebServicesApplication references closed project restful-web-services
@@ -9487,3 +9488,5 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2020-11-19 13:31:25,720 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-11-19 13:31:25,720 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2020-11-19 13:31:25,721 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\dcastilh\Documents\GitHub\Java\Ejercicios\STEP 2\restful-web-services-connect\src\test\resources
+=======
+>>>>>>> parent of 8000ce7... data.sql add users to DB
