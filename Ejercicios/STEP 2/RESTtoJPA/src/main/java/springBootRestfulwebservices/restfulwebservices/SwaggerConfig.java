@@ -1,5 +1,5 @@
 package springBootRestfulwebservices.restfulwebservices;
-
+/*
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -32,3 +32,4 @@ public class SwaggerConfig {
 				.consumes(DEFAULT_PRODUCES_AND_CONSUMES);
 	}
 }
+*/

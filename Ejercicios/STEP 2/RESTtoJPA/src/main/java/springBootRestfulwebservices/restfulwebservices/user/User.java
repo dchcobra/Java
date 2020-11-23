@@ -13,12 +13,12 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+//import io.swagger.annotations.ApiModel;
+//import io.swagger.annotations.ApiModelProperty;
 
 //http://localhost:8080/h2-console/ access the db
 
-@ApiModel(description="All detauls about the user. ")
+//@ApiModel(description="All detauls about the user. ")
 @Entity
 public class User {
 	/* message = text when return error
@@ -27,15 +27,15 @@ public class User {
 	 */
 	@Id
 	@GeneratedValue
-	@ApiModelProperty(notes="ID Auto-Generated ")
+	//@ApiModelProperty(notes="ID Auto-Generated ")
 	private Integer id;
 	
 	@Size(min=2, message="Name contains min 2 character")
-	@ApiModelProperty(notes="Name contains min 2 character")
+	//@ApiModelProperty(notes="Name contains min 2 character")
 	private String name;
 	// Validate date introduce user, can't introduce date future
 	@Past(message="Birth date should be in the past")
-	@ApiModelProperty(notes="Birth date should be in the past")
+	//@ApiModelProperty(notes="Birth date should be in the past")
 	private Date birthData;
 	@OneToMany(mappedBy = "user")
 	private List<Post> posts;

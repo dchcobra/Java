@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.*;
+import org.springframework.hateoas.EntityModel;
+
 
 
 
@@ -29,7 +31,7 @@ public class UserJPAResource {
 	public List<User> retrieveAllUsers() {
 		return userRepository.findAll();
 	}
-	
+	/*
 	@GetMapping("/jpa/users/{id}")
 	public User retreveUser(@PathVariable int id) {
 		userRepository.findById(id);
@@ -37,28 +39,34 @@ public class UserJPAResource {
 			throw new UserNotFoundException("id-" + id);		
 		return (User) userRepository;
 	}
+	*/
+
+	/*give a user that you introduce a ID
+	we change Resource = EntityModel and import 
+	import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+	import org.springframework.hateoas.*;
+	import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 	
-	/*
-	//give a user that you introduce a ID
-	@SuppressWarnings("deprecation")
+	and constructor change method and now use EntityModel.of()
+	*/
+	
 	@GetMapping("/jpa/users/{id}")
 	public EntityModel<User> retrieveUser(@PathVariable int id) {
 		
 		Optional<User> user = userRepository.findById(id);
 		
-		if (user.isPresent()) 
+		if (!user.isPresent()) 
 			throw new UserNotFoundException("id-" + id);
 		
+		EntityModel<User> resource = EntityModel.of(user.get());
 		
-		WebMvcLinkBuilder linkTo = 
+		/*WebMvcLinkBuilder linkTo = 
 				linkTo(methodOn(this.getClass()).retrieveAllUsers());
-		EntityModel<User> resource = new EntityModel<User>(user, linkTo);
 		
-		resource.add(linkTo.withRel("all-users"));
+		resource.add(linkTo.withRel("all-users"));*/
 		return resource;
 	}
-	*/
-	
+
 	//Create a user method POST
 	@PostMapping("/jpa/users")
 	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
@@ -76,6 +84,8 @@ public class UserJPAResource {
 	public void deleteUser(@PathVariable int id) {
 		userRepository.deleteById(id);	
 	}
+	
+	
 	
 	@GetMapping("/jpa/users/{id}/posts")
 	public List<Post> retrieveAllUsers(@PathVariable int id) {
