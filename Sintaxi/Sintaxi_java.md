@@ -624,3 +624,42 @@ La informacion se enviar a traves del protocolo HTTP
 ![SOAP VS REST](https://raw.githubusercontent.com/dchcobra/java/main/Sintaxi/restvssoap.png)
 
 Cada vez REST va escalando a SOAP pero al fin y al cabo un metodo sirve mejor para diseño y otro para rendimiento.
+
+## METHODS ON REST - SPRING BOOT
+### PATCH (MODIFY)
+REPOSITORY
+```java
+	Actor findByid(long id);
+```
+
+CONTROLLER 
+```java
+	void updateActor(Long id, String firstName, String secondName, Date dateOfBirth);
+```
+
+CONTROLLER IMPL
+```java
+@Override
+
+	@ResponseStatus(HttpStatus.OK)
+	@PatchMapping(value = RestConstants.RESOURCE_ID)
+	public void updateActor(Long id, String firstName, String secondName, Date dateOfBirth) {
+		ActorService.updateActor(id, firstName, secondName, dateOfBirth);
+	}
+```
+
+SERVICE 
+```java
+	void updateActor(Long id, String firstName, String secondName, Date dateOfBirth);
+```
+
+SERVICE IMPL
+```java
+	public void updateActor(Long id, String firstName, String secondName, Date dateOfBirth) {
+		Actor myActor = ActorRepository.findByid(id);
+		myActor.setFirstName(firstName);
+		myActor.setSecondName(secondName);
+		myActor.setDateOfBirth(dateOfBirth);
+		ActorRepository.save(myActor);
+	}
+```
