@@ -625,6 +625,13 @@ La informacion se enviar a traves del protocolo HTTP
 
 Cada vez REST va escalando a SOAP pero al fin y al cabo un metodo sirve mejor para diseño y otro para rendimiento.
 
+### DATOS QUE SE PASAN A LA HORA DE TRABAJAR EN REST
+
+La estructura de datos esta dividida por capas, para que no se mezclen y modifiquen valores o devuelvan errores:
+- Repositorios se pasan las entidades
+- Servicios se pasan los DTO (PUEDEN SER JSON EN OCASIONES)
+- Controladores se pasan los REST(JSON)
+
 ## METHODS ON REST - SPRING BOOT
 ### PATCH (MODIFY)
 REPOSITORY
