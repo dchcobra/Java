@@ -6817,3 +6817,146 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2020-12-01 12:17:46.819
 !MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.12.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.12.Final
+!SESSION 2020-12-16 11:54:55.874 -----------------------------------------------
+eclipse.buildId=4.17.0.I20200902-1800
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2020-12-16 11:55:28.067
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-12-16 11:55:28.067
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@63a7af06,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5f01fb5c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:43.142
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:43.145
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@596d15c[org.springframework.tooling.boot.ls:1.23.0.202010230633(id=467)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:43.150
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:43.337
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-12-16 11:55:47.777
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\dcastilh'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:55.187
+!MESSAGE Boot LS startup time from start to initialized: 12019ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.492
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.VAzEbjcNisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.500
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.505
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.507
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.509
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.511
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.VAzEbjcN => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.794
+!MESSAGE classpath=105 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.808
+!MESSAGE buffering callback sts4.classpath.VAzEbjcN restful-web-services false 105
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.811
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.830
+!MESSAGE classpath=96 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.842
+!MESSAGE buffering callback sts4.classpath.VAzEbjcN RESTtoJPA false 96
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.860
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.870
+!MESSAGE classpath=50 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.877
+!MESSAGE buffering callback sts4.classpath.VAzEbjcN dchcobraSpring false 50
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.879
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.889
+!MESSAGE classpath=50 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.897
+!MESSAGE buffering callback sts4.classpath.VAzEbjcN dchcobraSpringFramework false 50
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:58.900
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:59.055
+!MESSAGE classpath=94 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:59.067
+!MESSAGE buffering callback sts4.classpath.VAzEbjcN jpa10Steps false 94
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:59.069
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:59.381
+!MESSAGE classpath=69 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:59.388
+!MESSAGE buffering callback sts4.classpath.VAzEbjcN springbootdchcobrain10steps false 69
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:59.389
+!MESSAGE executing callback sts4.classpath.VAzEbjcN 6 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 11:55:59.531
+!MESSAGE executing callback sts4.classpath.VAzEbjcN SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-12-16 11:56:01.026
+!MESSAGE 
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 12:16:47.087
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.VAzEbjcN
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 12:16:47.088
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.VAzEbjcN
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 12:16:47.090
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-12-16 12:16:47.092
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.VAzEbjcN => OK
+
+!ENTRY org.eclipse.ui 2 2 2020-12-16 12:16:48.660
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
