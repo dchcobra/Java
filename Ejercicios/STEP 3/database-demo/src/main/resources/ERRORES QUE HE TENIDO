@@ -1,0 +1,13 @@
+1 . El proyecto no tenia lo necesario:
+  - A la hora de crear el Spring Initializr no puse las dependencias necesarias.
+ Solucion: Yo añadiria que fuese necesario verse el curso: https://learning.oreilly.com/videos/master-hibernate-and/9781788995320/9781788995320-video3_2
+ 
+2. FindById no devolvia lo mismo que en el curso (https://learning.oreilly.com/videos/master-hibernate-and/9781788995320/9781788995320-video3_16)
+ - En el video no aparecia que hacia falta el toString en la entidad de Person.
+ Solucion: Añadido el metodo toString en la entidad Person.
+ 
+3. Mala importacion del Date()
+ - Habia importado Date() de sql y no era el correcto
+ Solucion: Importar el Date() de utils en la entidad Person.
+ 
+ 
