@@ -1,0 +1,4 @@
+NO ENCUENTRA LA TABLA COURSE
+ - A la hora de insertar los datos los estaba insertando la tabla courser en vez de course
+ SOLUCION: Cambiar courser por course
+ 
