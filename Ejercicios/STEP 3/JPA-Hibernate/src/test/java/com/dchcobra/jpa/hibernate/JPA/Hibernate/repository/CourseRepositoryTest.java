@@ -3,6 +3,9 @@ package com.dchcobra.jpa.hibernate.JPA.Hibernate.repository;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 import com.dchcobra.jpa.hibernate.JPA.Hibernate.entity.Course;
+import com.dchcobra.jpa.hibernate.JPA.Hibernate.entity.Review;
 import com.dchcobra.jpa.hibernate.JPA.Hibernate.Application;
 
 @SpringBootTest(classes=Application.class)
@@ -20,6 +24,9 @@ public class CourseRepositoryTest {
 	
 	@Autowired
 	CourseRepository repository;
+	
+	@Autowired
+	EntityManager em;
 	
 	@Test
 	public void findById_basic() {
@@ -48,9 +55,24 @@ public class CourseRepositoryTest {
 		assertEquals("JDBC to JPA updated", course1.getName());
 	}
 
+	
 	@Test
 	@DirtiesContext
 	public void playWithEntiyManager() {
 		repository.playWithEntiyManager();
+	}
+
+	@Test
+	@Transactional
+	public void retrieveReviewsForCourse() {
+		Course course = repository.findById(10001L);
+		logger.info("{}", course.getReviews());
+	}
+	
+	@Test
+	@Transactional
+	public void retrieveCourseForReview() {
+		Review review = em.find(Review.class, 50001L);
+		logger.info("{}", review.getCourse());
 	}
 }
