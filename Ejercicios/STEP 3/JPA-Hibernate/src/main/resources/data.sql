@@ -51,9 +51,9 @@ INSERT INTO review(id, rating, description, course_id) VALUES (50002, '4', 'Wond
 INSERT INTO review(id, rating, description, course_id) VALUES (50003, '5', 'Awesome Course', 10003);
 */
 /* STEP 38 - CHAPTER 8 */
-INSERT INTO course(id, name, created_date, last_updated_date) VALUES (10001, 'JDBC to JPA', sysdate(), sysdate());
-INSERT INTO course(id, name, created_date, last_updated_date) VALUES (10002, 'Spring', sysdate(), sysdate());
-INSERT INTO course(id, name, created_date, last_updated_date) VALUES (10003, 'JPA', sysdate(), sysdate());
+INSERT INTO course(id, name, created_date, last_updated_date) VALUES (10001, 'JPA in 50 Steps', sysdate(), sysdate());
+INSERT INTO course(id, name, created_date, last_updated_date) VALUES (10002, 'Spring in 50 Steps', sysdate(), sysdate());
+INSERT INTO course(id, name, created_date, last_updated_date) VALUES (10003, 'Spring in 100 Steps ', sysdate(), sysdate());
 
 
 INSERT INTO passport(id, number) VALUES (40001, 'E12345126');
