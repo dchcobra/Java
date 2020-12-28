@@ -62,12 +62,14 @@ public class CourseRepositoryTest {
 		repository.playWithEntiyManager();
 	}
 
+	/*
 	@Test
 	@Transactional
 	public void retrieveReviewsForCourse() {
 		Course course = repository.findById(10001L);
 		logger.info("{}", course.getReviews());
 	}
+	*/
 	
 	@Test
 	@Transactional
