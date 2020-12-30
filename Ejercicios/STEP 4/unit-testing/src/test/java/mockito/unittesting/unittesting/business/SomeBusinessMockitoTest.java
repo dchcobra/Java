@@ -3,6 +3,7 @@ package mockito.unittesting.unittesting.business;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ import org.mockito.Mock;
 
 import mockito.unittesting.unittesting.data.SomeDataService;
 
-//@RunWith(MockitoJUnitRunner.class) this is deprecated
+@RunWith(MockitoJUnitRunner.class)
 public class SomeBusinessMockitoTest {
 	/* CHAPTER 2 - STEP 6 - 8*/
 	@InjectMocks

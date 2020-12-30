@@ -1,2 +1,6 @@
 ERROR = @RunWith(MockitoJUnitRunner.class)
 PORQUE? Esta obsoleto, ahora se utilza @Rule
+
+
+ERROR = No funcionaba porque junit 5 no encontraba no encontraba un runner
+PORQUE? He tenido que reemplazar Junit5 por Junit4 ya que JUNIT5 no encontraba el test
