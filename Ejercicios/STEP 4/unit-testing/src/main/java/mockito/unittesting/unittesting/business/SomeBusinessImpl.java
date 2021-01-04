@@ -1,5 +1,7 @@
 package mockito.unittesting.unittesting.business;
 
+import java.util.Arrays;
+
 import mockito.unittesting.unittesting.data.SomeDataService;
 
 public class SomeBusinessImpl {
@@ -19,7 +21,7 @@ public class SomeBusinessImpl {
 	public void setSomeDataService(SomeDataService someDataService) {
 		this.someDataService = someDataService;
 	}
-
+/*
 	public int calculateSum(int[] data) {
 		int sum = 0;
 		for(int value:data) {
@@ -27,7 +29,7 @@ public class SomeBusinessImpl {
 		}
 		return sum;
 	}
-	
+	*/
 	public int calculateSumUsingDataService() {
 		int sum = 0;
 		int[] data = someDataService.retrieveAllData();
@@ -37,5 +39,9 @@ public class SomeBusinessImpl {
 		return sum;
 	}
 	
-	
+	/* CHAPTER 3 - STEP 19 */
+
+	public int calculateSum(int[] data) {
+		return Arrays.stream(data).reduce(Integer::sum).orElse(0);
+	}
 }
