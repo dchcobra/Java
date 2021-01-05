@@ -266,7 +266,7 @@ FROM hr.jobs;
 
 ## LESSON 12 - JOINING TABLES
 
-INSERTAR IMAGEN JOIN.png
+![date](JOIN.png)
 
 ### SIMPLE JOIN
 
