@@ -194,7 +194,7 @@ ORDER BY MIN_SALARY;
 
 DATE
 
-INSERTAR IMG DATE.png
+![date](DATE.png)
 
 Mostramos el valor de la tabla que tenga en END_DATE el año 19
 ORACLE
