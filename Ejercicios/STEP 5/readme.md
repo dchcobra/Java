@@ -395,7 +395,7 @@ SELECT * FROM davidcp;
 
 Eliminamos la informacion del id 1
 
-````sql
+```sql
 DELETE FROM davidcp where id = 1;
 SELECT * FROM davidcp;
 ```
