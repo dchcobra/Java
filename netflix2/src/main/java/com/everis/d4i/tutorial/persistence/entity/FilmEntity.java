@@ -33,7 +33,7 @@ public class FilmEntity extends CommonAuditEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Long id;
+	private Integer id;
 
 	@Column(name = "name", nullable = false)
 	private String name;
@@ -58,7 +58,7 @@ public class FilmEntity extends CommonAuditEntity {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "category_id")
-	private CategoryEntity categoryEntity;
+	private CategoryEntity category;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "filmEntity")
 	private Collection<CastEntity> castEntityCollection;

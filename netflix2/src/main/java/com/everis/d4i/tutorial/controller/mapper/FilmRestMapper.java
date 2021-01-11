@@ -10,7 +10,7 @@ public class FilmRestMapper implements RestMapper<FilmRest, FilmDto>{
 	@Override
 	public FilmRest mapToRest(final FilmDto filmDto) {
 
-		final Long id = filmDto.getId();
+		final Integer id = filmDto.getId();
 		final String name = filmDto.getName();
 		final Integer year = filmDto.getYear();
 		final String country = filmDto.getCountry();

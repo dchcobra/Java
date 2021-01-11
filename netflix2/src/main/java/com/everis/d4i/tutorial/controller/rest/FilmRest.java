@@ -17,7 +17,7 @@ public class FilmRest implements Serializable {
     private static final long serialVersionUID = 3045052550331442918L;
 
     @JsonProperty("id")
-    private Long id;
+    private Integer id;
 
     @JsonProperty("name")
     private String name;

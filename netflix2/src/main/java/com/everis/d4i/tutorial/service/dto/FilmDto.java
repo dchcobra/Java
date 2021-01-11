@@ -15,7 +15,7 @@ public class FilmDto implements Serializable {
 
 	private static final long serialVersionUID = 3045052568331442918L;
 
-	private Long id;
+	private Integer id;
 
 	private String name;
 

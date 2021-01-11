@@ -10,7 +10,7 @@ public class FilmEntityMapper implements EntityMapper<FilmEntity, FilmDto> {
 	@Override
 	public FilmDto mapToDto(final FilmEntity filmEntity) {
 
-		final Long id = filmEntity.getId();
+		final Integer id = filmEntity.getId();
 		final String name = filmEntity.getName();
 		final Integer year = Integer.parseInt(filmEntity.getYear().toString());
 		final String country = filmEntity.getCountry();

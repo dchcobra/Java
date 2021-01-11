@@ -35,7 +35,7 @@ public class CategoryEntity extends CommonAuditEntity {
 	@Column(name = "name", nullable = false, unique = true)
 	private String name;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoryEntity")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
 	private Collection<FilmEntity> filmEntityCollection;
 
 }
