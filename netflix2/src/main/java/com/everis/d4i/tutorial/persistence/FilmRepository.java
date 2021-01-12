@@ -13,7 +13,7 @@ public interface FilmRepository extends JpaRepository<FilmEntity, Long> {
     
 	List<FilmEntity> findAllByOrderByYearDesc();
 
-    List<FilmEntity> findAllByCategory_Id(Integer category, Sort sort);
+    List<FilmEntity> findAllByCategory_Id(Long category, Sort sort);
 
 	
 }

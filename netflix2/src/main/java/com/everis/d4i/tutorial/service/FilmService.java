@@ -12,15 +12,12 @@ import org.springframework.data.domain.Sort;
 
 public interface FilmService {
 
-	List<FilmRest> getFilmsSortedDynamically(Sort sort);
-
-	List<FilmRest> getFilmsSortedByDefault();
-
-	List<FilmRest> getFilmsSortedProgrammatically();
+	Collection<FilmDto> getFilms() throws NetflixException;
 
 	List<FilmRest> getFilmsByCategorySortedDynamically(Sort sort);
 
-	Collection<FilmDto> getFilms() throws NetflixException;
+	List<FilmRest> getFilmsSortedProgrammatically();
 
+	List<FilmRest> getFilmsSortedByDefault();
 
 }

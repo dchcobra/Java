@@ -44,6 +44,7 @@ public class FilmControllerImpl implements FilmController {
 				filmService.getFilms().parallelStream().map(filmRestMapper::mapToRest).toArray(FilmRest[]::new));
 	}
 
+
     @Override
     @ApiImplicitParam(name = "sort", allowMultiple = true, dataType = "string", paramType = "query",
             value = "Sorting criteria in the format: property(,asc|desc). " +
