@@ -8,7 +8,9 @@ import com.everis.d4i.tutorial.service.dto.FilmDto;
 import lombok.RequiredArgsConstructor;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -19,47 +21,40 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class FilmServiceImpl implements FilmService {
-	
-	@Autowired
-	private FilmRepository filmRepository;
 
-    private final ModelMapper modelMapper = new ModelMapper();
+	private final FilmRepository filmRepository;
 
 	private final FilmEntityMapper filmEntityMapper;
-
-	@Override
-	public Collection<FilmDto> getFilms() {
-		return filmRepository.findAll().parallelStream().map(filmEntityMapper::mapToDto).collect(Collectors.toList());
-	}
-
 	
-	@Override
-	public List<FilmRest> getFilmsSortedProgrammatically() {
+    private ModelMapper modelMapper = new ModelMapper();
 
-	    final Sort sortProgrammatically = Sort.by(Sort.Direction.ASC, "year")
-	                                              .and(Sort.by(Sort.Direction.DESC, "name"));
-
-	    return filmRepository.findAll(sortProgrammatically).stream()
-	                   .map(film -> modelMapper.map(film, FilmRest.class))
-	                   .collect(Collectors.toList());
-	}
-
+/* SORT */
 
     @Override
     public List<FilmRest> getFilmsByCategorySortedDynamically(final Sort sort) {
 
-        return filmRepository.findAllByCategory_Id(2l, sort).stream()
+        return filmRepository.findAllByCategory_Id(1, sort).stream()
                        .map(film -> modelMapper.map(film, FilmRest.class))
                        .collect(Collectors.toList());
     }
 
+    // PAGINATION
+    @Override
+    public Page<FilmRest> getPageOfFilms(final Pageable pageable) {
+        return filmRepository.findAll(pageable).map(film -> modelMapper.map(film, FilmRest.class));
+    }
 
     @Override
-    public List<FilmRest> getFilmsSortedByDefault() {
-        return filmRepository.findAllByOrderByYearDesc().stream()
+    public Slice<FilmRest> getFilmsByCategorySliced(final Integer categoryId, final Pageable pageable) {
+        return filmRepository.findAllByCategory_Id(2, pageable).map(film -> modelMapper.map(film, FilmRest.class));
+    }
+
+    @Override
+    public List<FilmRest> getFilmsByDurationGreaterThanListed(final Integer duration, final Pageable pageable) {
+        return filmRepository.findAllByDurationGreaterThan(duration, pageable).stream()
                        .map(film -> modelMapper.map(film, FilmRest.class))
                        .collect(Collectors.toList());
     }
 
-	
+
 }

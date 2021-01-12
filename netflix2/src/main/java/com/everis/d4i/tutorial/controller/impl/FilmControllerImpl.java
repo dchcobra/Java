@@ -2,14 +2,15 @@ package com.everis.d4i.tutorial.controller.impl;
 
 import com.everis.d4i.tutorial.controller.FilmController;
 import com.everis.d4i.tutorial.controller.mapper.FilmRestMapper;
+import com.everis.d4i.tutorial.exception.NetflixException;
 import com.everis.d4i.tutorial.controller.rest.FilmRest;
 import com.everis.d4i.tutorial.controller.rest.response.NetflixResponse;
-import com.everis.d4i.tutorial.exception.NetflixException;
 import com.everis.d4i.tutorial.service.FilmService;
 import com.everis.d4i.tutorial.util.constant.CommonConstants;
 import com.everis.d4i.tutorial.util.constant.RestConstants;
 
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import springfox.documentation.annotations.ApiIgnore;
@@ -17,7 +18,10 @@ import springfox.documentation.annotations.ApiIgnore;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.data.web.SortDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -33,18 +37,8 @@ public class FilmControllerImpl implements FilmController {
 
     @Autowired
     private FilmService filmService;
-
-	private FilmRestMapper filmRestMapper;
-
-	@Override
-	@ResponseStatus(HttpStatus.OK)
-	@GetMapping(value = RestConstants.RESOURCE_FILM, produces = MediaType.APPLICATION_JSON_VALUE)
-	public NetflixResponse<FilmRest[]> getFilms() throws NetflixException {
-		return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
-				filmService.getFilms().parallelStream().map(filmRestMapper::mapToRest).toArray(FilmRest[]::new));
-	}
-
-
+    // SORTING
+    /*
     @Override
     @ApiImplicitParam(name = "sort", allowMultiple = true, dataType = "string", paramType = "query",
             value = "Sorting criteria in the format: property(,asc|desc). " +
@@ -59,6 +53,29 @@ public class FilmControllerImpl implements FilmController {
         return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
                 filmService.getFilmsByCategorySortedDynamically(sort));
     }
+*/
+    
+    // PAGINATION
 
-
+    @Override
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page", dataType = "integer", paramType = "query",
+                    value = "Results page you want to retrieve (0..N)", defaultValue = "0"),
+            @ApiImplicitParam(name = "size", dataType = "integer", paramType = "query",
+                    value = "Number of entries per page.", defaultValue = "8"),
+            @ApiImplicitParam(name = "sort", allowMultiple = true, dataType = "string", paramType = "query",
+                    value = "Sorting criteria in the format: property(,asc|desc). " +
+                                    "Default sort order is ascending. " +
+                                    "Multiple sort criteria are supported.")
+    })
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public NetflixResponse<Slice<FilmRest>> getFilms(
+            @ApiIgnore("ignored because too much stuff. Selection done instead with ApiImplicitParams")
+            @PageableDefault(sort = "id", direction = Sort.Direction.ASC, size = 8) final Pageable pageable) {
+        return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
+                filmService.getPageOfFilms(pageable));
+    }
+    
+    //FILTERING STATIC
 }

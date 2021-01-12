@@ -1,2 +1,0 @@
-2021-01-07 12:00:11,574 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
-2021-01-07 12:01:52,680 [Worker-2: Auto share git projects] WARN  org.eclipse.jgit.util.FS_Win32 - null
