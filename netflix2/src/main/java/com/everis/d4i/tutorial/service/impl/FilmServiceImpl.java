@@ -14,6 +14,7 @@ import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.Year;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -56,5 +57,26 @@ public class FilmServiceImpl implements FilmService {
                        .collect(Collectors.toList());
     }
 
+    // STATIC FILTERING
+    
+    @Override
+    public List<FilmRest> getFilmsFilteredByMinimumDuration(final Integer duration) {
+        return filmRepository.findAllByDurationGreaterThan(duration).stream()
+                       .map(film -> modelMapper.map(film, FilmRest.class))
+                       .collect(Collectors.toList());
+    }
 
+    @Override
+    public List<FilmRest> getFilmsByCategoryAndSubcategory(final Integer categoryId, final String subcategory) {
+        return filmRepository.findAllByCategory_IdAndShortDescriptionContaining(categoryId, subcategory).stream()
+                       .map(film -> modelMapper.map(film, FilmRest.class))
+                       .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<FilmRest> getFilmsByYearAndCategoryNameWithNativeQuery(final Integer year, final String categoryName) {
+        return filmRepository.myOwnNativeQueryFunctionFilterByYearAndCategory(year, categoryName).stream()
+                       .map(film -> modelMapper.map(film, FilmRest.class))
+                       .collect(Collectors.toList());
+    }
 }

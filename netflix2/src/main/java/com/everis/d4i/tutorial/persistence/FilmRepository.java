@@ -10,13 +10,14 @@ import java.util.Optional;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.util.Streamable;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FilmRepository extends JpaRepository<FilmEntity, Long> {
+public interface FilmRepository extends JpaRepository<FilmEntity, Long>, JpaSpecificationExecutor<FilmEntity> {
 
 	// SORTING
     List<FilmEntity> findAllByOrderByYearDesc();  
@@ -36,6 +37,20 @@ public interface FilmRepository extends JpaRepository<FilmEntity, Long> {
     List<FilmEntity> findTop10ByLanguageInOrderByLanguageDesc(Collection<String> possibleLanguages);
 
     Optional<FilmEntity> findFirstByYearBeforeAndDurationIsNotNullAndCountry(Year year, String country);
+/*
+    @Query(value = "select f from Film f where f.language in :languages ")
+    List<FilmEntity> myOwnQueryWithAListAsParam(
+            @Param("languages") Collection<String> languageCollection);
+
+*/  
+    @Query(nativeQuery = true,
+            value = "select * " +
+                           "from films " +
+                           "where year = :year " +
+                           "    and category_id = (select id from categories where name = :name);")
+    List<FilmEntity> myOwnNativeQueryFunctionFilterByYearAndCategory(
+            @Param("year") Integer year,
+            @Param("name") String name);
 
 
 }

@@ -1,6 +1,5 @@
 package com.everis.d4i.tutorial.controller;
 
-import com.everis.d4i.tutorial.exception.NetflixException;
 
 import java.util.List;
 
@@ -17,5 +16,9 @@ public interface FilmController {
 //	NetflixResponse<List<FilmRest>> getFilms(Sort sort);
 
 	//PAGINATION
-	NetflixResponse<Slice<FilmRest>> getFilms(Pageable pageable);
+//	NetflixResponse<Slice<FilmRest>> getFilms(Pageable pageable);
+	
+	//STATIC FILTERING
+    NetflixResponse<List<FilmRest>> getFilmsFilteredStaticallyBy(Integer duration);
+
 }

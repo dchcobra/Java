@@ -27,6 +27,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,7 +39,7 @@ public class FilmControllerImpl implements FilmController {
     @Autowired
     private FilmService filmService;
     // SORTING
-    /*
+/*
     @Override
     @ApiImplicitParam(name = "sort", allowMultiple = true, dataType = "string", paramType = "query",
             value = "Sorting criteria in the format: property(,asc|desc). " +
@@ -56,7 +57,7 @@ public class FilmControllerImpl implements FilmController {
 */
     
     // PAGINATION
-
+/*
     @Override
     @ApiImplicitParams({
             @ApiImplicitParam(name = "page", dataType = "integer", paramType = "query",
@@ -76,6 +77,23 @@ public class FilmControllerImpl implements FilmController {
         return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
                 filmService.getPageOfFilms(pageable));
     }
-    
+*/
     //FILTERING STATIC
+
+    @Override
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public NetflixResponse<List<FilmRest>> getFilmsFilteredStaticallyBy(
+    		@RequestParam(name = "minimumDuration", required = false) final Integer minimumDuration) {
+
+		return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
+                filmService.getFilmsFilteredByMinimumDuration(minimumDuration));
+		
+//      return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
+//      filmService.getFilmsByYearAndCategoryNameWithNativeQuery(2018, "drama"));
+
+	}
+    
+    
+    
 }

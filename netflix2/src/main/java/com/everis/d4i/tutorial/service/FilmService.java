@@ -25,4 +25,12 @@ public interface FilmService {
 
 	List<FilmRest> getFilmsByDurationGreaterThanListed(Integer duration, Pageable pageable);
 	
+	// STATIC FILTERING
+	
+	List<FilmRest> getFilmsFilteredByMinimumDuration(Integer duration);
+
+	List<FilmRest> getFilmsByCategoryAndSubcategory(Integer categoryId, String subcategory);
+
+	List<FilmRest> getFilmsByYearAndCategoryNameWithNativeQuery(Integer year, String categoryName);
+
 }
