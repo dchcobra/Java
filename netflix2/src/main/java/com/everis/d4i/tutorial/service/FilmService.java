@@ -1,6 +1,8 @@
 package com.everis.d4i.tutorial.service;
 
 import com.everis.d4i.tutorial.controller.rest.FilmRest;
+import com.everis.d4i.tutorial.controller.rest.FilteringParameters;
+
 import com.everis.d4i.tutorial.exception.NetflixException;
 import com.everis.d4i.tutorial.service.dto.FilmDto;
 
@@ -11,6 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
+
 
 public interface FilmService {
 
@@ -32,5 +35,9 @@ public interface FilmService {
 	List<FilmRest> getFilmsByCategoryAndSubcategory(Integer categoryId, String subcategory);
 
 	List<FilmRest> getFilmsByYearAndCategoryNameWithNativeQuery(Integer year, String categoryName);
+	
+	//DINAMIC FILTERING
+	
+	List<FilmRest> getDynamicallyFiltered(FilteringParameters filters);
 
 }

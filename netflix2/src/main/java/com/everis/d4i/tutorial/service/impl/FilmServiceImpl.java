@@ -2,9 +2,12 @@ package com.everis.d4i.tutorial.service.impl;
 
 import com.everis.d4i.tutorial.controller.rest.FilmRest;
 import com.everis.d4i.tutorial.persistence.FilmRepository;
+import com.everis.d4i.tutorial.persistence.entity.FilmEntity;
 import com.everis.d4i.tutorial.persistence.mapper.FilmEntityMapper;
+import com.everis.d4i.tutorial.persistence.specification.Specifications;
 import com.everis.d4i.tutorial.service.FilmService;
 import com.everis.d4i.tutorial.service.dto.FilmDto;
+
 import lombok.RequiredArgsConstructor;
 
 import org.modelmapper.ModelMapper;
@@ -12,12 +15,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.time.Year;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+import com.everis.d4i.tutorial.controller.rest.FilteringParameters;
+
+
 
 @Service
 @RequiredArgsConstructor
@@ -79,4 +86,29 @@ public class FilmServiceImpl implements FilmService {
                        .map(film -> modelMapper.map(film, FilmRest.class))
                        .collect(Collectors.toList());
     }
+    
+    //DINAMIC FILTERING
+    
+    //filter by year
+    /*@Override
+    public List<FilmRest> getDynamicallyFiltered(final FilteringParameters filteringParameters) {
+
+        final List<FilmEntity> filmList = filmRepository.findAll(Specifications.isYearEqual(filteringParameters.getYear()));
+
+        return filmList.stream()
+                       .map(film -> modelMapper.map(film, FilmRest.class))
+                       .collect(Collectors.toList());
+    }*/
+
+    //filter by name
+    @Override
+    public List<FilmRest> getDynamicallyFiltered(final FilteringParameters filteringParameters) {
+
+        final List<FilmEntity> filmList = filmRepository.findAll(Specifications.hasName(filteringParameters.getName()));
+
+        return filmList.stream()
+                       .map(film -> modelMapper.map(film, FilmRest.class))
+                       .collect(Collectors.toList());
+    }
+
 }

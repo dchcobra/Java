@@ -4,6 +4,7 @@ import com.everis.d4i.tutorial.controller.FilmController;
 import com.everis.d4i.tutorial.controller.mapper.FilmRestMapper;
 import com.everis.d4i.tutorial.exception.NetflixException;
 import com.everis.d4i.tutorial.controller.rest.FilmRest;
+import com.everis.d4i.tutorial.controller.rest.FilteringParameters;
 import com.everis.d4i.tutorial.controller.rest.response.NetflixResponse;
 import com.everis.d4i.tutorial.service.FilmService;
 import com.everis.d4i.tutorial.util.constant.CommonConstants;
@@ -15,6 +16,7 @@ import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import springfox.documentation.annotations.ApiIgnore;
 
+import java.time.Year;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,7 +81,7 @@ public class FilmControllerImpl implements FilmController {
     }
 */
     //FILTERING STATIC
-
+/*
     @Override
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -93,7 +95,35 @@ public class FilmControllerImpl implements FilmController {
     	//      filmService.getFilmsByYearAndCategoryNameWithNativeQuery(2018, "drama"));
 
 	}
+*/ 
+    // DINAMIC FILTERING
     
-    
+	@Override
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public NetflixResponse<List<FilmRest>> getFilmsFilteredDynamicallyBy(
+            @RequestParam(name = "name", required = false) final String name,
+            @RequestParam(name = "year", required = false) final Year year,
+            @RequestParam(name = "country", required = false) final String country,
+            @RequestParam(name = "language", required = false) final List<String> languages,
+            @RequestParam(name = "category", required = false) final Integer category,
+            @RequestParam(name = "subcategory", required = false) final List<String> subcategories,
+            @RequestParam(name = "mimum_duration", required = false) final Integer minimumDuration) {
+
+        FilteringParameters filters = FilteringParameters.builder()
+                                              .name(name)
+                                              .year(year)
+                                              .country(country)
+                                              .languages(languages)
+                                              .category(category)
+                                              .subcategories(subcategories)
+                                              .minimumDuration(minimumDuration)
+                                              .build();
+
+        return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
+                filmService.getDynamicallyFiltered(filters));
+
+    }
+
     
 }
