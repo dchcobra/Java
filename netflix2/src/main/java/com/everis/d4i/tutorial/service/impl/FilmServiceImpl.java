@@ -110,5 +110,11 @@ public class FilmServiceImpl implements FilmService {
                        .map(film -> modelMapper.map(film, FilmRest.class))
                        .collect(Collectors.toList());
     }
+    
+    private Specification<FilmEntity> complexFilter(final FilteringParameters filters) {
+        return Specification.where(Specifications.hasName(filters.getName())
+                                           .and(Specifications.isYearEqual(filters.getYear())));
+    }
+
 
 }
