@@ -10,6 +10,8 @@ import com.everis.d4i.tutorial.util.constant.CommonConstants;
 import com.everis.d4i.tutorial.util.constant.RestConstants;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
