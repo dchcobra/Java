@@ -36,6 +36,11 @@ public class FilmServiceImpl implements FilmService {
 	
     private ModelMapper modelMapper = new ModelMapper();
 
+    @Override
+	public Collection<FilmDto> getFilms() {
+		return filmRepository.findAll().parallelStream().map(filmEntityMapper::mapToDto).collect(Collectors.toList());
+	}
+
 /* SORT */
 
     @Override

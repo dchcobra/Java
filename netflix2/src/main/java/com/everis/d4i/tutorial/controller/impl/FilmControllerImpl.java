@@ -40,6 +40,17 @@ public class FilmControllerImpl implements FilmController {
 
     @Autowired
     private FilmService filmService;
+    
+    private final FilmRestMapper filmRestMapper;
+    
+    @Override
+	@ResponseStatus(HttpStatus.OK)
+	@GetMapping(value = RestConstants.RESOURCE_FILM, produces = MediaType.APPLICATION_JSON_VALUE)
+	public NetflixResponse<FilmRest[]> getFilms() throws NetflixException {
+		return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
+				filmService.getFilms().parallelStream().map(filmRestMapper::mapToRest).toArray(FilmRest[]::new));
+	}
+
     // SORTING
 /*
     @Override

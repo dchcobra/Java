@@ -10,9 +10,12 @@ import org.springframework.data.domain.Sort;
 
 import com.everis.d4i.tutorial.controller.rest.FilmRest;
 import com.everis.d4i.tutorial.controller.rest.response.NetflixResponse;
+import com.everis.d4i.tutorial.exception.NetflixException;
 
 public interface FilmController {
 
+	NetflixResponse<FilmRest[]> getFilms() throws NetflixException;
+	
     // SORTING
 //	NetflixResponse<List<FilmRest>> getFilms(Sort sort);
 
@@ -25,5 +28,6 @@ public interface FilmController {
     // DINAMIC FILTERING
 	NetflixResponse<List<FilmRest>> getFilmsFilteredDynamicallyBy(String name, Year year, String country,
 			List<String> languages, Integer category, List<String> subcategories, Integer minimumDuration);
+
 
 }

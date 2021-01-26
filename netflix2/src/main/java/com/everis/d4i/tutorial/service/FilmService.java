@@ -17,6 +17,8 @@ import org.springframework.data.domain.Sort;
 
 public interface FilmService {
 
+	Collection<FilmDto> getFilms() throws NetflixException;
+	
     // SORTING
 
 	List<FilmRest> getFilmsByCategorySortedDynamically(Sort sort);
@@ -39,5 +41,6 @@ public interface FilmService {
 	//DINAMIC FILTERING
 	
 	List<FilmRest> getDynamicallyFiltered(FilteringParameters filters);
+
 
 }

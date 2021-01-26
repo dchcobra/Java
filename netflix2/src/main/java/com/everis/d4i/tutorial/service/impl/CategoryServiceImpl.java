@@ -6,6 +6,8 @@ import com.everis.d4i.tutorial.service.CategoryService;
 import com.everis.d4i.tutorial.service.dto.CategoryDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

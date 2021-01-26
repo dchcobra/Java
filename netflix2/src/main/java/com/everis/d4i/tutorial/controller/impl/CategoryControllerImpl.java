@@ -11,22 +11,22 @@ import com.everis.d4i.tutorial.util.constant.RestConstants;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RestController
 @RequestMapping(RestConstants.APPLICATION_NAME + RestConstants.API_VERSION_1)
 @RequiredArgsConstructor
+@RestController
 public class CategoryControllerImpl implements CategoryController {
 
 	private final CategoryService categoryService;
 
 	private final CategoryRestMapper categoryRestMapper;
 
+	
 	@Override
 	@ResponseStatus(HttpStatus.OK)
 	@GetMapping(value = RestConstants.RESOURCE_CATEGORY, produces = MediaType.APPLICATION_JSON_VALUE)
