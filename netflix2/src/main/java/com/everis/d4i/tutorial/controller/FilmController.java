@@ -26,8 +26,8 @@ public interface FilmController {
 //    NetflixResponse<List<FilmRest>> getFilmsFilteredStaticallyBy(Integer duration);
 
     // DINAMIC FILTERING
-	NetflixResponse<List<FilmRest>> getFilmsFilteredDynamicallyBy(String name, Year year, String country,
-			List<String> languages, Integer category, List<String> subcategories, Integer minimumDuration);
+//	NetflixResponse<List<FilmRest>> getFilmsFilteredDynamicallyBy(String name, Year year, String country,
+//			List<String> languages, Integer category, List<String> subcategories, Integer minimumDuration);
 
 
 }

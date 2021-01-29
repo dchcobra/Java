@@ -36,6 +36,7 @@ public class CategoryControllerImplTest {
 	// Definimos los Beans que utiliza
 	@MockBean
 	CategoryService categoryService;
+	
 	@MockBean
 	CategoryRestMapper categoryRestMapper;
 	
@@ -65,23 +66,25 @@ public class CategoryControllerImplTest {
 	
 	@Test
 	public void createCategory_test() throws Exception {
+	
+		RequestBuilder requestBuilder = MockMvcRequestBuilders
+				.post("/netflix2/v1/categories")
+				.content("{\"id\": 1, \"name\": \"testMockito\"}")
+				.contentType(MediaType.APPLICATION_JSON);
 		
-			CategoryDto categoryCreate = new CategoryDto(1, "testMockito");
-			Mockito.when(categoryService.getCategories()).thenReturn(List.of(categoryCreate));
-			
-			CategoryRest categoryRestCreate = new CategoryRest(1, "testMockito");
-			Mockito.when(categoryRestMapper.mapToRest(categoryCreate)).thenReturn(categoryRestCreate);
-			
-			RequestBuilder requestBuilder = MockMvcRequestBuilders
-					.post("/netflix2/v1/categories")
-					.content("{\"id\": 1, \"name\": \"testMockito\"}")
-					.contentType(MediaType.APPLICATION_JSON);
-			
-			MvcResult result = mockMvc.perform(requestBuilder)
-					.andExpect(status().isCreated())
-					.andExpect(content()
-					.json("{\"status\":\"Success\",\"code\":\"201 CREATED\",\"message\":\"OK\",\"data\":[{\"id\": 1, \"name\": \"testMockito\"}]}"))
-					.andReturn();
-		}
+		CategoryDto category = new CategoryDto(1, "testMockito");
+		Mockito.when(categoryService.createCategory(Mockito.any(CategoryDto.class))).thenReturn(category);
+		
+		CategoryRest categoryRest = new CategoryRest(1, "testMockito");
+		Mockito.when(categoryRestMapper.mapToDto(categoryRest)).thenReturn(category);
+		
+		Mockito.when(categoryRestMapper.mapToRest(Mockito.any(CategoryDto.class))).thenReturn(categoryRest);
+		
+		MvcResult result = mockMvc.perform(requestBuilder)
+				.andExpect(status().isCreated())
+				.andExpect(content()
+				.json("{\"status\":\"Success\",\"code\":\"201 CREATED\",\"message\":\"OK\",\"data\":{\"id\": 1, \"name\": \"testMockito\"}}"))
+				.andReturn();
+	}
 }
 

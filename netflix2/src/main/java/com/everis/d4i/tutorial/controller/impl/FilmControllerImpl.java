@@ -108,7 +108,7 @@ public class FilmControllerImpl implements FilmController {
 	}
 */ 
     // DINAMIC FILTERING
-    
+    /*
 	@Override
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -135,6 +135,6 @@ public class FilmControllerImpl implements FilmController {
                 filmService.getDynamicallyFiltered(filters));
 
     }
-
+*/
     
 }
