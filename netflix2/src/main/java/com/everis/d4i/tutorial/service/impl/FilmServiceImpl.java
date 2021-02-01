@@ -87,7 +87,7 @@ public class FilmServiceImpl implements FilmService {
 
     @Override
     public List<FilmRest> getFilmsByYearAndCategoryNameWithNativeQuery(final Integer year, final String categoryName) {
-        return filmRepository.myOwnNativeQueryFunctionFilterByYearAndCategory(year, categoryName).stream()
+        return filmRepository.findFilmByYearAndCategory(year, categoryName).stream()
                        .map(film -> modelMapper.map(film, FilmRest.class))
                        .collect(Collectors.toList());
     }

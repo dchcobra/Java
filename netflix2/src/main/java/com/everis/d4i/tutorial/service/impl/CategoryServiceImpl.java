@@ -5,15 +5,13 @@ import com.everis.d4i.tutorial.persistence.mapper.CategoryEntityMapper;
 import com.everis.d4i.tutorial.service.CategoryService;
 import com.everis.d4i.tutorial.service.dto.CategoryDto;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
-@Log4j2
+
 @Service
 @RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
@@ -23,8 +21,8 @@ public class CategoryServiceImpl implements CategoryService {
 	private final CategoryEntityMapper categoryEntityMapper;
 
 	@Override
-	public Collection<CategoryDto> getCategories() {
-		return categoryRepository.findAll().parallelStream().map(categoryEntityMapper::mapToDto)
+	public List<CategoryDto> getCategories() {
+		return categoryRepository.findAll().stream().map(categoryEntityMapper::mapToDto)
 				.collect(Collectors.toList());
 	}
 

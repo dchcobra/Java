@@ -1,8 +1,6 @@
 package com.everis.d4i.tutorial.controller.impl;
 
 import com.everis.d4i.tutorial.controller.FilmController;
-import com.everis.d4i.tutorial.controller.mapper.FilmRestMapper;
-import com.everis.d4i.tutorial.exception.NetflixException;
 import com.everis.d4i.tutorial.controller.rest.FilmRest;
 import com.everis.d4i.tutorial.controller.rest.FilteringParameters;
 import com.everis.d4i.tutorial.controller.rest.response.NetflixResponse;
@@ -12,7 +10,6 @@ import com.everis.d4i.tutorial.util.constant.RestConstants;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import springfox.documentation.annotations.ApiIgnore;
 
@@ -24,7 +21,6 @@ import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.data.web.SortDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,37 +36,7 @@ public class FilmControllerImpl implements FilmController {
 
     @Autowired
     private FilmService filmService;
-    
-    private final FilmRestMapper filmRestMapper;
-    
-    @Override
-	@ResponseStatus(HttpStatus.OK)
-	@GetMapping(value = RestConstants.RESOURCE_FILM, produces = MediaType.APPLICATION_JSON_VALUE)
-	public NetflixResponse<FilmRest[]> getFilms() throws NetflixException {
-		return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
-				filmService.getFilms().parallelStream().map(filmRestMapper::mapToRest).toArray(FilmRest[]::new));
-	}
 
-    // SORTING
-/*
-    @Override
-    @ApiImplicitParam(name = "sort", allowMultiple = true, dataType = "string", paramType = "query",
-            value = "Sorting criteria in the format: property(,asc|desc). " +
-                            "Default sort order is ascending. " +
-                            "Multiple sort criteria are supported.")
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public NetflixResponse<List<FilmRest>> getFilms(
-            @ApiParam
-            @ApiIgnore("default params not useful. Using ApiImplicitParam instead")
-            @SortDefault(value = "year", direction = Sort.Direction.ASC) final Sort sort) {
-        return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
-                filmService.getFilmsByCategorySortedDynamically(sort));
-    }
-*/
-    
-    // PAGINATION
-/*
     @Override
     @ApiImplicitParams({
             @ApiImplicitParam(name = "page", dataType = "integer", paramType = "query",
@@ -83,35 +49,31 @@ public class FilmControllerImpl implements FilmController {
                                     "Multiple sort criteria are supported.")
     })
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = RestConstants.RESOURCE_FILM, produces = MediaType.APPLICATION_JSON_VALUE)
     public NetflixResponse<Slice<FilmRest>> getFilms(
             @ApiIgnore("ignored because too much stuff. Selection done instead with ApiImplicitParams")
             @PageableDefault(sort = "id", direction = Sort.Direction.ASC, size = 8) final Pageable pageable) {
         return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
                 filmService.getPageOfFilms(pageable));
     }
-*/
+
     //FILTERING STATIC
-/*
+
     @Override
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = RestConstants.RESOURCE_FILM_STATIC_FILTER, produces = MediaType.APPLICATION_JSON_VALUE)
     public NetflixResponse<List<FilmRest>> getFilmsFilteredStaticallyBy(
     		@RequestParam(name = "minimumDuration", required = false) final Integer minimumDuration) {
 
     	return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
                 filmService.getFilmsFilteredByMinimumDuration(minimumDuration));
-		
-    	//      return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
-    	//      filmService.getFilmsByYearAndCategoryNameWithNativeQuery(2018, "drama"));
+		}
 
-	}
-*/ 
     // DINAMIC FILTERING
-    /*
+
 	@Override
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = RestConstants.RESOURCE_FILM_DINAMIC_FILTER, produces = MediaType.APPLICATION_JSON_VALUE)
     public NetflixResponse<List<FilmRest>> getFilmsFilteredDynamicallyBy(
             @RequestParam(name = "name", required = false) final String name,
             @RequestParam(name = "year", required = false) final Year year,
@@ -135,6 +97,6 @@ public class FilmControllerImpl implements FilmController {
                 filmService.getDynamicallyFiltered(filters));
 
     }
-*/
+
     
 }

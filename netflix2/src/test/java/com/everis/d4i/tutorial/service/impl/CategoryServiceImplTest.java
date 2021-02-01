@@ -24,19 +24,19 @@ import com.everis.d4i.tutorial.service.dto.CategoryDto;
 public class CategoryServiceImplTest {
 
 	@InjectMocks
-	CategoryServiceImpl services;
+	private CategoryServiceImpl services;
 
 	@Mock
-	CategoryRepository categoryRepository;
+	private CategoryRepository categoryRepository;
 	
 	@Mock
-	CategoryEntity categoryEntity;
+	private CategoryEntity categoryEntity;
 	
 	@Mock
-	CategoryDto categoryDto;
+	private CategoryDto categoryDto;
 	
 	@Mock
-	CategoryEntityMapper categoryEntityMapper;
+	private CategoryEntityMapper categoryEntityMapper;
 	
 	@Test
 	public void getCategories_succesTest() throws NetflixException {
@@ -46,10 +46,11 @@ public class CategoryServiceImplTest {
 		
 		Mockito.when(categoryRepository.findAll()).thenReturn(new ArrayList<CategoryEntity>(List.of(test, test2)));
 		
-		final Collection<CategoryDto> responseGet = services.getCategories();
+		final Collection<CategoryDto> response = services.getCategories();
 		
-		assertNotNull(responseGet);
-		assertEquals(2, responseGet.size());
+		assertNotNull(response);
+		assertEquals(2, response.size());
+		//assertEquals(response.containsAll(test, test2)); CONSEGUIR QUE FUNCIONE ESTO
 	}
 	
 	@Test

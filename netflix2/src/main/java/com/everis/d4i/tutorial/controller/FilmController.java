@@ -14,20 +14,15 @@ import com.everis.d4i.tutorial.exception.NetflixException;
 
 public interface FilmController {
 
-	NetflixResponse<FilmRest[]> getFilms() throws NetflixException;
-	
-    // SORTING
-//	NetflixResponse<List<FilmRest>> getFilms(Sort sort);
-
 	//PAGINATION
-//	NetflixResponse<Slice<FilmRest>> getFilms(Pageable pageable);
+	NetflixResponse<Slice<FilmRest>> getFilms(Pageable pageable);
 	
 	//STATIC FILTERING
-//    NetflixResponse<List<FilmRest>> getFilmsFilteredStaticallyBy(Integer duration);
+    NetflixResponse<List<FilmRest>> getFilmsFilteredStaticallyBy(Integer duration);
 
     // DINAMIC FILTERING
-//	NetflixResponse<List<FilmRest>> getFilmsFilteredDynamicallyBy(String name, Year year, String country,
-//			List<String> languages, Integer category, List<String> subcategories, Integer minimumDuration);
+	NetflixResponse<List<FilmRest>> getFilmsFilteredDynamicallyBy(String name, Year year, String country,
+			List<String> languages, Integer category, List<String> subcategories, Integer minimumDuration);
 
 
 }

@@ -35,10 +35,10 @@ public class CategoryControllerImplTest {
 	
 	// Definimos los Beans que utiliza
 	@MockBean
-	CategoryService categoryService;
+	private CategoryService categoryService;
 	
 	@MockBean
-	CategoryRestMapper categoryRestMapper;
+	private CategoryRestMapper categoryRestMapper;
 	
 	// Test of method GET CATEGORIES
 	@Test
@@ -57,7 +57,7 @@ public class CategoryControllerImplTest {
 				.accept(MediaType.APPLICATION_JSON);
 		
 		// Especificamos que es lo que vamos a recibir
-		MvcResult result = mockMvc.perform(request)
+		mockMvc.perform(request)
 				.andExpect(status().isOk())
 				.andExpect(content()
 				.json("{\"status\":\"Success\",\"code\":\"200 OK\",\"message\":\"OK\",\"data\":[{\"id\": 1, \"name\": \"testMockito\"}]}"))
@@ -80,7 +80,7 @@ public class CategoryControllerImplTest {
 		
 		Mockito.when(categoryRestMapper.mapToRest(Mockito.any(CategoryDto.class))).thenReturn(categoryRest);
 		
-		MvcResult result = mockMvc.perform(requestBuilder)
+		mockMvc.perform(requestBuilder)
 				.andExpect(status().isCreated())
 				.andExpect(content()
 				.json("{\"status\":\"Success\",\"code\":\"201 CREATED\",\"message\":\"OK\",\"data\":{\"id\": 1, \"name\": \"testMockito\"}}"))

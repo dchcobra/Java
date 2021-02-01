@@ -6,7 +6,7 @@ import org.springframework.data.jpa.domain.Specification;
 
 import com.everis.d4i.tutorial.persistence.entity.FilmEntity;
 
-public class Specifications<T> {
+public class Specifications {
 	
     public static Specification<FilmEntity> isYearEqual(final Year year) {
         return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("year"), year);
