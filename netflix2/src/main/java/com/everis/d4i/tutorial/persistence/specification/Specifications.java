@@ -25,4 +25,15 @@ public class Specifications {
         return ((root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("category"), categoryId));
     }
 
+    public static Specification<FilmEntity> getFilmsByYearOrName(String name, Year year) {
+		Specification<FilmEntity> specificationName = Specifications.hasName(name);
+		Specification<FilmEntity> specificationYear = isYearEqual(year);
+
+		if (year == null) {
+			return specificationName;
+		} else {
+			return specificationYear;			
+		}
+	}
+    
 }

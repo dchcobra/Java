@@ -41,16 +41,6 @@ public class FilmServiceImpl implements FilmService {
 		return filmRepository.findAll().parallelStream().map(filmEntityMapper::mapToDto).collect(Collectors.toList());
 	}
 
-/* SORT */
-
-    @Override
-    public List<FilmRest> getFilmsByCategorySortedDynamically(final Sort sort) {
-
-        return filmRepository.findAllByCategory_Id(1, sort).stream()
-                       .map(film -> modelMapper.map(film, FilmRest.class))
-                       .collect(Collectors.toList());
-    }
-
     // PAGINATION
     @Override
     public Page<FilmRest> getPageOfFilms(final Pageable pageable) {
@@ -77,49 +67,18 @@ public class FilmServiceImpl implements FilmService {
                        .map(film -> modelMapper.map(film, FilmRest.class))
                        .collect(Collectors.toList());
     }
-
-    @Override
-    public List<FilmRest> getFilmsByCategoryAndSubcategory(final Integer categoryId, final String subcategory) {
-        return filmRepository.findAllByCategory_IdAndShortDescriptionContaining(categoryId, subcategory).stream()
-                       .map(film -> modelMapper.map(film, FilmRest.class))
-                       .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<FilmRest> getFilmsByYearAndCategoryNameWithNativeQuery(final Integer year, final String categoryName) {
-        return filmRepository.findFilmByYearAndCategory(year, categoryName).stream()
-                       .map(film -> modelMapper.map(film, FilmRest.class))
-                       .collect(Collectors.toList());
-    }
     
     //DINAMIC FILTERING
     
-    //filter by year
-    /*@Override
-    public List<FilmRest> getDynamicallyFiltered(final FilteringParameters filteringParameters) {
-
-        final List<FilmEntity> filmList = filmRepository.findAll(Specifications.isYearEqual(filteringParameters.getYear()));
-
-        return filmList.stream()
-                       .map(film -> modelMapper.map(film, FilmRest.class))
-                       .collect(Collectors.toList());
-    }*/
-
-    //filter by name
     @Override
     public List<FilmRest> getDynamicallyFiltered(final FilteringParameters filteringParameters) {
 
-        final List<FilmEntity> filmList = filmRepository.findAll(Specifications.hasName(filteringParameters.getName()));
-
+        final List<FilmEntity> filmList = filmRepository.findAll(Specifications.getFilmsByYearOrName(
+        		filteringParameters.getName(), filteringParameters.getYear()));
         return filmList.stream()
                        .map(film -> modelMapper.map(film, FilmRest.class))
                        .collect(Collectors.toList());
     }
     
-    private Specification<FilmEntity> complexFilter(final FilteringParameters filters) {
-        return Specification.where(Specifications.hasName(filters.getName())
-                                           .and(Specifications.isYearEqual(filters.getYear())));
-    }
-
-
+    
 }

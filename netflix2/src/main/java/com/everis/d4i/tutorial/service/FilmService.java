@@ -12,16 +12,11 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
-import org.springframework.data.domain.Sort;
 
 
 public interface FilmService {
 
 	Collection<FilmDto> getFilms() throws NetflixException;
-	
-    // SORTING
-
-	List<FilmRest> getFilmsByCategorySortedDynamically(Sort sort);
 
 	// PAGINATION
 	Page<FilmRest> getPageOfFilms(Pageable pageable);
@@ -34,13 +29,10 @@ public interface FilmService {
 	
 	List<FilmRest> getFilmsFilteredByMinimumDuration(Integer duration);
 
-	List<FilmRest> getFilmsByCategoryAndSubcategory(Integer categoryId, String subcategory);
-
-	List<FilmRest> getFilmsByYearAndCategoryNameWithNativeQuery(Integer year, String categoryName);
 	
 	//DINAMIC FILTERING
-	
-	List<FilmRest> getDynamicallyFiltered(FilteringParameters filters);
+
+	List<FilmRest> getDynamicallyFiltered(FilteringParameters filteringParameters);
 
 
 }

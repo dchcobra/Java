@@ -48,6 +48,7 @@ public class FilmControllerImpl implements FilmController {
                                     "Default sort order is ascending. " +
                                     "Multiple sort criteria are supported.")
     })
+    
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = RestConstants.RESOURCE_FILM, produces = MediaType.APPLICATION_JSON_VALUE)
     public NetflixResponse<Slice<FilmRest>> getFilms(
@@ -62,7 +63,7 @@ public class FilmControllerImpl implements FilmController {
     @Override
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = RestConstants.RESOURCE_FILM_STATIC_FILTER, produces = MediaType.APPLICATION_JSON_VALUE)
-    public NetflixResponse<List<FilmRest>> getFilmsFilteredStaticallyBy(
+    public NetflixResponse<List<FilmRest>> getFilmsFilteredStatic(
     		@RequestParam(name = "minimumDuration", required = false) final Integer minimumDuration) {
 
     	return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
@@ -74,23 +75,13 @@ public class FilmControllerImpl implements FilmController {
 	@Override
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = RestConstants.RESOURCE_FILM_DINAMIC_FILTER, produces = MediaType.APPLICATION_JSON_VALUE)
-    public NetflixResponse<List<FilmRest>> getFilmsFilteredDynamicallyBy(
+    public NetflixResponse<List<FilmRest>> getFilmsFilteredDynamic(
             @RequestParam(name = "name", required = false) final String name,
-            @RequestParam(name = "year", required = false) final Year year,
-            @RequestParam(name = "country", required = false) final String country,
-            @RequestParam(name = "language", required = false) final List<String> languages,
-            @RequestParam(name = "category", required = false) final Integer category,
-            @RequestParam(name = "subcategory", required = false) final List<String> subcategories,
-            @RequestParam(name = "mimum_duration", required = false) final Integer minimumDuration) {
+            @RequestParam(name = "year", required = false) final Year year) {
 
         FilteringParameters filters = FilteringParameters.builder()
                                               .name(name)
                                               .year(year)
-                                              .country(country)
-                                              .languages(languages)
-                                              .category(category)
-                                              .subcategories(subcategories)
-                                              .minimumDuration(minimumDuration)
                                               .build();
 
         return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
