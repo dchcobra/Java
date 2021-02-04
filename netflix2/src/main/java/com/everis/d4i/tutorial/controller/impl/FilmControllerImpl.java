@@ -1,6 +1,7 @@
 package com.everis.d4i.tutorial.controller.impl;
 
 import com.everis.d4i.tutorial.controller.FilmController;
+import com.everis.d4i.tutorial.controller.mapper.FilmRestMapper;
 import com.everis.d4i.tutorial.controller.rest.FilmRest;
 import com.everis.d4i.tutorial.controller.rest.FilteringParameters;
 import com.everis.d4i.tutorial.controller.rest.response.NetflixResponse;
@@ -14,7 +15,6 @@ import lombok.RequiredArgsConstructor;
 import springfox.documentation.annotations.ApiIgnore;
 
 import java.time.Year;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Slice;
@@ -36,6 +36,9 @@ public class FilmControllerImpl implements FilmController {
 
     @Autowired
     private FilmService filmService;
+    
+	private final FilmRestMapper filmRestMapper;
+
 
     @Override
     @ApiImplicitParams({
@@ -55,19 +58,19 @@ public class FilmControllerImpl implements FilmController {
             @ApiIgnore("ignored because too much stuff. Selection done instead with ApiImplicitParams")
             @PageableDefault(sort = "id", direction = Sort.Direction.ASC, size = 8) final Pageable pageable) {
         return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
-                filmService.getPageOfFilms(pageable));
+                filmService.getPageOfFilms(pageable).map(filmRestMapper::mapToRest));
     }
 
     //FILTERING STATIC
 
-    @Override
+	@Override
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = RestConstants.RESOURCE_FILM_STATIC_FILTER, produces = MediaType.APPLICATION_JSON_VALUE)
-    public NetflixResponse<List<FilmRest>> getFilmsFilteredStatic(
+    public NetflixResponse<FilmRest[]> getFilmsFilteredStatic(
     		@RequestParam(name = "minimumDuration", required = false) final Integer minimumDuration) {
 
     	return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
-                filmService.getFilmsFilteredByMinimumDuration(minimumDuration));
+                filmService.getFilmsFilteredByMinimumDuration(minimumDuration).parallelStream().map(filmRestMapper::mapToRest).toArray(FilmRest[]::new));
 		}
 
     // DINAMIC FILTERING
@@ -75,7 +78,7 @@ public class FilmControllerImpl implements FilmController {
 	@Override
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = RestConstants.RESOURCE_FILM_DINAMIC_FILTER, produces = MediaType.APPLICATION_JSON_VALUE)
-    public NetflixResponse<List<FilmRest>> getFilmsFilteredDynamic(
+    public NetflixResponse<FilmRest[]> getFilmsFilteredDynamic(
             @RequestParam(name = "name", required = false) final String name,
             @RequestParam(name = "year", required = false) final Year year) {
 
@@ -85,7 +88,7 @@ public class FilmControllerImpl implements FilmController {
                                               .build();
 
         return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
-                filmService.getDynamicallyFiltered(filters));
+                filmService.getDynamicallyFiltered(filters).stream().map(filmRestMapper::mapToRest).toArray(FilmRest[]::new));
 
     }
 

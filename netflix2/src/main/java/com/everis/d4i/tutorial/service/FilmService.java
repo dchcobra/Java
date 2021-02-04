@@ -1,6 +1,5 @@
 package com.everis.d4i.tutorial.service;
 
-import com.everis.d4i.tutorial.controller.rest.FilmRest;
 import com.everis.d4i.tutorial.controller.rest.FilteringParameters;
 
 import com.everis.d4i.tutorial.exception.NetflixException;
@@ -19,20 +18,18 @@ public interface FilmService {
 	Collection<FilmDto> getFilms() throws NetflixException;
 
 	// PAGINATION
-	Page<FilmRest> getPageOfFilms(Pageable pageable);
+	Page<FilmDto> getPageOfFilms(Pageable pageable);
 
-	Slice<FilmRest> getFilmsByCategorySliced(Integer categoryId, Pageable pageable);
-
-	List<FilmRest> getFilmsByDurationGreaterThanListed(Integer duration, Pageable pageable);
+	Slice<FilmDto> getFilmsByCategorySliced(Integer categoryId, Pageable pageable);
 	
 	// STATIC FILTERING
 	
-	List<FilmRest> getFilmsFilteredByMinimumDuration(Integer duration);
+	List<FilmDto> getFilmsFilteredByMinimumDuration(Integer duration);
 
 	
 	//DINAMIC FILTERING
 
-	List<FilmRest> getDynamicallyFiltered(FilteringParameters filteringParameters);
+	List<FilmDto> getDynamicallyFiltered(FilteringParameters filteringParameters);
 
 
 }
