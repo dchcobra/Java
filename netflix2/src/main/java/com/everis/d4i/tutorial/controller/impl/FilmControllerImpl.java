@@ -57,8 +57,9 @@ public class FilmControllerImpl implements FilmController {
     public NetflixResponse<Slice<FilmRest>> getFilms(
             @ApiIgnore("ignored because too much stuff. Selection done instead with ApiImplicitParams")
             @PageableDefault(sort = "id", direction = Sort.Direction.ASC, size = 8) final Pageable pageable) {
-        return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
+    	return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
                 filmService.getPageOfFilms(pageable).map(filmRestMapper::mapToRest));
+        
     }
 
     //FILTERING STATIC
