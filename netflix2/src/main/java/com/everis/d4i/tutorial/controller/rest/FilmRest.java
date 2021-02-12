@@ -5,11 +5,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FilmRest implements Serializable {
@@ -40,10 +42,6 @@ public class FilmRest implements Serializable {
     @JsonProperty("longDescription")
     private String longDescription;
 
-    // Hace falta el contructor vacio para que devuelva datos | necessary empty contructor to return data
-	public FilmRest() {
-		
-	}
-
+    
     
 }

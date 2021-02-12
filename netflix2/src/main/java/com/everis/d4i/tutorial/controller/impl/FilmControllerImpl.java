@@ -47,7 +47,7 @@ public class FilmControllerImpl implements FilmController {
             @ApiImplicitParam(name = "size", dataType = "integer", paramType = "query",
                     value = "Number of entries per page.", defaultValue = "8"),
             @ApiImplicitParam(name = "sort", allowMultiple = true, dataType = "string", paramType = "query",
-                    value = "Sorting criteria in the format: property(,asc|desc). " +
+                    value = "Sorting criteria in the format: property,(asc|desc). " +
                                     "Default sort order is ascending. " +
                                     "Multiple sort criteria are supported.")
     })

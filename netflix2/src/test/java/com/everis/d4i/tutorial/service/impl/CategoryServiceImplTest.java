@@ -41,8 +41,8 @@ public class CategoryServiceImplTest {
 	@Test
 	public void getCategories_succesTest() throws NetflixException {
 				
-		CategoryEntity test = new CategoryEntity(1 , "test", null);
-		CategoryEntity test2 = new CategoryEntity(2, "test2", null);
+		final CategoryEntity test = new CategoryEntity(1 , "test", null);
+		final CategoryEntity test2 = new CategoryEntity(2, "test2", null);
 		
 		Mockito.when(categoryRepository.findAll()).thenReturn(new ArrayList<CategoryEntity>(List.of(test, test2)));
 		
@@ -56,8 +56,8 @@ public class CategoryServiceImplTest {
 	@Test
 	public void createCategories_succesTest() throws NetflixException {
 		
-		CategoryEntity categoryNewEntity = new CategoryEntity(1, "newTestMock", null);
-		CategoryDto categoryNew = new CategoryDto(1, "newTestMock");
+		final CategoryEntity categoryNewEntity = new CategoryEntity(1, "newTestMock", null);
+		final CategoryDto categoryNew = new CategoryDto(1, "newTestMock");
 
 		Mockito.when(categoryEntityMapper.mapToEntity(categoryNew)).thenReturn(categoryNewEntity);
 		

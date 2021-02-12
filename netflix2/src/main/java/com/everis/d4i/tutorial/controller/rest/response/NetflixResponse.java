@@ -2,7 +2,6 @@ package com.everis.d4i.tutorial.controller.rest.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;

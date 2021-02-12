@@ -26,10 +26,12 @@ public class Specifications {
     }
 
     public static Specification<FilmEntity> getFilmsByYearOrName(String name, Year year) {
-		Specification<FilmEntity> specificationName = Specifications.hasName(name);
+		Specification<FilmEntity> specificationName = hasName(name);
 		Specification<FilmEntity> specificationYear = isYearEqual(year);
 
-		if (year == null) {
+		if  (year != null && name != null) {
+			return Specification.where(specificationName).and(specificationYear);
+		} else if (year == null) {
 			return specificationName;
 		} else {
 			return specificationYear;			

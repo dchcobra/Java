@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -29,24 +28,15 @@ public class FilmServiceImpl implements FilmService {
 
 	private final FilmEntityMapper filmEntityMapper;
 	
-
     @Override
 	public Collection<FilmDto> getFilms() {
 		return filmRepository.findAll().parallelStream().map(filmEntityMapper::mapToDto).collect(Collectors.toList());
 	}
 
-    // PAGINATION
     @Override
     public Page<FilmDto> getPageOfFilms(final Pageable pageable) {
         return filmRepository.findAll(pageable).map(filmEntityMapper::mapToDto);
     }
-
-    @Override
-    public Slice<FilmDto> getFilmsByCategorySliced(final Integer categoryId, final Pageable pageable) {
-        return filmRepository.findAllByCategory_Id(categoryId, pageable).map(filmEntityMapper::mapToDto);
-    }
-
-    // STATIC FILTERING
     
     @Override
     public List<FilmDto> getFilmsFilteredByMinimumDuration(final Integer duration) {
@@ -54,9 +44,7 @@ public class FilmServiceImpl implements FilmService {
                        .map(filmEntityMapper::mapToDto)
                        .collect(Collectors.toList());
     }
-    
-    //DINAMIC FILTERING
-    
+        
     @Override
     public List<FilmDto> getDynamicallyFiltered(final FilteringParameters filteringParameters) {
 

@@ -16,6 +16,8 @@ import java.io.Serializable;
 @SuppressWarnings({ "rawtypes", "unchecked" })
 public class NetflixRestExceptionHandler implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	@ExceptionHandler({ Exception.class })
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	@ResponseBody

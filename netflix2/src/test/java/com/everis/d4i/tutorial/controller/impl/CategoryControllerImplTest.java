@@ -1,8 +1,6 @@
 package com.everis.d4i.tutorial.controller.impl;
 
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.List;
@@ -16,7 +14,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -33,30 +30,25 @@ public class CategoryControllerImplTest {
 	@Autowired
 	private MockMvc mockMvc;
 	
-	// Definimos los Beans que utiliza
 	@MockBean
 	private CategoryService categoryService;
 	
 	@MockBean
 	private CategoryRestMapper categoryRestMapper;
 	
-	// Test of method GET CATEGORIES
 	@Test
 	public void getCategories_test() throws Exception {
-		// Creamos el objeto del bean para hacer pruebas
-		CategoryDto category = new CategoryDto(1, "testMockito");
+
+		final CategoryDto category = new CategoryDto(1, "testMockito");
 		Mockito.when(categoryService.getCategories()).thenReturn(List.of(category)); // Le damos a mockito lo que tiene que recibir sin procesar
 		
-		// Creamos un Rest para hacer el test procesado 
-		CategoryRest categoryRest = new CategoryRest(1, "testMockito");
+		final CategoryRest categoryRest = new CategoryRest(1, "testMockito");
 		Mockito.when(categoryRestMapper.mapToRest(category)).thenReturn(categoryRest); // JSON para el test
 
-		// Method GET of categories, URL donde se espera el resultado 
-		RequestBuilder request = MockMvcRequestBuilders
+		final RequestBuilder request = MockMvcRequestBuilders
 				.get("/netflix2/v1/categories")
 				.accept(MediaType.APPLICATION_JSON);
 		
-		// Especificamos que es lo que vamos a recibir
 		mockMvc.perform(request)
 				.andExpect(status().isOk())
 				.andExpect(content()
@@ -67,15 +59,15 @@ public class CategoryControllerImplTest {
 	@Test
 	public void createCategory_test() throws Exception {
 	
-		RequestBuilder requestBuilder = MockMvcRequestBuilders
+		final RequestBuilder requestBuilder = MockMvcRequestBuilders
 				.post("/netflix2/v1/categories")
 				.content("{\"id\": 1, \"name\": \"testMockito\"}")
 				.contentType(MediaType.APPLICATION_JSON);
 		
-		CategoryDto category = new CategoryDto(1, "testMockito");
+		final CategoryDto category = new CategoryDto(1, "testMockito");
 		Mockito.when(categoryService.createCategory(Mockito.any(CategoryDto.class))).thenReturn(category);
 		
-		CategoryRest categoryRest = new CategoryRest(1, "testMockito");
+		final CategoryRest categoryRest = new CategoryRest(1, "testMockito");
 		Mockito.when(categoryRestMapper.mapToDto(categoryRest)).thenReturn(category);
 		
 		Mockito.when(categoryRestMapper.mapToRest(Mockito.any(CategoryDto.class))).thenReturn(categoryRest);

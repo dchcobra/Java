@@ -16,12 +16,12 @@ public abstract class NetflixException extends Exception implements Serializable
 
 	private final List<ErrorDto> errorList = new ArrayList<>();
 
-	public NetflixException(final int code, final String message) {
+	protected NetflixException(final int code, final String message) {
 		super(message);
 		this.code = code;
 	}
 
-	public NetflixException(final int code, final String message, final List<ErrorDto> errorList) {
+	protected NetflixException(final int code, final String message, final List<ErrorDto> errorList) {
 		super(message);
 		this.code = code;
 		this.errorList.addAll(errorList);
