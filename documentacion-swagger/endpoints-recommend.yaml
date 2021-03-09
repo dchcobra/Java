@@ -1,0 +1,2051 @@
+openapi: 3.0.1
+info:
+  title: OneTicketBookingOrderAPI
+  description: OneTicketBookingOrderAPI Swagger
+  license:
+    name: everis
+    url: 'https://www.everis.com'
+  version: 0.0.1
+servers:
+  - url: 'http://localhost:7083/booking-api/v1'
+    description: Generated server url
+tags:
+  - name: Token
+    description: Token rest
+  - name: Supplier Sessions
+    description: Supplier Sessions rest
+  - name: Supplier Booking Orders
+    description: Supplier Booking Orders rest
+  - name: Sessions
+    description: Sessions rest
+  - name: Country
+    description: Country rest
+  - name: BookingOrder
+    description: BookingOrder rest
+  - name: Backoffice
+    description: Backoffice rest
+  - name: Recomendation
+    description: Activities recomendations rest
+  - name: Activities
+    description: Activities rest
+paths:
+  '/activities/{activity-id}':
+    get:
+      tags:
+        - Activities
+      summary: getActivityById
+      description: Retrieve a activity by id
+      operationId: getActivityById
+      parameters:
+        - in: header
+          name: Authorization
+          description: "Token for the access"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - name: Content-Language
+          description: "Language of acceptance of the content"
+          in: header
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: activity-id
+          description: "Recommended activity id"
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: activity-include-session-and-markups
+          in: query
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/definitions/ExampleValueActivityId'
+
+  /activities/recomendations:
+    get:
+      tags:
+        - Recomendation
+      summary: getAllActivities
+      description: Retrieve all the activities
+      operationId: getAllActivities
+      parameters:
+        - in: header
+          name: Authorization
+          description: "Token for the access"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - name: Content-Language
+          description: "Language of acceptance of the content"
+          in: header
+          required: true
+          schema:
+            type: string
+        - in: "body"
+          name: "body" 
+          description: "Token object that needs to get the Token"
+          required: true
+          schema:
+            $ref: "#/definitions/Recomendations"
+      responses:
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/definitions/ExampleValueRecomendations'
+  /backoffice/paxdetails:
+    get:
+      tags:
+        - Backoffice
+      summary: get pax details form
+      description: get pax details for activity
+      operationId: getPaxDetails
+      parameters:
+        - in: header
+          name: Authorization
+          description: "Token for the access"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - name: Content-Language
+          description: "Language of acceptance of the content"
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: activityId
+          description: "Id of Activity"
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: sessionId
+          description: "Id of Session"
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/definitions/ExampleValuePaxdetails'
+  '/booking-orders/{booking-order-id}/all-data':
+    get:
+      tags:
+        - BookingOrder
+      summary: getOrderFromClientById
+      description: Get order from client by id
+      operationId: getOrderFromClient
+      parameters:
+        - in: header
+          name: Authorization
+          description: "Token for the access"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - name: Content-Language
+          description: "Language of acceptance of the content"
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: booking-order-id
+          description: "Id of booking order"
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/definitions/ExampleValueAll-Data'
+  '/booking-orders/{booking-order-id}/download':
+    get:
+      tags:
+        - BookingOrder
+      summary: Dowload tickets
+      description: endpoint for download tickts of same client
+      operationId: downloadBookingOrderById
+      parameters:
+        - in: header
+          name: Authorization
+          description: "Token for the access"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - name: Content-Language
+          description: "Language of acceptance of the content"
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: booking-order-id
+          description: "Id of booking order"
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/definitions/ExampleValueDownload'
+  /countries:
+    get:
+      tags:
+        - Country
+      summary: getCountries
+      description: Get all Countries
+      operationId: getCountries
+      parameters:
+        - in: header
+          name: Authorization
+          description: "Token for the access"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - name: Content-Language
+          description: "Language of acceptance of the content"
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/definitions/ExampleCountries'
+  '/activities/{activity-id}/sessions':
+    get:
+      tags:
+        - Sessions
+      summary: getSessionsByDate
+      description: Get sessions by date and name
+      operationId: getSessionsByDate
+      parameters:
+        - in: header
+          name: Authorization
+          description: "Token for the access"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Content-Language
+          description: "Language of acceptance of the content"
+          required: true
+          schema:
+            type: string
+        - name: activity-id
+          in: path
+          description: "Id of activity "
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: from-date
+          in: query
+          description: "From date of activity"
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: to-date
+          in: query
+          required: false
+          description: "To date of activity"
+          schema:
+            type: string
+            format: date
+        - name: start-time
+          in: query
+          required: false
+          description: "Start date of activity"
+          schema:
+            $ref: '#/components/schemas/LocalTime'
+        - name: name-session
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/definitions/ExampleValueSessions'
+  '/activities/{activity-id}/sessions/availability':
+    get:
+      tags:
+        - Sessions
+      summary: getDatesWithSessionAvailability
+      description: Get dates with availability given a date and an activity
+      operationId: getDatesWithSessionAvailability
+      parameters:
+        - in: header
+          name: Authorization
+          description: "Token for the access"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Content-Language
+          description: "Language of acceptance of the content"
+          required: true
+          schema:
+            type: string
+        - name: Activity-id
+          description: "Id of activity"
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: Session-from-date
+          in: query
+          description: "Session from date"
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: Session-to-date
+          in: query
+          description: "Session to date"
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OneticketProductsApiResponseListLocalDate'
+  /booking-orders/reserve:
+    post:
+      tags:
+        - Token
+      summary: token
+      description: Log in
+      operationId: token
+      parameters:
+        - in: header
+          name: Authorization
+          description: "Token for the access"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Content-Language
+          description: "Language of acceptance of the content"
+          required: true
+          schema:
+            type: string
+        - in: "body"
+          name: "body" 
+          description: "Reserve object that needs to get the Book"
+          required: true
+          schema:
+            $ref: "#/definitions/Reserve"
+      responses:
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/definitions/ExampleValueReserve'
+  '/suppliers/booking-orders/{booking-order-id}/checkout':
+    post:
+      tags:
+        - Supplier Booking Orders
+      summary: booking order checkout
+      description: booking order confirm
+      operationId: bookingOrderCheckout
+      parameters:
+        - in: header
+          name: Authorization
+          description: "Token for the access"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Content-Language
+          description: "Language of acceptance of the content"
+          required: true
+          schema:
+            type: string
+        - name: booking-order-id
+          description: "Id of booking order"
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentRest'
+      responses:
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/GlobickSupplierEngineApiResponsePaymentRest'
+  '/suppliers/sessions/{session-id}/check-availability-and-rates':
+    get:
+      tags:
+        - Supplier Sessions
+      summary: checkAvailabilityAndRates
+      description: Checks the real-time prices and rates for the session in its supplier
+      operationId: checkAvailabilityAndRates
+      parameters:
+        - name: Authorization
+          description: Token for the access
+          in: header
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - name: Content-Language
+          description: "Language of acceptance of the content"
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: session-id
+          description: Session id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: from-date
+          description: From date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: required-units
+          description: Units required
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 1
+      responses:
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/definitions/ExampleCheckAvailabilityAndRates'
+  /oauth2/token:
+    post:
+      tags:
+        - Token
+      summary: token
+      description: Log in
+      operationId: token
+      parameters:
+        - in: header
+          name: Authorization
+          description: "Token for the access"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Accept-Language
+          description: "Language of acceptance of the user"
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: Content-Language
+          description: "Language of acceptance of the content"
+          required: true
+          schema:
+            type: string
+        - in: "body"
+          name: "body" 
+          description: "Token object that needs to get the Token"
+          required: true
+          schema:
+            $ref: "#/definitions/Token"
+      responses:
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: default response
+          content:
+            '*/*':
+              schema:
+                $ref: '#/definitions/ExampleValueToken'
+components:
+  schemas:
+    OneTicketBookingOrderAPIResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        data:
+          type: object
+    ActivityDetailRest:
+      type: object
+      properties:
+        id:
+          type: string
+        thumbnails:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageRest'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageRest'
+        operatingDays:
+          type: array
+          items:
+            type: integer
+            format: int32
+        status:
+          type: integer
+          format: int32
+        operator:
+          $ref: '#/components/schemas/OperatorRest'
+        cityCode:
+          type: string
+        countryCode:
+          type: string
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/CategoryRest'
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date
+        minPrice:
+          type: number
+          format: float
+        maxPrice:
+          type: number
+          format: float
+        purchaseLimit:
+          type: integer
+          format: int32
+        isMostPupular:
+          type: boolean
+        venue:
+          $ref: '#/components/schemas/ActivityVenueRest'
+        availability:
+          type: integer
+          format: int32
+        sessions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SessionRest'
+        translations:
+          $ref: '#/components/schemas/TranslationDetailRest'
+        coverImageURL:
+          type: string
+        coverImageAlternativeText:
+          type: string
+    ActivityVenueRest:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        address:
+          type: string
+    BasicRest:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    CategoryRest:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        code:
+          type: string
+        description:
+          type: string
+        translation:
+          type: string
+    ImageRest:
+      type: object
+      properties:
+        imageUrl:
+          type: string
+        alternativeText:
+          type: string
+    OneticketProductsApiResponseActivityDetailRest:
+      type: object
+      properties:
+        status:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/ActivityDetailRest'
+    OperatorRest:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        code:
+          type: string
+        supplierId:
+          type: integer
+          format: int64
+        countries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BasicRest'
+    SessionRest:
+      type: object
+    TranslationDetailRest:
+      type: object
+      properties:
+        title:
+          type: string
+        cityName:
+          type: string
+        countryName:
+          type: string
+        venue:
+          type: string
+        description:
+          type: string
+        additionalNotes:
+          type: string
+        duration:
+          type: string
+        specialNotes:
+          type: string
+        highlightsStr:
+          type: string
+        itineraryStr:
+          type: string
+        includes:
+          type: string
+        imageURL:
+          type: string
+        coverImageAlternativeText:
+          type: string
+    OneTicketBookingOrderAPIResponseActivityDetailRest:
+      type: object
+      properties:
+        status:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/ActivityDetailRest'
+    OneticketProductsApiResponseMap:
+      type: object
+      properties:
+        status:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties:
+            type: object
+    BookingOrderLineRestFromClient:
+      type: object
+      properties:
+        rateName:
+          type: string
+        ratePrice:
+          type: number
+        numberOfTickets:
+          type: integer
+          format: int32
+    LocalTime:
+      type: object
+      properties:
+        hour:
+          type: integer
+          format: int32
+        minute:
+          type: integer
+          format: int32
+        second:
+          type: integer
+          format: int32
+        nano:
+          type: integer
+          format: int32
+    OneTicketBookingOrderAPIResponseOrderFromClientRest:
+      type: object
+      properties:
+        status:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/OrderFromClientRest'
+    OrderFromClientRest:
+      type: object
+      properties:
+        orderid:
+          type: integer
+          format: int64
+        referenceNumber:
+          type: string
+        transactionDate:
+          type: string
+          format: date-time
+        userEmail:
+          type: string
+        transactionType:
+          type: string
+        orderStatus:
+          type: string
+        activityId:
+          type: integer
+          format: int64
+        activityTitle:
+          type: string
+        activityDate:
+          type: string
+          format: date
+        session:
+          $ref: '#/components/schemas/LocalTime'
+        totalQuantity:
+          type: integer
+          format: int32
+        totalPrice:
+          type: number
+        bookingOrderLineRest:
+          type: array
+          items:
+            $ref: '#/components/schemas/BookingOrderLineRestFromClient'
+    ByteArrayResource:
+      type: object
+      properties:
+        byteArray:
+          type: array
+          items:
+            type: string
+            format: byte
+        description:
+          type: string
+        inputStream:
+          type: object
+        open:
+          type: boolean
+        file:
+          type: string
+          format: binary
+        readable:
+          type: boolean
+        url:
+          type: string
+          format: url
+        filename:
+          type: string
+        uri:
+          type: string
+          format: uri
+    CountryRest:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        code:
+          type: string
+        isoCode:
+          type: string
+        latitude:
+          type: number
+          format: float
+        longitude:
+          type: number
+          format: float
+        translate:
+          type: string
+    OneTicketSearchEngineAPIResponseListCountryRest:
+      type: object
+      properties:
+        status:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CountryRest'
+    OneticketProductsApiResponseListSessionRest:
+      type: object
+      properties:
+        status:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/SessionRest'
+    OneticketProductsApiResponseListLocalDate:
+      type: object
+      properties:
+        status:
+          type: string
+          description: 'Result of the action, for example  "200 OK"'
+        code:
+          type: string
+          description: 'Status code, for example "200"'
+        message:
+          type: string
+          description: 'Specific message, result of the action.'
+        data:
+          description: 'It returns a list of local dates when the activity is available.'
+          type: array
+          items:
+            type: string
+            format: date
+    RequestedTicketsRest:
+      type: object
+      properties:
+        rateId:
+          type: integer
+          format: int64
+        activityRateId:
+          type: integer
+          format: int64
+        quantity:
+          type: integer
+          format: int32
+    ReservationDetailsRest:
+      type: object
+      properties:
+        sessionId:
+          type: integer
+          format: int64
+        activityId:
+          type: integer
+          format: int64
+        supplierMarkup:
+          type: number
+          format: float
+        contactEmail:
+          type: string
+        contactName:
+          type: string
+        startDate:
+          type: string
+          format: date
+        startTime:
+          $ref: '#/components/schemas/LocalTime'
+        requestedTickets:
+          type: array
+          items:
+            $ref: '#/components/schemas/RequestedTicketsRest'
+    GlobickSupplierEngineApiResponseReservationResponseRest:
+      type: object
+      properties:
+        status:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/ReservationResponseRest'
+    ReservationResponseRest:
+      type: object
+      properties:
+        bookingId:
+          type: integer
+          format: int64
+        bookingReference:
+          type: string
+        finalPrice:
+          type: number
+    PaymentRest:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        bookingOrderId:
+          type: integer
+          format: int64
+        paymentMethodId:
+          type: integer
+          format: int32
+        paymentValue:
+          type: number
+          format: double
+        paymentTypeId:
+          type: integer
+          format: int32
+        paymentReference:
+          type: string
+        bookingReference:
+          type: string
+        paymentDate:
+          type: string
+          format: date-time
+        status:
+          type: integer
+          format: int32
+    GlobickSupplierEngineApiResponsePaymentRest:
+      type: object
+      properties:
+        status:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/PaymentRest'
+    GlobickSupplierEngineApiResponseSessionAvailabilityAndRateCheckRest:
+      type: object
+      properties:
+        status:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/SessionAvailabilityAndRateCheckRest'
+    SessionAvailabilityAndRateCheckRest:
+      type: object
+    GlobickSupplierEngineApiResponseTokenResponseRest:
+      type: object
+      properties:
+        status:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/TokenResponseRest'
+    TokenResponseRest:
+      type: object
+      properties:
+        tokenId:
+          type: integer
+          format: int64
+  securitySchemes:
+    basicScheme:
+      type: http
+      scheme: basic
+definitions:
+  Order:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      petId:
+        type: "integer"
+        format: "int64"
+      quantity:
+        type: "integer"
+        format: "int32"
+      shipDate:
+        type: "string"
+        format: "date-time"
+      status:
+        type: "string"
+        description: "Order Status"
+        enum:
+        - "placed"
+        - "approved"
+        - "delivered"
+      complete:
+        type: "boolean"
+        default: false
+    xml:
+      name: "Order"
+  Category:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+    xml:
+      name: "Category"
+  User:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      username:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      email:
+        type: "string"
+      password:
+        type: "string"
+      phone:
+        type: "string"
+      userStatus:
+        type: "integer"
+        format: "int32"
+        description: "User Status"
+    xml:
+      name: "User"
+  Tag:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+    xml:
+      name: "Tag"
+  Pet:
+    type: "object"
+    required:
+    - "name"
+    - "photoUrls"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      category:
+        $ref: "#/definitions/Category"
+      name:
+        type: "string"
+        example: "doggie"
+      photoUrls:
+        type: "array"
+        xml:
+          name: "photoUrl"
+          wrapped: true
+        items:
+          type: "string"
+      tags:
+        type: "array"
+        xml:
+          name: "tag"
+          wrapped: true
+        items:
+          $ref: "#/definitions/Tag"
+      status:
+        type: "string"
+        description: "pet status in the store"
+        enum:
+        - "available"
+        - "pending"
+        - "sold"
+    xml:
+      name: "Pet"
+  Token:
+    type: "object"
+    required:
+    - "grant_type"
+    - "client_id"
+    - "client_secret"
+    properties:
+      grant_type:
+        type: "string"  
+        description: "petition type"
+      client_id:
+        type: "string"
+        description: "client id"
+      client_secret:
+        type: "string"
+        description: "client password"
+    xml:
+      name: "Token"
+  TokenResponse:
+    type: "object"
+    required:
+    - "grant_type"
+    - "client_id"
+    - "client_secret"
+    properties:
+      access_token:
+        type: "string"
+        format: "int64"
+        description: "token"
+      expires_in:
+        type: "integer"
+        description: "token accepted time"
+      token_type:
+        type: "string"
+        description: "token time"
+    xml:
+      name: "Token"
+  ExampleValueToken:
+    type: "object"
+    required:
+    - "access_token"
+    - "expires_in"
+    - "token_type"
+    properties:
+      status:
+        type: "string"
+        description: 'Result of the action, for example: "200 OK"'
+      code:
+        type: "string"
+        description: '200'
+      message:
+        type: "string"
+        description: "A specific message that depends on the action result"
+      data:
+        type: "array"
+        description: "Contains the next data"
+        items:
+          $ref: "#/definitions/TokenResponse"
+    xml:
+      name: "Token"
+  Recomendations:
+    type: "object"
+    required:
+    - "location"
+    - "startDate"
+    - "totalTickets"
+    properties:
+      location:
+        type: "string"  
+        description: "Location"
+      startDate:
+        type: "string"
+        format: "date"
+        description: "Start Date"
+      totalTickets:
+        type: "integer"
+        description: "Total Tickets"
+    xml:
+      name: "Recomendations"
+  RecomendationsResponse:
+    type: "object"
+    required:
+    - "grant_type"
+    - "client_id"
+    - "client_secret"
+    properties:
+      links:
+        description: "A list of links about this activity"
+        type: "array"
+        items: 
+          oneOf:
+            - type: string
+      coverImageURL :
+        description: "URL of the activity image"
+        type: "string"
+      locationCode:
+        description: "List of locations code to activity"
+        type: "array"
+        items: 
+          oneOf:
+            - type: string
+      from_date:
+        description: "Date of start activity"
+        type: "string"
+        format: "date"
+      operatorName:
+        description: "Name of the operator of the activity"
+        type: "string"
+      to_date:
+        description: "Date the activity ends"
+        type: "string"
+        format: "date"
+      tagsCode:
+        description: "List of locations code to activity"
+        type: "array"
+        items: 
+          oneOf:
+            - type: string
+      activityId:
+        description: "Id of activity"
+        type: "integer"
+      translation:
+        description: "Contains the next data"
+        type: "array"
+        items: 
+          $ref: "#/definitions/TranslationRecomendations"
+      minPrice:
+        description: "Minimal price"
+        type: "integer"
+      operatingDays:
+        description: "Boolean list where you define the days that the activity is available or unavailable"
+        type: "string"
+      searchId:
+        description: "recommendation id"
+        type: "integer"
+    xml:
+      name: "Recomendations"
+  ExampleValueRecomendations:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        description: 'Result of the action, for example: "200 OK"'
+      code:
+        type: "string"
+        description: '200'
+      message:
+        type: "string"
+        description: "A specific message that depends on the action result"
+      data:
+        description: "Contains the next data"
+        type: array
+        items:
+          oneOf:
+            - $ref: "#/definitions/ContentRecomendations"
+            - $ref: "#/definitions/Page"
+    xml:
+      name: "Recomendations"
+  ContentRecomendations:
+    properties:
+      content:
+        type: "array"
+        description: "A list of activities that happen in a specific location. For each activity"
+        items:
+          $ref: "#/definitions/RecomendationsResponse"
+    xml:
+      name: "Recomendations"
+  TranslationRecomendations:
+    properties:
+      coverImageAlternativeText: 
+        type: "string"
+        description: "Cover image for alternative text"
+      warning:
+        type: "string"
+        description: "Warning of activity"
+      location:
+        type: "string"
+        description: "Location of activity"
+      title:
+        type: "string"
+        description: "Title of activity"
+      tags:
+        type: "array"
+        description: "List of tags entertainment of the activity"
+        items:
+          oneOf:
+            - type: string
+    xml:
+      name: "Recomendations"
+  Page:
+    properties:
+      Page:
+        description: "The pagination info for that activity list"
+        type: "integer"
+  ExampleValueActivityId:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        description: 'Result of the action, for example: "200 OK"'
+      code:
+        type: "string"
+        description: '200'
+      message:
+        type: "string"
+        description: "A specific message that depends on the action result"
+      data:
+        type: "array"
+        description: "Contains the next data"
+        items:
+          oneOf:
+            - $ref: "#/definitions/LinksActivityId"
+            - $ref: "#/definitions/ContentActivityId"
+  LinksActivityId:
+    type: "object"
+    properties:
+      links:
+        type: "string"
+        description: "links for pages"
+        items:
+          type: "object"
+          properties:
+            id:
+              type: "string"
+    xml:
+      name: "Links"
+  ContentActivityId:
+    type: "object"
+    properties:
+      links:
+        type: "array"
+        description: "links for pages"
+        items:
+          $ref: "#/definitions/ContentActivityIdExtended"
+    xml:
+      name: "ContentActivityId"
+  ContentActivityIdExtended:
+    type: "object"
+    properties:
+      activityId:
+        type: "string"
+        description: "id activity"
+      startDate:
+        type: "string"
+        format: "date"
+        description: "start date"
+      endDate:
+        type: "string"
+        format: "date"
+        description: "end date"
+      imageURL:
+        type: "string"
+        description: "url for image card"
+      minPrice:
+        type: "integer"
+        description: "minimun price"
+      maxPrice:
+        type: "integer"
+        description: "maximum price"
+      purchaseLimit:
+        type: "integer"
+        description: "purchase limit"
+      isMostPopular:
+        type: "boolean"
+        description: "is most popular (true,false)"
+      operatingDays:
+        description: "days week with operating ( 1= operating; 0= not operating )"
+        type: "array"
+        items:
+          type: "integer"
+      availability:
+        type: "string"
+        description: "avaibability"
+      status:
+        type: "string"
+        description: "status"
+      urlThumbnails:
+        description: "url thumbnails"
+        type: "array"
+        items:
+          type: "string"
+      urlImages:
+        description: "url images"
+        type: "array"
+        items:
+          type: "string"
+      cityCode:
+        type: "string"
+        description: "city code"
+      countryCode:
+        type: "string"
+        description: "country code"
+      translation:
+        description: "(translation by userLanguage)"
+        type: "array"
+        items:
+          $ref: "#/definitions/TranslationActivityId"
+      OPT categories: 
+        type: "array"
+        items:
+          $ref: "#/definitions/OPTcategoriesActivityId"
+      operator: 
+        type: "array"
+        items:
+          $ref: "#/definitions/OperatorActivityId"
+  TranslationActivityId:
+    type: "object"
+    properties:
+      title:
+        type: "string"
+        description: "title of activity"
+      cityName:
+        type: "string"
+        description: "city name"
+      countryName:
+        type: "string"
+        description: "country name"
+      specialNotes:
+        type: "string"
+        description: "special notes"
+      highlightsStr:
+        type: "string"
+        description: "highlights"
+      itineraryStr:
+        type: "string"
+        description: "itenerary"
+      includes:
+        type: "string"
+        description: "includes"
+      OPT cancellationPolicy:
+        type: "array"
+        items:
+          $ref: "#/definitions/OPTcancellationPolicy"
+      
+  OPTcancellationPolicy:
+    type: "object"
+    properties:
+      cancellationPolicy:
+        type: "string"
+      feePerc:
+        type: "string"
+  OPTcategoriesActivityId:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        description: "category id"
+      name:
+        type: "string"
+        description: "name (translation by userLanguage)"
+      code:
+        type: "string"
+        description: "code"
+      description:
+        type: "string"
+        description: "description"
+      translation:
+        type: "array"
+        items:
+          $ref: "#/definitions/TranslationOPTcategoriesActivityId"
+  TranslationOPTcategoriesActivityId:
+    type: "object"
+    properties:
+      en-US:
+        type: "string"
+        description: "name en-US"
+      zh-CN:
+        type: "string"
+        description: "name zh-CN"
+  OperatorActivityId:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+        description: "id"
+      name:
+        type: "string"
+        description: "name"
+      code:
+        type: "string"
+        description: "code"
+  ExampleValueSessions:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        description: 'Result of the action, for example: "200 OK"'
+      code:
+        type: "string"
+        description: '200'
+      message:
+        type: "string"
+        description: "A specific message that depends on the action result"
+      data:
+        type: "array"
+        description: "Contains the next data"
+        items:
+          $ref: "#/definitions/DataSessions"
+  DataSessions:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        description: 'activity id'
+      name:
+        type: "string"
+        format: "date"
+        description: 'activity name'
+      startDate:
+        type: "string"
+        format: "date"
+        description: "day when the activity starts"
+      endDate:
+        type: "string"
+        description: "day when the activity ends"
+      availability:
+        type: "string"
+        description: "availability of the activity"
+      time:
+        type: "string"
+        format: "date-time"
+        description: "time"
+      date:
+        type: "string"
+        format: "date"
+        description: "date"
+      prices:
+        type: "array"
+        description: "list of the different activity prices depending on the rate"
+        items:
+          $ref: "#/definitions/PricesSessions"
+      sessionRatesRest:
+        type: "string"
+        description: "rates of the session"
+  PricesSessions:
+    type: "object"
+    properties:
+      rateId :
+        type: "integer"
+        description: 'rate id'
+      name:
+        type: "string"
+        description: 'rate name'
+      price:
+        type: "integer"
+        description: 'rate price include commision'
+      type:
+        type: "string"
+        description: 'rate type'
+  ExampleCheckAvailabilityAndRates:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        description: 'Result of the action, for example: "200 OK"'
+      code:
+        type: "string"
+        description: '200'
+      message:
+        type: "string"
+        description: "A specific message that depends on the action result"
+      data:
+        type: "array"
+        description: "Contains the next data"
+        items:
+          $ref: "#/definitions/DataCheckAvailabilityAndRates"
+  DataCheckAvailabilityAndRates:
+    type: "object"
+    properties:
+      sessionAvailabilityCheck:
+        type: "array"
+        items:
+          $ref: "#/definitions/SessionAvailabilityCheck"
+      sessionRateCheck:
+        type: "array"
+        items:
+          $ref: "#/definitions/SessionRateCheck"
+  SessionAvailabilityCheck:
+    type: "object"
+    properties:
+      isAvailable :
+        type: "boolean"
+        description: 'Is activity available'
+      availableUnits:
+        type: "integer"
+        description: 'How many more tickets the activity has'
+  SessionRateCheck:
+    type: "object"
+    properties:
+      haveRatesChanged  :
+        type: "boolean"
+        description: 'If rates have changed'
+      rates:
+        type: "array"
+        description: 'How many more tickets the activity has'
+        items:
+          $ref: "#/definitions/RatesCheckAvailabilityAndRates"
+  RatesCheckAvailabilityAndRates:
+    type: "object"
+    properties:
+      type:
+        type: "string"
+        description: 'Type'
+      id:
+        type: "integer"
+        description: 'Id'
+      expectedRate:
+        type: "string"
+        description: "Expected rate"
+      currentRate:
+        type: "string"
+        description: "Current rate"
+      hasChanged:
+        type: "boolean"
+        description: "If it has changed"
+  ExampleValuePaxdetails:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        description: 'Result of the action, for example: "200 OK"'
+      code:
+        type: "string"
+        description: '200'
+      message:
+        type: "string"
+        description: "A specific message that depends on the action result"
+      data:
+        type: "array"
+        description: "Contains the next data"
+        items:
+          $ref: "#/definitions/DataPaxdetails"
+  DataPaxdetails:
+    type: "object"
+    properties:
+      country:
+        type: "string"
+        description: "Country of user"
+      address:
+        type: "string"
+        description: "Address"
+      nationality:
+        type: "string"
+        description: "Nationality"
+      passport:
+        type: "string"
+        description: "Passport"
+      phone:
+        type: "integer"
+        description: "Phone"
+      dob:
+        type: "string"
+        description: "Dob"
+      name:
+        type: "string"
+        description: "Name"
+      mobile:
+        type: "integer"
+        description: "Mobile"
+      language:
+        type: "string"
+        description: "Language"
+      email:
+        type: "string"
+        description: "Email"
+  ExampleCountries:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        description: 'Result of the action, for example: "200 OK"'
+      code:
+        type: "string"
+        description: '200'
+      message:
+        type: "string"
+        description: "A specific message that depends on the action result"
+      data:
+        type: "array"
+        description: "Contains a list of countries"
+        items:
+          $ref: "#/definitions/DataCountries"
+  DataCountries:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        description: "Country id"
+      name:
+        type: "string"
+        description: "Country name"
+      code:
+        type: "string"
+        description: "Code"
+      isoCode:
+        type: "string"
+        description: "Country code"
+      translate:
+        type: "array"
+        items:
+          $ref: "#/definitions/TranslateCountries"
+  TranslateCountries:
+    type: "object"
+    properties:
+      en-US:
+        type: "string"
+        description: "Country name in english"
+      zh-CN:
+        type: "string"
+        description: "Country name in chinese"
+  Reserve:
+    type: "object"
+    required:
+    - "sessionId"
+    - "contactEmail"
+    - "paxInfo"
+    - "requestedTickets"
+    properties:
+      sessionId:
+        type: "integer"  
+        description: "Session id"
+      contactEmail:
+        type: "string"
+        description: "User email"
+      contactName:
+        type: "string"
+        description: "User name"
+      paxInfo:
+        type: "array"
+        items:
+          $ref: "#/definitions/PaxInfoReserve"
+      requestedTickets:
+        type: "array"
+        items:
+          $ref: "#/definitions/RequestedTicketsReserve"
+    xml:
+      name: "Token"
+  PaxInfoReserve:
+    required:
+    - "name"
+    - "email"
+    - "lastName"
+    properties:
+      name:
+        type: "string"  
+        description: "User name"
+      email:
+        type: "string"  
+        description: "User email"
+      lastName:
+        type: "string"  
+        description: "User last name"
+  RequestedTicketsReserve:
+    required:
+    - "rateId"
+    - "quantity"
+    properties:
+      rateId:
+        type: "integer"  
+        description: "Rate id"
+      quantity:
+        type: "integer"  
+        description: "Tickets' rate quantity"
+  ExampleValueReserve:
+    type: "object"
+    required:
+    - "access_token"
+    - "expires_in"
+    - "token_type"
+    properties:
+      status:
+        type: "string"
+        description: 'Result of the action, for example: "200 OK"'
+      code:
+        type: "string"
+        description: '200'
+      message:
+        type: "string"
+        description: "A specific message that depends on the action result"
+      data:
+        type: "array"
+        description: "Contains the next data"
+        items:
+          $ref: "#/definitions/ReserveResponse"
+  ReserveResponse:
+    type: "object"
+    properties:
+      bookingId:
+        type: "integer"
+        description: 'Booking id'
+      bookingReference:
+        type: "integer"
+        description: 'Booking reference'
+      finalPrice:
+        type: "integer"
+        description: 'Final price'
+  ExampleValueAll-Data:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        description: 'Result of the action, for example: "200 OK"'
+      code:
+        type: "string"
+        description: '200'
+      message:
+        type: "string"
+        description: "A specific message that depends on the action result"
+      data:
+        type: "array"
+        description: "Contains a list of countries"
+        items:
+          $ref: "#/definitions/DataAll-Data"
+  DataAll-Data:
+    type: "object"
+    properties:
+      orderId:
+        type: "integer"
+        description: 'Order id'
+      referenceNumber:
+        type: "integer"
+        description: 'Reference number'
+      transactionDate:
+        type: "string"
+        format: "date"
+        description: 'Transaction date'
+      userEmail:
+        type: "string"
+        description: 'User email'
+      orderStatus:
+        type: "string"
+        description: 'Order status'
+      activityId :
+        type: "integer"
+        description: 'Activity id'
+      activityTitle  :
+        type: "string"
+        description: 'Activity title'
+      activityDate:
+        type: "string"
+        format: "date"
+        description: 'Activity date'
+      session:
+        type: "array"
+        description: "Activity session"
+        items:
+          $ref: "#/definitions/SessionAll-Data"
+      totalQuantity:
+        type: "integer"
+        description: 'Tickets quantity'
+      totalPrice:
+        type: "integer"
+        description: 'Total price of the booking'
+      bookingOrderLineRest:
+        type: "array"
+        description: "Activity rates booked "
+        items:
+          $ref: "#/definitions/bookingOrderLineRestAll-Data"
+  SessionAll-Data:
+    type: "object"
+    properties:
+      hour:
+        type: "integer"
+        description: "Hour of activity"
+      minute:
+        type: "integer"
+        description: "Minute of activity"
+      second:
+        type: "integer"
+        description: "Second of activity"
+      nano:
+        type: "integer"
+        description: "Nano of activity"
+  bookingOrderLineRestAll-Data:
+    type: "object"
+    properties:
+      rateName:
+        type: "string"
+        description: "Rate name"
+      ratePrice:
+        type: "integer"
+        description: "Rate Price"
+      numberOfTickets:
+        type: "integer"
+        description: "Tickets quantity"
+  ExampleValueDownload:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        description: 'Result of the action, for example: "200 OK"'
+      code:
+        type: "string"
+        description: '200'
+      message:
+        type: "string"
+        description: "A specific message that depends on the action result"
+      data:
+        type: "array"
+        description: "Contains a list of countries"
+        items:
+          $ref: '#/components/schemas/ByteArrayResource'
+  ApiResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      type:
+        type: "string"
+      message:
+        type: "string"
